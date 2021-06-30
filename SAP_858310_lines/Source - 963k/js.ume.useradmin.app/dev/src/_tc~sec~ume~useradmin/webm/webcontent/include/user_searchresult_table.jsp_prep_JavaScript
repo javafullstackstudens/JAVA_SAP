@@ -1,0 +1,356 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function doSomething(action, index) {
+      frm = document.forms[0];
+      actionTag = document.createElement("input");
+      actionTag.setAttribute("name", action);
+      actionTag.setAttribute("type", "hidden");
+      actionTag.setAttribute("value", "");
+      frm.appendChild( actionTag );
+
+      slctObjTag = document.createElement("input");
+      slctObjTag.setAttribute("name", "Cx_0dummy");
+      slctObjTag.setAttribute("type", "hidden");
+      slctObjTag.setAttribute("value", index);
+      frm.appendChild( slctObjTag );
+
+      pageTag = document.createElement("input");
+      pageTag.setAttribute("name", "Cx_0dummy");
+      pageTag.setAttribute("type", "hidden");
+      pageTag.setAttribute("value", "Cx_0dummy");
+      frm.appendChild(pageTag);
+
+      frm.action = "Cx_0dummy";
+      setPaging();
+      frm.submit();
+    }
+
+    function doSorting(sortName, orderBy) {
+      frm = document.forms[0];
+      actionTag = document.createElement("input");
+      actionTag.setAttribute("name", "Cx_0dummy");
+      actionTag.setAttribute("type", "hidden");
+      actionTag.setAttribute("value", "");
+      frm.appendChild( actionTag );
+
+      sortFieldNameTag = document.createElement("input");
+      sortFieldNameTag.setAttribute("name", "Cx_0dummy");
+      sortFieldNameTag.setAttribute("type", "hidden");
+      sortFieldNameTag.setAttribute("value", sortName);
+      frm.appendChild( sortFieldNameTag );
+
+      orderByTag = document.createElement("input");
+      orderByTag.setAttribute("name", "Cx_0dummy");
+      orderByTag.setAttribute("type", "hidden");
+      orderByTag.setAttribute("value", orderBy);
+      frm.appendChild( orderByTag );
+
+      pageTag = document.createElement("input");
+      pageTag.setAttribute("name", "Cx_0dummy");
+      pageTag.setAttribute("type", "hidden");
+      pageTag.setAttribute("value", "Cx_0dummy");
+      frm.appendChild(pageTag);
+
+      frm.action = "Cx_0dummy";
+      setPaging();
+      frm.submit();
+    } // doSorting
+
+    function toggle_select(size) {
+        var toggleslct = document.getElementById("toggleSelect");
+        if (toggleslct.checked == true) {
+            select_all(size);
+        }
+        else {
+            deselect_all(size);
+        }
+    }
+
+    function select_all(size) {
+        var cks = document.all("Cx_0dummy");
+        if ( size < 2 ) {
+            cks.checked = true;
+        } else {
+            for (var i=0; i<size; i++) {
+                cks[i].checked = true;
+            }
+        }
+    }
+
+    function deselect_all(size) {
+        var cks = document.all("Cx_0dummy");
+        if ( size < 2 ) {
+            cks.checked = false;
+        } else {
+            for (var i=0; i<size; i++) {
+                cks[i].checked = false;
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+function onkeypress___141707975() {if(event.keyCode=='115') {document.getElementById('Cx_0dummy').focus();}}
+
+
+
+
+
+
+
+
+function onClick____1976140959() {doSorting('Cx_0dummy' ,'false');}
+
+ function onClick___1991576520() {doSorting('Cx_0dummy' ,'true');}
+
+
+function onClick____1976140959() {doSorting('Cx_0dummy' ,'false');}
+
+
+
+
+
+
+
+
+
+
+
+function onClick____1243644032() {doSorting('Cx_0dummy', 'false');}
+
+function onClick___556814917() {doSorting('Cx_0dummy', 'true');}
+
+
+function onClick____1243644032() {doSorting('Cx_0dummy', 'false');}
+
+
+
+
+
+
+
+
+
+function onClick___485963126() {doSorting('Cx_0dummy', 'false');}
+
+function onClick____978971183() {doSorting('Cx_0dummy', 'true');}
+
+
+function onClick___485963126() {doSorting('Cx_0dummy', 'false');}
+
+
+
+
+
+
+
+
+
+
+function onClick____50854058() {doSorting('Cx_0dummy', 'false');}
+
+function onClick___1230010543() {doSorting('Cx_0dummy', 'true');}
+
+
+function onClick____50854058() {doSorting('Cx_0dummy', 'false');}
+
+
+
+
+
+
+
+
+function onClick____712161421() {doSorting('Cx_0dummy', 'false');}
+
+function onClick____1753810198() {doSorting('Cx_0dummy', 'true');}
+
+
+function onClick____712161421() {doSorting('Cx_0dummy', 'false');}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function href____784477361() {doSomething('Cx_0dummy', 'Cx_0dummy');}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

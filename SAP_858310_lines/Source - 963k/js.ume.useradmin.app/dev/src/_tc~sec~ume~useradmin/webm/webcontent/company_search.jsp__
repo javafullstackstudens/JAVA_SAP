@@ -1,0 +1,171 @@
+﻿ package PackageNo1556921278;import proxy_txt;import contextspecific_includes_top_txt;import contextspecific_includes_bottom_txt;import java.util.Hashtable;import com.sap.security.core.util.*; public class company_search_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+ ErrorBean error = new ErrorBean();
+
+
+ InfoBean info = new InfoBean();
+
+
+
+     if (!inPortal) {
+
+
+ response.write(userAdminLocale.get("USER_MANAGEMENT"));
+
+
+
+
+     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+       response.write(CompanySearchLogic.performCompanySearchAction)+response.write(request.getAttribute("CompanySearchLogic").performCompanySearchAction);
+
+
+
+
+
+
+
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+     response.write(userAdminLocale.get("SEARCHCOMPANY"));
+
+
+
+
+
+
+
+
+
+  response.write(userAdminLocale.get("SEARCH_COMPANY_HEADER"));
+
+
+
+
+
+      if ( error.isError() ) { 
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+     response.write(userAdminMessages.print(error.getMessage()))+response.write(request.getAttribute("userAdminMessages").print(error.getMessage()));
+
+
+
+      } 
+
+
+if ( info.isInfo() ) { 
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+  response.write(userAdminMessages.print(info.getMessage()))+response.write(request.getAttribute("userAdminMessages").print(info.getMessage()));
+
+
+
+} 
+
+     response.write(companySearchAlias)+response.write(request.getAttribute("companySearchAlias"));
+
+
+     response.write(CompanySearchLogic.getSEARCH_COMPANY_NAME())+response.write(request.getAttribute("CompanySearchLogic").getSEARCH_COMPANY_NAME());response.write(userAdminLocale.get("COMPANY_NAME"));
+
+     
+     String companySearchName = request.getParameter(CompanySearchLogic.SEARCH_COMPANY_NAME);
+     if (null == companySearchName) companySearchName = "";
+     
+   response.write(CompanySearchLogic.getSEARCH_COMPANY_NAME())+response.write(request.getAttribute("CompanySearchLogic").getSEARCH_COMPANY_NAME());
+   response.write(CompanySearchLogic.getSEARCH_COMPANY_NAME())+response.write(request.getAttribute("CompanySearchLogic").getSEARCH_COMPANY_NAME());
+
+
+
+
+   response.write(util.getFilteringSpecialChar(companySearchName))+response.write(request.getAttribute("util").getFilteringSpecialChar(companySearchName));
+
+
+
+
+       response.write(userAdminLocale.get("PART_OR_COMP_NAME"));
+
+
+ response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+  String nameLinks = userAdminLocale.get("PART_OR_COMP_NAME");
+     				   if ( entryExit.length() > 0 ) entryExit.delete(0, entryExit.length());	
+     				   entryExit.append(userAdminMessages.print(new Message("START_GROUP_LINKS", nameLinks))); 
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+       response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+
+       response.write(nameLinks)+response.write(request.getAttribute("nameLinks"));
+  String[] alphabet = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
+     										"K", "L", "M", "N", "O", "P", "Q", "R", "S", "T",
+     										"U", "V", "W", "X", "Y", "Z" }; 
+     response.write(companySearchAlias)+response.write(request.getAttribute("companySearchAlias"));response.write(CompanySearchLogic.getPerformCompanySearchAction())+response.write(request.getAttribute("CompanySearchLogic").getPerformCompanySearchAction());response.write(CompanySearchLogic.getSEARCH_COMPANY_CHARS())+response.write(request.getAttribute("CompanySearchLogic").getSEARCH_COMPANY_CHARS());
+   for (int i=0; i<alphabet.length; i++) { 
+if (alphabet[i].equals("I") || alphabet[i].equals("S")) {  }response.write(companySearchAlias)+response.write(request.getAttribute("companySearchAlias"));response.write(CompanySearchLogic.performCompanySearchAction)+response.write(request.getAttribute("CompanySearchLogic").performCompanySearchAction);response.write(CompanySearchLogic.SEARCH_COMPANY_NAME)+response.write(request.getAttribute("CompanySearchLogic").SEARCH_COMPANY_NAME);response.write(alphabet[i]+"*");response.write(alphabet[i])+response.write(request.getAttribute("alphabet[i]"));
+   } 
+  if ( CompanySearchLogic.guestUsersAllowed(proxy) ) { 
+response.write(companySearchAlias)+response.write(request.getAttribute("companySearchAlias"));response.write(CompanySearchLogic.getFinishCompanySearchAction())+response.write(request.getAttribute("CompanySearchLogic").getFinishCompanySearchAction());response.write(CompanySearchResultBean.getRESULT_COMPANY_ID())+response.write(request.getAttribute("CompanySearchResultBean").getRESULT_COMPANY_ID());response.write(userAdminLocale.get("SELECT_GUEST_COMPANY"));
+  } 
+  entryExit.delete(0, entryExit.length());
+     				   entryExit.append(userAdminMessages.print(new Message("END_GROUP_LINKS", nameLinks))); 
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+       response.write(nameLinks)+response.write(request.getAttribute("nameLinks"));
+       response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+ String search = " "+userAdminLocale.get("SEARCH")+" ";
+     				String cancel = " "+userAdminLocale.get("CANCEL")+" "; 
+
+
+
+      response.write(CompanySearchLogic.getPerformCompanySearchAction())+response.write(request.getAttribute("CompanySearchLogic").getPerformCompanySearchAction());
+      response.write(search)+response.write(request.getAttribute("search"));
+      response.write(CompanySearchLogic.getPerformCompanySearchAction())+response.write(request.getAttribute("CompanySearchLogic").getPerformCompanySearchAction());
+
+
+
+      response.write(CompanySearchLogic.getCancelCompanySearchAction())+response.write(request.getAttribute("CompanySearchLogic").getCancelCompanySearchAction());
+      response.write(cancel);
+      response.write(CompanySearchLogic.getCancelCompanySearchAction())+response.write(request.getAttribute("CompanySearchLogic").getCancelCompanySearchAction());
+}
+
+}

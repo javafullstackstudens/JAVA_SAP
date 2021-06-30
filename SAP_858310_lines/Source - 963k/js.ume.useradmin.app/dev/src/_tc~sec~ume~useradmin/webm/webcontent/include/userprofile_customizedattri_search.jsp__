@@ -1,0 +1,75 @@
+﻿ package PackageNo1020133617;import com.sap.security.core.admin.UserAdminCustomization; public class userprofile_customizedattri_search_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+/* ?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_customizedattri_search.jsp */ /* 2?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_customizedattri_search.jsp */ /* 1?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\useradmincustomization.jsp */ UserAdminCustomization cus = (UserAdminCustomization)proxy.getSessionAttribute(UserAdminCustomization.beanId); /* 2?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\useradmincustomization.jsp */ if ( null == cus ) cus = new UserAdminCustomization(); /* 3?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\useradmincustomization.jsp */ IUser cusUser = proxy.getActiveUser(); /* 4?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\useradmincustomization.jsp */ boolean isAddnRe = cus.isAddnExist(cusUser); /* 5?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\useradmincustomization.jsp */ String[] addnNames = null; /* 6?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\useradmincustomization.jsp */ String[] addnLabels = null; /* 7?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\useradmincustomization.jsp */ if ( isAddnRe ) { /* 8?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\useradmincustomization.jsp */ addnNames = cus.getAddnNames(cusUser); /* 9?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\useradmincustomization.jsp */ addnLabels = cus.getAddnLabels(cusUser); /* 10?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\useradmincustomization.jsp */ } /* 11?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\useradmincustomization.jsp */ /* 12?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\useradmincustomization.jsp */ /* 13?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\useradmincustomization.jsp */ response.write(CxResponseWrite)+response.write(request.getAttribute("CxResponseWrite")); /* 2?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_customizedattri_search.jsp */
+
+      if ( isAddnRe ) { 
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+      String customizedInfo = userAdminLocale.get("CUSTOMIZED_INFO");
+if ( entryExit.length() > 0 ) entryExit.delete(0, entryExit.length());		   
+entryExit.append(userAdminMessages.print(new Message("START_GROUP_BOX", customizedInfo))); 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+   response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+
+   response.write(customizedInfo)+response.write(request.getAttribute("customizedInfo"));
+
+
+
+
+   response.write(userAdminLocale.get("CUSTOMIZED_INFO"));
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+       response.write(altmin)+response.write(request.getAttribute("altmin"));
+       response.write(altmin)+response.write(request.getAttribute("altmin"));response.write(altmax)+response.write(request.getAttribute("altmax"));response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+String addnName = null;
+  String addnLabel = null;
+  for (int i=0; i<addnLabels.length; i++ ) {
+      addnName = addnNames[i];
+      addnLabel = addnLabels[i]; 
+
+
+ response.write(addnLabel); response.write(addnName)+response.write(request.getAttribute("addnName"));
+
+
+ response.write(addnLabel);
+ response.write(addnLabel);
+
+ response.write(user.attribute(addnLabel)[0]);
+
+
+
+
+} 
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+      entryExit.delete(0, entryExit.length());
+entryExit.append(userAdminMessages.print(new Message("END_GROUP_BOX", customizedInfo))); 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+   response.write(customizedInfo)+response.write(request.getAttribute("customizedInfo"));
+   response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+
+      } 
+}
+
+}

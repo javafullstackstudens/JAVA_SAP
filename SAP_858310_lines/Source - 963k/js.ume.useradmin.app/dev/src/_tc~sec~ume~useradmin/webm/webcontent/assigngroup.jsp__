@@ -1,0 +1,132 @@
+﻿ package PackageNo664212872;import proxy_txt;import contextspecific_includes_top_txt;import contextspecific_includes_bottom_txt;import com.sapmarkets.tpd.master.TradingPartnerInterface;import com.sap.security.core.*;import com.sap.security.api.IUser;import com.sap.security.core.role.*;import java.util.*; public class assigngroup_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+     CompanyListBean companyList = (CompanyListBean) proxy.getSessionAttribute(CompanyListBean.beanId);
+
+      TradingPartnerInterface [] companies = companyList.getPagedCompanies();
+Boolean roleFlag=(Boolean)proxy.getRequestAttribute("roleFlag");
+java.util.Locale locale = proxy.getLocale();   
+if ( null == locale ) locale = java.util.Locale.getDefault();
+     
+
+      if (!inPortal) { 
+
+
+ response.write(userAdminLocale.get("ASSIGN_COMPANY_TO_GROUP"));
+
+
+
+
+
+     }
+
+
+
+
+
+   response.write(companyListAlias)+response.write(request.getAttribute("companyListAlias"));
+
+
+     response.write(userAdminLocale.get("ASSIGN_COMPANY_TO_GROUP"));
+
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+     
+     java.util.Iterator groupsIt = companyList.getServiceRepository().getAllGroupDefinitions();
+     
+     String cid = (String)(proxy.getRequestAttribute(CompanySelectBean.companyIdId));
+     boolean derived = false;
+     
+     TradingPartnerInterface companyobject = null;
+     
+     if (cid.length()!=0) {
+ companyobject = com.sapmarkets.tpd.TradingPartnerDirectoryCommon.getTPD().getPartner(cid);
+     }
+     
+     IGroupDefinition pgroup = companyList.getDefinitionOfOwnGroup(companyobject);
+     if (pgroup == null) {
+ pgroup = companyList.getDefinitionOfDerivedGroup(companyobject);
+ derived = true;
+     }
+     
+     //if pgroup is still null, there is a problem with groups so no page is displayed
+     if (pgroup != null) {
+ if (companyobject!=null) {
+     
+
+
+
+     response.write(userAdminLocale.get("ASSIGN_COMPANY"));
+     response.write(companyobject.getDisplayName());
+  response.write(userAdminLocale.get("TO_GROUP"));
+
+
+
+  } else { 
+response.write(userAdminLocale.get("ASSIGN"));
+
+response.write(userAdminLocale.get("INDIVIDUAL_USERS"));
+response.write(userAdminLocale.get("TO_GROUP"));
+ }
+
+
+
+
+
+
+
+
+      response.write(CompanyListBean.getSelectedGroupNameId())+response.write(request.getAttribute("CompanyListBean").getSelectedGroupNameId());
+      response.write(derived?"selected":"");
+       response.write(userAdminLocale.get("DERIVE_FROM_EBP"));response.write("("+companyList.getDefinitionOfExternalGroup(companyobject).getDescription(locale)+")");
+
+       IGroupDefinition group = null;
+     	   while (groupsIt.hasNext()) {
+     	       group = (IGroupDefinition) groupsIt.next(); 
+      response.write(util.filteringSpecialChar(group.getName()))+response.write(request.getAttribute("util").filteringSpecialChar(group.getName()));if(group.getName().equals(pgroup.getName()) && !derived){}response.write(group.getDescription(locale));
+       }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+     response.write(CompanyListLogic.getPerformAssignGroupAction())+response.write(request.getAttribute("CompanyListLogic").getPerformAssignGroupAction());
+     response.write(CompanySelectBean.getCompanyIdId())+response.write(request.getAttribute("CompanySelectBean").getCompanyIdId());response.write(util.getFilteringSpecialChar(cid));
+     response.write(userAdminLocale.get("ASSIGN_TO_GROUP"));
+   response.write(userAdminLocale.get("CANCEL"));
+
+
+
+      } 
+}
+
+}

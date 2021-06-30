@@ -1,0 +1,218 @@
+﻿ package PackageNo1212383608;import com.sap.archtech.daservice.admin.*;import com.sap.archtech.daservice.ejb.*;import java.util.*;import javax.naming.*; public class cas_validate_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();   page.errorPage = "cas_validate_error.jsp";   
+
+
+     
+     String storeid = request.getParameter("storeid");
+     String archivestore = request.getParameter("archivestore").trim();
+     String storagesystem = request.getParameter("storagesystem");
+     String type = request.getParameter("type");
+     String winroot = request.getParameter("winroot").trim();
+     String unixroot = request.getParameter("unixroot").trim();
+     String destination = request.getParameter("destination").trim();
+     String proxyhost = request.getParameter("proxyhost").trim();
+     String proxyport = request.getParameter("proxyport").trim();
+     String isdefault = request.getParameter("isdefaultcheckbox");
+     String entertype = request.getParameter("entertype");
+     
+     String archivestoreError = "";
+     String storagesystemError = "";
+     String typeError = "";
+     String winrootError = "";
+     String unixrootError = "";
+     String destinationError = "";
+     String isdefaultError = "";
+     
+     // Validate IsDefault Checkbox
+     if ((isdefault != null) && (isdefault.equalsIgnoreCase("Y")))
+     	isdefault = "Y";
+     else
+     	isdefault = "N";
+     
+     // Check if archive store already exists
+     if (entertype.equalsIgnoreCase("I"))
+     {
+     
+       try
+       {
+
+ // Get store id
+ if ((archivestore == null) || (archivestore.length() == 0))
+ {
+   archivestoreError = " Archive Store missing";
+ }
+ else if(archivestore.equalsIgnoreCase("None"))
+ {
+     	  archivestoreError = " '" + archivestore + "' is not a valid name for an Archive Store";
+ }
+ else
+ { 
+ 	
+   // Get Archive Store Id 
+     	  Context ctx = new InitialContext();
+     	  ArchStoreConfigLocalHome beanLocalHome =
+     	      (ArchStoreConfigLocalHome) ctx.lookup("java:comp/env/ArchStoreConfigBean");
+     	  Collection col = beanLocalHome.findByArchiveStore(archivestore.toUpperCase());
+     	  if (!col.isEmpty())
+     	  {
+     archivestoreError = " Archive Store already exists";
+   }
+ }
+       }
+       catch (Exception ex)
+       {
+ throw ex;
+       }
+     }
+     
+
+     
+     if (archivestoreError.length() != 0)
+     {
+     
+
+request.getRequestDispatcher("cas_enter.jsp").forward(request,response);
+    response.write(archivestoreError);
+    response.write(archivestore);
+    response.write(storagesystem);
+    response.write(type);
+    response.write(winroot);
+    response.write(unixroot);
+    response.write(destination);
+    response.write(proxyhost);
+    response.write(proxyport);
+    response.write(isdefault);
+
+
+     
+     }
+     
+
+     
+     // Check if necessary input data is missing
+     if (archivestore.length() < 1)
+     {
+       archivestoreError = "Archive Store missing!";
+     }
+     
+     if (!(type.equalsIgnoreCase("W") || type.equalsIgnoreCase("F")))
+     {
+       typeError = "Type missing!";
+     }
+     
+     // Check if winroot syntax is correct 
+     if (winroot.endsWith("\\"))
+     {
+     	if (type.toUpperCase().startsWith("W"))
+     		winrootError = "WebDAV root must not end with a backslash";
+     	else
+     		winrootError = "Windows root must not end with a backslash";
+     } 
+
+     if (winroot.endsWith("/"))
+     {
+     	if (type.toUpperCase().startsWith("W"))
+     		winrootError = "WebDAV root must not end with a slash";
+     	else
+     		winrootError = "Windows root must not end with a slash";
+     }
+     
+     //Check if unixroot syntax is correct     
+     if (unixroot.endsWith("/"))
+     {
+     		unixrootError = "Unix root must not end with a slash";
+     }    
+     
+     //Check if winroot or unixroot are selected
+     if (winroot.length() == 0 && unixroot.length() == 0 && type.equalsIgnoreCase("F"))	
+     {
+     	winrootError = "Windows root missing!";
+     	unixrootError = "Unix root missing!";
+     }
+     
+     // Check if destination is selected
+     if (destination.length() == 0 && type.equalsIgnoreCase("W"))	
+     {
+     destinationError = "Destination missing!";	
+     }
+     
+     // Clear unnecessary fields
+     if (type.equalsIgnoreCase("W"))
+     {
+     	winroot = "";
+     	unixroot = "";
+     }
+     else
+     {
+     	destination = "";
+     	proxyhost = "";
+     	proxyport = "0";
+     }
+     
+     if (archivestoreError.length() != 0 ||
+   storagesystemError.length() != 0 ||
+   typeError.length() != 0 ||
+   winrootError.length() != 0 ||
+   unixrootError.length() != 0 ||
+   destinationError.length() != 0 ||
+   isdefaultError.length() != 0)
+   {		
+     
+
+request.getRequestDispatcher("cas_enter.jsp").forward(request,response);
+    response.write(archivestoreError);
+    response.write(storagesystemError);
+    response.write(typeError);
+    response.write(winrootError);
+    response.write(unixrootError);
+    response.write(destinationError);
+    response.write(isdefaultError);
+    response.write(archivestore);
+    response.write(storagesystem);
+    response.write(type);
+    response.write(winroot);
+    response.write(unixroot);
+    response.write(destination);
+    response.write(proxyhost);
+    response.write(proxyport);
+    response.write(isdefault);
+
+
+     
+     }
+     
+
+     
+     if (storeid.startsWith("X"))
+     {
+     
+
+request.getRequestDispatcher("cas_store.jsp").forward(request,response);
+    response.write(winroot);
+    response.write(unixroot);
+    response.write(destination);
+    response.write(proxyhost);
+    response.write(proxyport);
+    response.write(isdefault);
+
+
+     
+     }
+     else
+     {
+     
+
+request.getRequestDispatcher("cas_update.jsp").forward(request,response);
+    response.write(winroot);
+    response.write(unixroot);
+    response.write(destination);
+    response.write(proxyhost);
+    response.write(proxyport);
+    response.write(isdefault);
+
+
+     
+     }
+     
+}
+
+}

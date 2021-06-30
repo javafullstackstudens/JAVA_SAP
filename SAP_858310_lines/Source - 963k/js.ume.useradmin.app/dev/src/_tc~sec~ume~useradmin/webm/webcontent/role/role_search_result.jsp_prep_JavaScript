@@ -1,0 +1,282 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function script____1672578772() {src("Cx_0dummyjs/util-role.js");}
+function script___281776209() {src("Cx_0dummyjs/basic.js");}
+function script____685706691() {src("Cx_0dummyjs/roleList.js");}
+
+function setReq(value)
+{
+ document.frmRoleInfo.cmd.value = value;
+ var msg = "";
+ var selected = 0;
+ var checkboxGrp = document.frmRoleInfo.selectedUsers;
+ var valChecked;
+ document.frmRoleInfo.uncheckedItems.value = msg;
+
+ if(checkboxGrp == null)
+ {
+  return 0; 
+ }
+ if(checkboxGrp.length == null)
+ {
+  if (checkboxGrp.checked == true)
+  {
+   valChecked = 1;
+   selected = 1;
+  }
+  else
+  {
+   valChecked = 0;
+   msg = msg + checkboxGrp.value + ",";
+  }
+
+ }
+ else
+ {
+  for (var i=0; i<checkboxGrp.length; i++)
+  {
+   if (checkboxGrp[i].checked == true)
+   {
+    valChecked = 1;
+    selected = 1;
+   }
+   else
+   {
+    valChecked = 0;
+    msg = msg + checkboxGrp[i].value + ",";
+   }
+  }
+ }
+ // you can put the content of msg into a hidden text field
+ document.frmRoleInfo.uncheckedItems.value = msg;
+ return selected;
+}
+
+function checkbox_select_all()
+{
+ var checkboxGrp = document.frmRoleInfo.selectedUsers;
+ if(checkboxGrp.length == null)
+ {
+   checkboxGrp.checked = true;
+
+ }
+ else
+ {
+  for (var i=0; i<checkboxGrp.length; i++)
+  {
+   checkboxGrp[i].checked = true;
+  }
+ }
+}
+
+function checkbox_deselect_all()
+{
+ var checkboxGrp = document.frmRoleInfo.selectedUsers;
+ if(checkboxGrp.length == null)
+ {
+   checkboxGrp.checked = false;
+
+ }
+ else
+ {
+  for (var i=0; i<checkboxGrp.length; i++)
+  {
+   checkboxGrp[i].checked = false;
+  }
+ }
+}
+
+function toggleSelection()
+{
+ if(document.frmRoleInfo.toggle.value == "")
+ {
+
+  checkbox_select_all();
+  document.frmRoleInfo.toggle.value = "selected";
+ }
+ else
+ {
+  checkbox_deselect_all();
+  document.frmRoleInfo.toggle.value = "";
+ }
+ return false;
+}
+
+function doSearch()
+{
+ if ((document.frmRoleInfo.cmd.value == null) || (document.frmRoleInfo.cmd.value == ""))
+  document.frmRoleInfo.cmd.value = 'role-assignment-search-groups';
+}
+
+
+
+
+ function onSubmit____1285098588() {doSearch()}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

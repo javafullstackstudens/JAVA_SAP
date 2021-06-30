@@ -1,0 +1,217 @@
+﻿ package PackageNo1405852543;import com.sap.security.api.IUserAccount; public class useraccount_search_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+      java.util.Locale locale = proxy.getLocale();
+if ( null == locale ) locale = java.util.Locale.getDefault();
+Boolean isLocked = userAccount.isLocked();
+int locked = 0;
+if ( null != isLocked ) {
+    if ( isLocked.equals(Boolean.TRUE) ) {
+locked = 1;
+    } else {
+locked = 2;
+    }
+}
+int lockedReason = userAccount.getLockReason().intValue();
+UserAdminCustomization uac = (UserAdminCustomization)proxy.getSessionAttribute(UserAdminCustomization.beanId);
+boolean noLimited = uac.toShowAllAccountInfo();
+     
+
+
+
+       String parent = "userSearch"; 
+ response.write(parent)+response.write(request.getAttribute("parent"));
+      StringBuffer certSB = new StringBuffer(userAdminAlias);
+certSB.append("?");
+certSB.append("callCalendar");
+certSB.append("=").append("&").append("formID").append("=");
+String cert = certSB.toString(); 
+     response.write(cert);
+
+
+
+
+      String acH = userAdminLocale.get("ACCOUNT_INFO");   
+if ( entryExit.length() > 0 ) entryExit.delete(0, entryExit.length());
+entryExit.append(userAdminMessages.print(new Message("START_GROUP_BOX", acH))); 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+   response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+
+   response.write(acH);
+
+
+
+
+       response.write(acH);
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+       response.write(altmin)+response.write(request.getAttribute("altmin"));
+       response.write(altmin)+response.write(request.getAttribute("altmin"));
+       response.write(altmin)+response.write(request.getAttribute("altmin"));response.write(altmax)+response.write(request.getAttribute("altmax"));response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+ response.write(userAccount.getLocked())+response.write(request.getAttribute("userAccount").getLocked());response.write(userAdminLocale.get("STATUS"));
+
+       response.write(userAccount.getLocked())+response.write(request.getAttribute("userAccount").getLocked());response.write(userAccount.getLocked())+response.write(request.getAttribute("userAccount").getLocked());
+response.write(locked==0?"selected":"");response.write(userAdminLocale.get("ANY"));
+    response.write(locked==1?"selected":"");response.write(userAdminLocale.get("DEACTIVATED"));
+      response.write(userAccount.getLockreason())+response.write(request.getAttribute("userAccount").getLockreason());response.write(userAdminLocale.get("SET_BY"));
+       response.write(userAccount.getLockreason())+response.write(request.getAttribute("userAccount").getLockreason());response.write(userAccount.getLockreason())+response.write(request.getAttribute("userAccount").getLockreason());
+      response.write(IUserAccount.LOCKED_BY_ADMIN)+response.write(request.getAttribute("IUserAccount").LOCKED_BY_ADMIN);response.write(lockedReason==IUserAccount.LOCKED_BY_ADMIN?"selected":"");response.write(userAdminLocale.get("ADMINISTRATOR"));
+      response.write(IUserAccount.LOCKED_AUTO)+response.write(request.getAttribute("IUserAccount").LOCKED_AUTO);response.write(lockedReason==IUserAccount.LOCKED_AUTO?"selected":"");response.write(userAdminLocale.get("SYSTEM"));
+response.write(lockedReason==IUserAccount.LOCKED_NO?"selected":"");response.write(userAdminLocale.get("EITHER"));
+
+
+
+
+     response.write(userAccount.getCreatedbegin())+response.write(request.getAttribute("userAccount").getCreatedbegin());response.write(userAdminLocale.get("CREATION_DATE"));
+
+       response.write(userAccount.getCreatedbegin())+response.write(request.getAttribute("userAccount").getCreatedbegin());
+
+
+       response.write(userAccount.getCreatedbegin())+response.write(request.getAttribute("userAccount").getCreatedbegin());
+       response.write(userAccount.getCreatedbegin())+response.write(request.getAttribute("userAccount").getCreatedbegin());
+
+
+
+       response.write(userAdminLocale.get("CALENDAR"));
+response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+response.write(userAdminLocale.get("CALENDAR"));
+      response.write(userAdminLocale.get("CALENDAR"));
+
+      response.write(userAccount.createdbegin)+response.write(request.getAttribute("userAccount").createdbegin);
+ response.write(userAccount.getCreatedend())+response.write(request.getAttribute("userAccount").getCreatedend());response.write(userAdminLocale.get("TO"));
+
+       response.write(userAccount.getCreatedend())+response.write(request.getAttribute("userAccount").getCreatedend());
+
+
+       response.write(userAccount.getCreatedend())+response.write(request.getAttribute("userAccount").getCreatedend());
+       response.write(userAccount.getCreatedend())+response.write(request.getAttribute("userAccount").getCreatedend());
+
+
+
+       response.write(userAdminLocale.get("CALENDAR"));
+response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+response.write(userAdminLocale.get("CALENDAR"));
+      response.write(userAdminLocale.get("CALENDAR"));
+
+     response.write(userAccount.createdend)+response.write(request.getAttribute("userAccount").createdend);
+
+
+  if (noLimited) { 
+
+     response.write(userAccount.getLoggedinbegin())+response.write(request.getAttribute("userAccount").getLoggedinbegin());response.write(userAdminLocale.get("LAST_LOGIN_DATE"));
+
+       response.write(userAccount.getLoggedinbegin())+response.write(request.getAttribute("userAccount").getLoggedinbegin());
+
+
+       response.write(userAccount.getLoggedinbegin())+response.write(request.getAttribute("userAccount").getLoggedinbegin());
+       response.write(userAccount.getLoggedinbegin())+response.write(request.getAttribute("userAccount").getLoggedinbegin());
+
+
+
+       response.write(userAdminLocale.get("CALENDAR"));
+response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+response.write(userAdminLocale.get("CALENDAR"));
+      response.write(userAdminLocale.get("CALENDAR"));
+
+     response.write(userAccount.loggedinbegin)+response.write(request.getAttribute("userAccount").loggedinbegin);
+response.write(userAccount.getLoggedinend())+response.write(request.getAttribute("userAccount").getLoggedinend());response.write(userAdminLocale.get("TO"));
+
+       response.write(userAccount.getLoggedinend())+response.write(request.getAttribute("userAccount").getLoggedinend());
+
+
+       response.write(userAccount.getLoggedinend())+response.write(request.getAttribute("userAccount").getLoggedinend());
+       response.write(userAccount.getLoggedinend())+response.write(request.getAttribute("userAccount").getLoggedinend());
+
+
+
+       response.write(userAdminLocale.get("CALENDAR"));
+response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+response.write(userAdminLocale.get("CALENDAR"));
+      response.write(userAdminLocale.get("CALENDAR"));
+
+     response.write(userAccount.loggedinend)+response.write(request.getAttribute("userAccount").loggedinend);
+
+
+
+     response.write(userAccount.getPwdchangebegin())+response.write(request.getAttribute("userAccount").getPwdchangebegin());response.write(userAdminLocale.get("DATE_OF_LAST_PSWD_CHANGE"));
+
+       response.write(userAccount.getPwdchangebegin())+response.write(request.getAttribute("userAccount").getPwdchangebegin());
+
+
+       response.write(userAccount.getPwdchangebegin())+response.write(request.getAttribute("userAccount").getPwdchangebegin());
+       response.write(userAccount.getPwdchangebegin())+response.write(request.getAttribute("userAccount").getPwdchangebegin());
+
+
+
+       response.write(userAdminLocale.get("CALENDAR"));
+response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+response.write(userAdminLocale.get("CALENDAR"));
+      response.write(userAdminLocale.get("CALENDAR"));
+
+     response.write(userAccount.pwdchangebegin)+response.write(request.getAttribute("userAccount").pwdchangebegin);
+response.write(userAccount.getPwdchangeend())+response.write(request.getAttribute("userAccount").getPwdchangeend());response.write(userAdminLocale.get("TO"));
+
+       response.write(userAccount.getPwdchangeend())+response.write(request.getAttribute("userAccount").getPwdchangeend());
+
+
+       response.write(userAccount.getPwdchangeend())+response.write(request.getAttribute("userAccount").getPwdchangeend());
+       response.write(userAccount.getPwdchangeend())+response.write(request.getAttribute("userAccount").getPwdchangeend());
+
+
+
+       response.write(userAdminLocale.get("CALENDAR"));
+response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+response.write(userAdminLocale.get("CALENDAR"));
+      response.write(userAdminLocale.get("CALENDAR"));
+
+     response.write(userAccount.pwdchangeend)+response.write(request.getAttribute("userAccount").pwdchangeend);
+
+
+  } 
+
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+      entryExit.delete(0, entryExit.length());
+entryExit.append(userAdminMessages.print(new Message("END_GROUP_BOX", acH))); 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+   response.write(acH);
+   response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+}
+
+}

@@ -1,0 +1,17 @@
+﻿ package PackageNo1609661901;import com.sap.archtech.daservice.admin.*;import java.net.*; public class pst_execute_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();   page.errorPage = "pst_error.jsp";   
+
+     
+     String archivepath = request.getParameter("archivepath");
+     String authorization = (String) session.getAttribute("AuthRequHead");
+     if (authorization == null)
+     	authorization = "";  
+     URL url = new URL(request.getScheme() + "://localhost:" + request.getServerPort() + AdminMaster.DASPATH);
+     PackStatus pst = new PackStatus(url, authorization, archivepath);
+     String responsecode = pst.execute();
+     
+
+request.getRequestDispatcher("pst_result.jsp").forward(request,response);
+     response.write(responsecode);
+}
+
+}

@@ -1,0 +1,355 @@
+﻿ package PackageNo1222183654;import com.sap.security.api.*;import com.sap.archtech.daservice.mbeans.*;import com.sap.archtech.daservice.commands.*;import com.sap.archtech.daservice.data.*;import com.sap.archtech.daservice.util.*;import com.sap.security.core.server.destinations.api.*;import com.sap.archtech.daservice.ejb.*;import com.tssap.dtr.client.lib.protocol.*;import com.tssap.dtr.client.lib.protocol.session.*;import com.tssap.dtr.client.lib.protocol.requests.http.*;import java.io.*;import java.util.*;import javax.naming.*; public class tas_list_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();   page.errorPage = "tas_error.jsp";   
+
+
+     
+       String isUserValid = (String) session.getAttribute("isUserValid");
+       if (!(isUserValid != null && isUserValid.equals("x")))
+       {
+     
+
+request.getRequestDispatcher("../index.jsp").forward(request,response);
+
+     
+       }
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ IUser user = UMFactory.getAuthenticator().getLoggedInUser();
+ boolean hasPermission = user.hasPermission(new XmldasAdminPermission("write", "*"));
+ if (hasPermission == true)
+ {
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+   try
+   {
+     
+     // Get all BC_XMLA_CONFIG entries
+     	SortedMap sm = new TreeMap();
+     	Context ctx = new InitialContext();
+     	ArchStoreConfigLocalHome beanLocalHome = (ArchStoreConfigLocalHome) ctx.lookup("java:comp/env/ArchStoreConfigBean");
+     	Collection col = beanLocalHome.findAll();
+     	Iterator iter = col.iterator();
+     	while(iter.hasNext())
+     	{
+       ArchStoreConfigLocal ascl = (ArchStoreConfigLocal) iter.next();
+       sm.put(ascl.getArchivestore(), ascl.getSapxmla_Config());
+     	}
+     	
+     	for (Iterator i = sm.entrySet().iterator(); i.hasNext();)
+     	{
+     	  Sapxmla_Config sac = (Sapxmla_Config)((Map.Entry)i.next()).getValue();
+       String archivestore = sac.archive_store;
+       String storagesystem = sac.storage_system;
+       String storetype = sac.type;
+       if (storetype.equalsIgnoreCase("W"))
+ storetype = "WebDAV System";
+       else
+ storetype = "File System";
+       String winroot = sac.win_root;
+       if (winroot == null)
+ winroot = "";
+       String winroot_normalized = winroot;
+       winroot_normalized = winroot_normalized.replace("<", "&lt;");
+       winroot_normalized = winroot_normalized.replace(">", "&gt;");
+       String unixroot = sac.unix_root;  
+       if (unixroot == null)
+ unixroot = "";
+       String unixroot_normalized = unixroot;
+       unixroot_normalized = unixroot_normalized.replace("<", "&lt;");
+       unixroot_normalized = unixroot_normalized.replace(">", "&gt;");    
+       String destination = sac.destination;
+       if (destination == null)
+ destination = "";
+       String proxyhost = sac.proxy_host;
+       if (proxyhost == null)
+ proxyhost = "";
+       int proxyportint = sac.proxy_port;
+       if (proxyportint < 0 || proxyportint > 65535)
+ proxyportint = 0;
+       String proxyport = null;
+       if (proxyportint != 0)
+ proxyport = Integer.toString(proxyportint);
+       else
+ proxyport = "";
+       short ilmconformanceshort = sac.ilm_conformance;
+       String ilmconformance = Short.toString(ilmconformanceshort);
+       String isdefault = sac.is_default;
+       if ((isdefault == null) || (isdefault.length() == 0))
+       {
+     	isdefault = "N";
+       }
+       else
+       {
+     	  isdefault = isdefault.toUpperCase();
+     	  if (!isdefault.equalsIgnoreCase("Y"))
+     	     isdefault = "N";
+       }  
+     
+       // Check If Archive Store Is Running 
+       boolean storeRuns = false;
+       if (storetype.startsWith("WebDAV System"))
+       {
+     	    int optionsStatusCode = 0;
+     	    String optionsReasonPhrase = "";
+     	    boolean optionsSupportsDAV = false;
+     	    int headStatusCode = 0;
+     	    String headReasonPhrase = "";
+     	    try
+     	    {
+     
+     	      // At This Time The New Archive Store Is Not Accessable From HTTP Connection Pool				
+     	      com.tssap.dtr.client.lib.protocol.Connection conn = null;
+     				
+     	      // After Destination Service Usage
+     	      if (destination.trim().length() != 0)
+     	      {				
+     	      DestinationService destService = (DestinationService) new InitialContext()
+     	      .lookup(DestinationService.JNDI_KEY);
+     	      if (destService == null)
+     		  throw new NamingException(
+     		  "Destination Service is not available");
+     	      HTTPDestination httpDest = (HTTPDestination) destService
+     	      .getDestination("HTTP", destination);
+     	      IConnectionTemplate connTemplate = httpDest
+     	      .getHTTPConnectionTemplate();
+     	      conn = new com.tssap.dtr.client.lib.protocol.Connection(connTemplate);
+     	      }
+     				
+     	      // Before Destination Service Usage
+     	      else
+     	      {	
+     	      conn = new com.tssap.dtr.client.lib.protocol.Connection(winroot);
+     	      conn.setSessionContext(new SessionContext(
+     		  WebDavTemplateProvider.WEBDAVCLIENTUSR,
+     		  WebDavTemplateProvider.WEBDAVCLIENTPWD,
+     		  WebDavTemplateProvider.WEBDAVCLIENTAUTHSCHEME));
+     	      }
+     
+     	      if (proxyhost == null || proxyhost.length() == 0)
+     	      {
+     	conn.setUseProxy(false);
+     	      }
+     	      else
+     	      {
+     	conn.setProxyHost(proxyhost);
+     		    conn.setProxyPort(proxyportint);
+     		    conn.setUseProxy(true);
+     	      }
+     	      conn.setSocketReadTimeout(WebDavTemplateProvider.WEBDAVREADTIMEOUT);
+     	      conn.setSocketConnectTimeout(WebDavTemplateProvider.WEBDAVCONNECTTIMEOUT);
+     	      conn.setSocketExpirationTimeout(WebDavTemplateProvider.WEBDAVEXPIRATIONTIMEOUT);
+     
+     	      // OPTIONS request
+     	      OptionsRequest optionsRequest = new OptionsRequest("");
+     	      IResponse optionsResponse = optionsRequest.perform(conn);
+     	      optionsSupportsDAV = optionsRequest.supportsDAV();
+     	      optionsStatusCode = optionsResponse.getStatus();
+     	      optionsReasonPhrase = optionsResponse.getStatusDescription();
+     
+     	      // Get ILM Conformance Class From Archive Store
+     	      Header header = optionsResponse.getHeader("SAP-ILM-Conformance");
+     	      if (header != null)
+     	      {
+     	String ilmValue = header.getValue();
+     		    if (ilmValue != null && ilmValue.length() > 0)
+     		    {
+     		      ilmconformance = ilmValue;
+     	}
+     	else
+     	{
+     		      ilmconformance = "0";
+     		    }
+     	      }
+     	      else
+     	      {
+     	ilmconformance = "0";
+     	      }
+     
+     	      // HEAD Request
+     	      HeadRequest headRequest = new HeadRequest("");
+     	      IResponse headResponse = headRequest.perform(conn);
+     	      headStatusCode = headResponse.getStatus();
+     	      headReasonPhrase = headResponse.getStatusDescription();
+     	      conn.close();
+   
+   if ((optionsStatusCode == 200) && (optionsSupportsDAV == true) && (headStatusCode == 200))
+     storeRuns = true;
+     }
+     catch (Exception ex)
+     {
+       storeRuns = false;
+     }
+       }
+       else 
+       {  
+ String uri = "";
+     
+ if (System.getProperty("file.separator").startsWith("/")) {
+     	      if (unixroot.contains("<DIR_GLOBAL>"))
+     	uri = unixroot.replace("<DIR_GLOBAL>", MasterMethod.GLOBAL_DIR);
+     	      else
+     	uri = unixroot;
+     	    }
+ else
+ {
+     	      if (winroot.contains("<DIR_GLOBAL>"))
+     	uri = winroot.replace("<DIR_GLOBAL>", MasterMethod.GLOBAL_DIR);
+     	      else
+     	uri = winroot;
+ }
+ 
+ try
+ {
+   File rootpath = new File(uri);
+   storeRuns = rootpath.isDirectory();
+ }
+ catch (Exception ex)
+ {
+   storeRuns = false;
+ }
+       }
+    
+
+
+    response.write(archivestore);
+    response.write(storagesystem);
+
+       
+     		if (isdefault.equalsIgnoreCase("Y"))
+     		{
+     
+
+
+
+       
+     		}
+     		else
+     		{	
+     
+
+
+
+       
+     		}
+     
+
+    response.write(storetype);
+    response.write(winroot_normalized);
+    response.write(unixroot_normalized);
+    response.write(destination);
+    response.write(proxyhost);
+    response.write(proxyport);
+   response.write(ilmconformance);
+
+
+       if (storeRuns == true)
+       {
+     // Store Runs
+     
+
+
+
+
+       
+       }
+       else
+       {
+     // Store Does Not Run
+     
+
+
+
+       
+       }
+     
+
+
+
+       
+     } // End for() loop
+     
+   } // End try 
+   catch (Exception ex)
+   {
+   
+     // Forward Excception
+     throw ex;  
+   }
+   
+
+
+
+
+
+ 
+     
+ }
+ else
+ {
+     
+ 
+
+
+
+
+
+
+ 
+ 
+ }
+ 
+ 
+}
+
+}

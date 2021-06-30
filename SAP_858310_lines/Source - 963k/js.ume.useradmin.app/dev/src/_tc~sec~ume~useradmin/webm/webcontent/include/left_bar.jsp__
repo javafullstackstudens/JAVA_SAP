@@ -1,0 +1,40 @@
+﻿ package PackageNo1804524617; public class left_bar_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+      if ( util.isServlet23() ) proxy.setResponseContentType("text/html; charset=utf-8"); 
+
+
+      StringBuffer viewUserProfile = new StringBuffer(userAdminAlias);
+StringBuffer logOut = new StringBuffer(userAdminAlias);
+viewUserProfile.append("?");
+viewUserProfile.append(UserAdminLogic.viewUserProfileAction);
+viewUserProfile.append("=");
+logOut.append("?");
+logOut.append(UserAdminLogic.logOffAction);
+logOut.append("=");
+     
+
+
+
+
+
+
+
+
+
+
+
+    response.write(webpath)+response.write(request.getAttribute("webpath"));      response.write(userAdminLocale.get("SKIP_TO_MAIN_CONTENT"));response.write(userAdminLocale.get("USER_MANAGEMENT"));
+
+     response.write(viewUserProfile.getToString());response.write(userAdminLocale.get("UM_HOME"));
+
+     response.write(logOut.getToString());response.write(userAdminLocale.get("LOG_OUT"));
+
+    response.write(userAdminLocale.get("SAP"));
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+}
+
+}

@@ -1,0 +1,410 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function script____1672578772() {src("Cx_0dummyjs/util-role.js");}
+function script___281776209() {src("Cx_0dummyjs/basic.js");}
+function script____685706691() {src("Cx_0dummyjs/roleList.js");}
+
+
+
+
+
+function setCmd(value)
+{
+  document.frmRoleInfo.cmd.value = value;
+}
+
+function onRemoveReq(value,message1,message2)
+{
+ document.frmRoleInfo.cmd.value = value;
+ var selected = setReq(value);
+ if(selected == 0)
+ {
+  alert(message1);
+  return false;
+ }
+ if(confirm(message2) == true)
+ {
+  return true;
+ }
+ else
+ {
+  return false;
+ }
+}
+
+function setReq(value)
+{
+ document.frmRoleInfo.cmd.value = value;
+
+ var msg = "";
+ var selected = 0;
+ var checkboxGrp = document.frmRoleInfo.userIDs;
+ var valChecked;
+ document.frmRoleInfo.uncheckedItems.value = msg;
+
+ if(checkboxGrp == null)
+ {
+  return 0; 
+ }
+ if(checkboxGrp.length == null)
+ {
+  if (checkboxGrp.checked == true)
+  {
+   valChecked = 1;
+   selected = 1;
+  }
+  else
+  {
+   valChecked = 0;
+   msg = msg + checkboxGrp.value + ",";
+  }
+ }
+ else
+ {
+  for (var i=0; i<checkboxGrp.length; i++)
+  {
+   if (checkboxGrp[i].checked == true)
+   {
+    valChecked = 1;
+    selected = 1;
+   }
+   else
+   {
+    valChecked = 0;
+    msg = msg + checkboxGrp[i].value + ",";
+   }
+  }
+ }
+ // you can put the content of msg into a hidden text field
+ document.frmRoleInfo.uncheckedItems.value = msg;
+ return selected;
+}
+
+function checkbox_select_all()
+{
+ var checkboxGrp = document.frmRoleInfo.userIDs;
+ if(checkboxGrp.length == null)
+ {
+   checkboxGrp.checked = true;
+ }
+ else
+ {
+  for (var i=0; i<checkboxGrp.length; i++)
+  {
+   checkboxGrp[i].checked = true;
+  }
+ }
+}
+
+function checkbox_deselect_all()
+{
+ var checkboxGrp = document.frmRoleInfo.userIDs;
+ if(checkboxGrp.length == null)
+ {
+   checkboxGrp.checked = false;
+ }
+ else
+ {
+  for (var i=0; i<checkboxGrp.length; i++)
+  {
+   checkboxGrp[i].checked = false;
+  }
+ }
+}
+
+function toggleSelection()
+{
+ if (document.frmRoleInfo.userIDs == null) 
+ {
+  return false;
+ }
+ if(document.frmRoleInfo.toggle.value == "")
+ {
+
+  checkbox_select_all();
+  document.frmRoleInfo.toggle.value = "selected";
+ }
+ else
+ {
+  checkbox_deselect_all();
+  document.frmRoleInfo.toggle.value = "";
+ }
+ return false;
+}
+
+function doUserSearch(command) 
+{
+        var frm = document.forms["frmRoleInfo"];
+        frm.action = "Cx_0dummy";
+        inputTag1 = document.createElement("input");
+        inputTag1.setAttribute("name","Cx_0dummy");
+        inputTag1.setAttribute("type", "hidden");
+        inputTag1.setAttribute("value", "");
+        frm.appendChild(inputTag1);
+        inputTag2 = document.createElement("input");
+        inputTag2.setAttribute("name","Cx_0dummy");
+        inputTag2.setAttribute("type", "hidden");
+        inputTag2.setAttribute("value", "Cx_0dummy");
+        frm.appendChild(inputTag2);
+
+     frm.cmd.value = command;
+        frm.submit();
+}
+
+function doMemberSearch()
+{
+ if ((document.frmRoleInfo.cmd.value == null) || (document.frmRoleInfo.cmd.value == ""))
+  document.frmRoleInfo.cmd.value = 'group-assignment';
+}
+
+
+   function onSubmit___122686026() {doMemberSearch()}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

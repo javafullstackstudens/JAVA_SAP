@@ -1,0 +1,157 @@
+﻿ package PackageNo1215284799;import proxy_txt;import contextspecific_includes_bottom_txt;import com.sap.security.api.IUser;import com.sap.security.core.admin.*;import com.sap.security.core.util.*; public class user_language_modify_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+     LanguagesBean languages = (LanguagesBean) proxy.getSessionAttribute(LanguagesBean.beanId);
+
+ UserBean user = new UserBean();
+
+
+ ErrorBean error = new ErrorBean();
+
+
+ InfoBean info = new InfoBean();
+
+
+
+      IUser self = user.getUser();   
+boolean toDisable = false;
+if ( UserAdminFactory.isAttributeReadOnly(self.getUniqueID(), UserBean.localeId) ) {
+    toDisable = true;
+} 
+String altmin = userAdminLocale.get("MINIMIZE_THIS_SECTION");
+String altmax = userAdminLocale.get("MAXIMIZE_THIS_SECTION");
+     
+
+
+
+
+     if (!inPortal) {
+
+     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+   response.write(userAdminAlias)+response.write(request.getAttribute("userAdminAlias"));
+
+
+
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+      if ( info.isInfo() ) { 
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+    response.write(userAdminMessages.print(info.getMessage()))+response.write(request.getAttribute("userAdminMessages").print(info.getMessage()));
+  if (inPortal) { 
+
+
+
+  } 
+
+
+
+      } 
+
+      if ( error.isError() ) { 
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+    response.write(userAdminMessages.print(error.getMessage()))+response.write(request.getAttribute("userAdminMessages").print(error.getMessage()));
+
+
+
+      } 
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+     response.write(userAdminLocale.get("SET_PORTAL_LANG"));
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+       response.write(altmin);
+       response.write(altmin);response.write(altmax);response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+    if (toDisable) { 
+       response.write(userAdminLocale.get("ATTRIBUTE_IS_READONLY"));
+    } 
+     response.write(user.getUidId())+response.write(request.getAttribute("user").getUidId());response.write(user.getUid())+response.write(request.getAttribute("user").getUid());
+
+
+if ( toDisable ) { 
+if ( spanTitle.length() > 0 ) spanTitle.delete(0, spanTitle.length());
+  spanTitle.append(userAdminLocale.get("PORTAL_LANGUAGE")).append(" ");
+  spanTitle.append(user.getPreferredLanguage()).append(" ");
+  spanTitle.append(userAdminLocale.get("NOT_AVAILABLE")); 
+     response.write(spanTitle.getToString())+response.write(request.getAttribute("spanTitle").getToString());response.write(user.getPreferredLanguageId())+response.write(request.getAttribute("user").getPreferredLanguageId());response.write(userAdminLocale.get("PORTAL_LANGUAGE"));
+} else {  
+     response.write(user.getPreferredLanguageId())+response.write(request.getAttribute("user").getPreferredLanguageId());response.write(userAdminLocale.get("PORTAL_LANGUAGE"));
+} 
+
+
+response.write(user.preferredLanguageId)+response.write(request.getAttribute("user").preferredLanguageId);
+  response.write(user.preferredLanguageId)+response.write(request.getAttribute("user").preferredLanguageId);
+
+
+if (toDisable) {    }
+       response.write((user.getLocale()!=null)?"":" selected");response.write(userAdminLocale.get("PLEASE_SELECT"));
+      response.write(languages.getHtmlOptions(user.getPreferredLanguage()))+response.write(request.getAttribute("languages").getHtmlOptions(user.getPreferredLanguage()));
+
+
+
+
+
+
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+  String apply = " "+userAdminLocale.get("APPLY")+" ";
+    String close = " "+userAdminLocale.get("CLOSE")+" "; 
+
+    response.write(UserAdminLogic.getPerformUserLanguageChangeAction())+response.write(request.getAttribute("UserAdminLogic").getPerformUserLanguageChangeAction());
+
+    response.write(apply)+response.write(request.getAttribute("apply"));
+
+
+
+
+    response.write(close);
+}
+
+}

@@ -1,0 +1,101 @@
+﻿ package PackageNo1775189912;import _proxy_txt;import _contextspecific_includes_top_txt;import _contextspecific_includes_bottom_txt;import com.sap.security.core.admin.batch.BatchLogic;import com.sap.security.core.*;import com.sap.security.core.util.batch.*;import com.sapmarkets.tpd.master.TradingPartnerInterface;import com.sap.security.core.admin.*;import com.sap.security.core.util.*; public class batchdownload_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+ CompanyListBean companyList = new CompanyListBean();
+
+
+ InfoBean info = new InfoBean();
+
+
+
+     if (!inPortal) {
+
+ response.write(userAdminLocale.get("BATCH_DOWNLOAD_MANAGEMENT"));
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+     }
+   response.write(batchAlias)+response.write(request.getAttribute("batchAlias"));
+
+
+     
+     Exception ex = (Exception) (proxy.getRequestAttribute("exception"));
+     
+     if (ex != null)
+       {
+     
+
+      response.write(com.sap.security.core.util.taglib.EncodeHtmlTag.encode(ex.getMessage()))+response.write(request.getAttribute("com").sap.security.core.util.taglib.EncodeHtmlTag.encode(ex.getMessage()));
+
+     
+     
+     }
+     else
+     {
+
+
+
+
+
+    response.write(userAdminLocale.get("BATCH_DOWNLOAD_MANAGEMENT"));
+
+
+
+
+
+    response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+     
+if ( info.isInfo() )
+{
+     
+     response.write(userAdminMessages.print(info.getMessage()))+response.write(request.getAttribute("userAdminMessages").print(info.getMessage()));
+      } 
+
+     
+TradingPartnerInterface [] companies = companyList.getCompanies();
+//Boolean roleFlag=(Boolean)proxy.getRequestAttribute("roleFlag");
+//IUser performer= proxy.getActiveUser();
+//Locale locale = proxy.getLocale();
+     
+
+
+
+       response.write(userAdminLocale.get("SELECT_ONE_OR_MORE_COMPANIES"));
+
+ response.write(CompanyListBean.selectedCidsId)+response.write(request.getAttribute("CompanyListBean").selectedCidsId);
+     if (performer.getCompany()==null || UserAdminHelper.hasAccess(performer, UserAdminHelper.MANAGE_ALL_COMPANIES))
+     {
+      response.write(userAdminLocale.get("ALL_USERS").toUpperCase());
+   response.write(userAdminLocale.get("INDIVIDUAL_USERS"));
+     }
+
+      for (int i=0; i<companies.length; i++)
+       {
+   response.write(companies[i].getPartnerID().getToString())+response.write(request.getAttribute("companies[i]").getPartnerID().getToString());response.write(com.sap.security.core.util.taglib.EncodeHtmlTag.encode(companies[i].getDisplayName()))+response.write(request.getAttribute("com").sap.security.core.util.taglib.EncodeHtmlTag.encode(companies[i].getDisplayName()));
+     }
+
+
+
+
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+      response.write(userAdminLocale.get("DOWNLOAD_USERS_NOW"));response.write(BatchLogic.performDownloadAction)+response.write(request.getAttribute("BatchLogic").performDownloadAction);
+
+
+
+      } 
+}
+
+}

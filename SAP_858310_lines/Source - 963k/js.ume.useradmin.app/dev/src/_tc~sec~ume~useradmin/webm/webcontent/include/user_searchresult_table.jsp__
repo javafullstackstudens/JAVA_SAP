@@ -1,0 +1,352 @@
+﻿ package PackageNo776898046; public class user_searchresult_table_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+      String sort = (String) proxy.getSessionAttribute(UserAdminLogic.sortFieldName);
+boolean order = ((Boolean)proxy.getSessionAttribute(UserAdminLogic.orderBy)).booleanValue(); // true is as; false is de
+     
+StringBuffer altTextSB = new StringBuffer(userAdminLocale.get("SORT_BY"));
+altTextSB.append(": ");
+int altLength = altTextSB.length();
+String altText;
+     
+boolean allowedToView = UserAdminHelper.hasAccess(performer, UserAdminHelper.VIEW_PROFILE);
+boolean allowedToModify = UserAdminHelper.hasAccess(performer, UserAdminHelper.CHANGE_PROFILE);
+boolean allowedToLock = UserAdminHelper.hasAccess(performer, UserAdminHelper.LOCK_USERS);
+boolean allowedToUnlock = UserAdminHelper.hasAccess(performer, UserAdminHelper.UNLOCK_USERS);
+boolean allowedToCreate = UserAdminHelper.hasAccess(performer, UserAdminHelper.CREATE_USERS);
+boolean allowedToViewRoles = UserAdminHelper.hasAccess(performer, UserAdminHelper.VIEW_ROLES);
+boolean allowedToViewGroups = UserAdminHelper.hasAccess(performer, UserAdminHelper.VIEW_GROUPS);
+     
+
+
+
+
+
+
+
+
+
+
+
+ response.write(ListBean.selectedObjId)+response.write(request.getAttribute("ListBean").selectedObjId);
+
+
+
+
+
+      response.write(pageKey)+response.write(request.getAttribute("pageKey"));
+
+       response.write(pageName)+response.write(request.getAttribute("pageName"));
+
+
+      response.write(userAdminAlias)+response.write(request.getAttribute("userAdminAlias"));
+
+
+
+
+
+
+
+response.write(UserAdminLogic.performSearchResultSortingAction)+response.write(request.getAttribute("UserAdminLogic").performSearchResultSortingAction);
+
+
+
+
+
+       response.write(UserAdminLogic.sortFieldName)+response.write(request.getAttribute("UserAdminLogic").sortFieldName);
+
+
+
+
+
+ response.write(UserAdminLogic.orderBy)+response.write(request.getAttribute("UserAdminLogic").orderBy);
+
+
+
+
+
+      response.write(pageKey)+response.write(request.getAttribute("pageKey"));
+
+       response.write(pageName)+response.write(request.getAttribute("pageName"));
+
+
+      response.write(userAdminAlias)+response.write(request.getAttribute("userAdminAlias"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  response.write(ListBean.selectedObjId)+response.write(request.getAttribute("ListBean").selectedObjId);
+
+
+
+
+
+
+
+
+
+
+  response.write(ListBean.selectedObjId)+response.write(request.getAttribute("ListBean").selectedObjId);
+
+
+
+
+
+
+
+
+
+
+
+
+       String resultTable = userAdminLocale.get("TABLE"); 
+     	 if ( entryExit.length() > 0 ) entryExit.delete(0, entryExit.length());		   
+     	 entryExit.append(userAdminMessages.print(new Message("START_OF", resultTable))); 
+    response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+    response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+
+    response.write(resultTable)+response.write(request.getAttribute("resultTable"));
+ response.write(users.length)+response.write(request.getAttribute("users").length);response.write(userAdminLocale.get("SELECT_OR_DESELECT"));
+
+
+  if ( !pageName.equals(UserAdminLogic.lockedUsersListPage) ) {
+      altTextSB.append(userAdminLocale.get("ACCOUNT_STATUS"));
+altText = altTextSB.toString();
+if ( sort.equals(UserAccountBean.locked) ) {
+    if ( order ) { 
+       response.write(UserAccountBean.getLocked())+response.write(request.getAttribute("UserAccountBean").getLocked());response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(altText);response.write(altText);
+} else { 
+       response.write(UserAccountBean.getLocked())+response.write(request.getAttribute("UserAccountBean").getLocked());response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(altText);response.write(altText);
+} 
+      } else { 
+       response.write(UserAccountBean.getLocked())+response.write(request.getAttribute("UserAccountBean").getLocked());response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(userAdminLocale.get("SORT"));response.write(userAdminLocale.get("SORT"));
+      } 
+  } else { 
+    response.write(webpath)+response.write(request.getAttribute("webpath"));   response.write(userAdminLocale.get("DEACTIVATED"));response.write(userAdminLocale.get("DEACTIVATED"));
+  } 
+
+
+ response.write(userAdminLocale.get("NAME"));
+  altTextSB.replace(altLength, altTextSB.length(), userAdminLocale.get("NAME"));
+    altText = altTextSB.toString();
+    if ( sort.equals(UserBean.displayNameId) ) {
+if ( order ) { 
+   response.write(UserBean.getDisplayNameId())+response.write(request.getAttribute("UserBean").getDisplayNameId());response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(altText);response.write(altText);
+    } else { 
+   response.write(UserBean.getDisplayNameId())+response.write(request.getAttribute("UserBean").getDisplayNameId());response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(altText);response.write(altText);
+    } 
+  } else { 
+   response.write(UserBean.getDisplayNameId())+response.write(request.getAttribute("UserBean").getDisplayNameId());response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(userAdminLocale.get("SORT"));response.write(userAdminLocale.get("SORT"));
+  } 
+
+
+
+ response.write(userAdminLocale.get("USER_ID"));
+  altTextSB.replace(altLength, altTextSB.length(), userAdminLocale.get("USER_ID"));
+    altText = altTextSB.toString();
+    if ( sort.equals(UserAccountBean.logonuid) ) {
+if ( order ) { 
+   response.write(UserAccountBean.getLogonuid())+response.write(request.getAttribute("UserAccountBean").getLogonuid());response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(altText);response.write(altText);
+    } else { 
+   response.write(UserAccountBean.getLogonuid())+response.write(request.getAttribute("UserAccountBean").getLogonuid());response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(altText);response.write(altText);
+    } 
+  } else { 
+   response.write(UserAccountBean.getLogonuid())+response.write(request.getAttribute("UserAccountBean").getLogonuid());response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(userAdminLocale.get("SORT"));response.write(userAdminLocale.get("SORT"));
+  } 
+
+
+
+  if ( UserAdminCustomization.isCompanyFieldEnabled(proxy) ) { 
+ response.write(userAdminLocale.get("COMPANY"));
+  altTextSB.replace(altLength, altTextSB.length(), userAdminLocale.get("COMPANY"));
+    altText = altTextSB.toString();
+    if ( sort.equals(UserBean.companyId) ) {
+if ( order ) { 
+   response.write(UserBean.getCompanyId())+response.write(request.getAttribute("UserBean").getCompanyId());response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(altText);response.write(altText);
+    } else { 
+   response.write(UserBean.getCompanyId())+response.write(request.getAttribute("UserBean").getCompanyId());response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(altText);response.write(altText);
+    } 
+  } else { 
+   response.write(UserBean.getCompanyId())+response.write(request.getAttribute("UserBean").getCompanyId());response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(userAdminLocale.get("SORT"));response.write(userAdminLocale.get("SORT"));
+  } 
+
+  } else { 
+ response.write(userAdminLocale.get("DEPARTMENT"));
+  altTextSB.replace(altLength, altTextSB.length(), userAdminLocale.get("DEPARTMENT"));
+    altText = altTextSB.toString();
+    if ( sort.equals(UserBean.departmentId) ) {
+if ( order ) { 
+   response.write(UserBean.getDepartmentId())+response.write(request.getAttribute("UserBean").getDepartmentId());response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(altText);response.write(altText);
+    } else { 
+   response.write(UserBean.getDepartmentId())+response.write(request.getAttribute("UserBean").getDepartmentId());response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(altText);response.write(altText);
+    } 
+  } else { 
+   response.write(UserBean.getDepartmentId())+response.write(request.getAttribute("UserBean").getDepartmentId());response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(userAdminLocale.get("SORT"));response.write(userAdminLocale.get("SORT"));
+  } 
+
+  } 
+
+    response.write(userAdminLocale.get("ACTIONS"));
+
+
+      boolean toAllowChangeStatus = true;
+boolean isLocked = false;
+boolean toDisable = false;  
+int lockMutableStatus = 1;
+int changeMutableStatus = 1;
+String companyName = null;
+String companyId = null;
+com.sapmarkets.tpd.master.TradingPartnerInterface tp = null;   
+String logonId = " ";
+for (int i=0; i<users.length; i++) {
+    user = users[i];
+    accounts = user.getUserAccounts();
+    isLocked = false;
+    if ( ( null != accounts ) && ( accounts.length > 0 ) ) {
+isLocked = accounts[0].isLocked();
+logonId = accounts[0].getLogonUid();
+    }      
+    lockMutableStatus = readOnlys[2*i];
+    changeMutableStatus = readOnlys[2*i+1];
+    toAllowChangeStatus = (lockMutableStatus>0)?true:((lockMutableStatus==-3)?true:false);
+    toDisable = (changeMutableStatus>0)?false:((changeMutableStatus==-2)?false:true); 
+     
+     response.write( (i % 2 == 0) ? "TBDATA_CNT_ODD_BG":" TBDATA_CNT_EVEN_BG");
+
+       response.write(ListBean.getSelectedObjId())+response.write(request.getAttribute("ListBean").getSelectedObjId());response.write(ListBean.getSelectedObjId())+response.write(request.getAttribute("ListBean").getSelectedObjId());response.write(i);
+response.write((changeMutableStatus==-2)?"true":" false");
+
+
+  if ( !isLocked ) { 
+  response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(userAdminLocale.get("ACTIVE"));
+  } else { 
+  response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(userAdminLocale.get("DEACTIVATED"));
+  } 
+
+
+    if ( allowedToView ) { 
+ response.write(UserAdminLogic.getViewUserProfileAction())+response.write(request.getAttribute("UserAdminLogic").getViewUserProfileAction());response.write(i);response.write(user.getDisplayName())+response.write(request.getAttribute("user").getDisplayName());
+    } else { 
+   response.write(user.getDisplayName())+response.write(request.getAttribute("user").getDisplayName());
+    } 
+
+
+response.write(logonId);
+
+
+  if ( UserAdminCustomization.isCompanyFieldEnabled(proxy) ) { 
+     	       companyName = "----";
+     	       companyId = user.getCompany();
+     	       if ( null != util.checkEmpty(companyId) ) {
+     	   tp = util.getTP(companyId);
+     	   if ( null != tp ) {
+     	       companyName = tp.getDisplayName();
+     	       if ( null == util.checkEmpty(companyName) )
+     	   companyName = "----";
+     	   }
+    }   response.write(companyName);
+  } else { 
+     response.write((user.getDepartment()==null)?"":user.getDepartment());
+  } 
+
+
+    if ( allowedToCreate ) { 
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+response.write(userAdminLocale.get("COPY_TO_NEW"));
+  response.write(userAdminLocale.get("COPY_TO_NEW"));
+    response.write(UserAdminLogic.createUserFromReferenceAction)+response.write(request.getAttribute("UserAdminLogic").createUserFromReferenceAction);response.write(i);
+
+    } 
+    if ( allowedToModify && !toDisable ) { 
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+response.write(userAdminLocale.get("MODIFY"));
+  response.write(userAdminLocale.get("MODIFY"));
+    response.write(UserAdminLogic.modifyUserAction)+response.write(request.getAttribute("UserAdminLogic").modifyUserAction);response.write(i);
+
+    } 
+  if ( !isLocked ) { 
+    if ( allowedToLock && toAllowChangeStatus ) { 
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+response.write(userAdminLocale.get("DEACTIVATE"));
+  response.write(userAdminLocale.get("DEACTIVATE"));
+    response.write(UserAdminLogic.lockUserAction)+response.write(request.getAttribute("UserAdminLogic").lockUserAction);response.write(i);
+
+    } 
+  } else { 
+    if ( allowedToUnlock && toAllowChangeStatus ) { 
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+response.write(userAdminLocale.get("ACTIVATE"));
+  response.write(userAdminLocale.get("ACTIVATE"));
+    response.write(UserAdminLogic.unlockUserAction)+response.write(request.getAttribute("UserAdminLogic").unlockUserAction);response.write(i);
+
+    } 
+  } 
+  if ( allowedToViewRoles ) { 
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+response.write(userAdminLocale.get("ASSIGNED_ROLES"));
+  response.write(userAdminLocale.get("ASSIGNED_ROLES"));
+    response.write(UserAdminLogic.viewRolesAction)+response.write(request.getAttribute("UserAdminLogic").viewRolesAction);response.write(i);
+
+  } 
+  if ( allowedToViewGroups ) { 
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+response.write(userAdminLocale.get("GROUPS"));
+  response.write(userAdminLocale.get("GROUPS"));
+    response.write(UserAdminLogic.viewGroupsAction)+response.write(request.getAttribute("UserAdminLogic").viewGroupsAction);response.write(i);
+
+  } 
+  if ( i == (users.length-1) ) { 
+       entryExit.delete(0, entryExit.length());
+     	   entryExit.append(userAdminMessages.print(new Message("END_OF", resultTable))); 
+    response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+    response.write(resultTable)+response.write(request.getAttribute("resultTable"));
+    response.write(entryExit.getToString());
+
+  } 
+
+
+      } 
+}
+
+}

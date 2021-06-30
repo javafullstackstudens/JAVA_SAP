@@ -1,0 +1,260 @@
+﻿ package PackageNo1689740992;import proxy_txt;import contextspecific_includes_bottom_txt;import com.sap.security.api.IUser;import com.sap.security.core.admin.*;import com.sap.security.core.util.*; public class selfreg_applyuser_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+      if ( util.isServlet23() ) proxy.setResponseContentType("text/html; charset=utf-8"); 
+
+
+
+     com.sap.security.core.admin.LanguagesBean languages = (com.sap.security.core.admin.LanguagesBean) proxy.getSessionAttribute("languages");
+
+ UserBean user = new UserBean();
+
+
+ UserAccountBean userAccount = new UserAccountBean();
+
+
+      CompanySelectBean companySelect = new CompanySelectBean();
+
+
+ ErrorBean error = new ErrorBean();
+
+
+
+
+      boolean cEnabled = ((Boolean)proxy.getSessionAttribute(SelfRegLogic.enableCompanyReg)).booleanValue();
+boolean susEnabled = ((Boolean)proxy.getSessionAttribute(SelfRegLogic.enableSUSPlugin)).booleanValue();
+
+
+     if (!inPortal) {
+
+
+   response.write(userAdminLocale.get("SELF_REGISTRATION"));
+
+
+
+     }
+
+     if (!inPortal) {
+
+     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       response.write(selfRegAlias)+response.write(request.getAttribute("selfRegAlias"));
+
+
+
+
+response.write(userAdminLocale.get("WELCOME_TO_REGISTRATION"));
+
+
+
+
+       response.write(userAdminLocale.get("NEW_USER_REGISTRATION"));
+
+
+
+     response.write(userAdminLocale.get("USE_THE_FORM_BELOW"));
+
+
+
+  if ( error.isError() ) { 
+
+ response.write(webpath)+response.write(request.getAttribute("webpath"));
+      response.write(userAdminMessages.print(error.getMessage()))+response.write(request.getAttribute("userAdminMessages").print(error.getMessage()));
+
+  } 
+
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+ response.write(userAccount.getLogonuid())+response.write(request.getAttribute("userAccount").getLogonuid());response.write(userAdminLocale.get("USER_ID"));
+
+
+
+
+     response.write(userAccount.getLogonuid())+response.write(request.getAttribute("userAccount").getLogonuid());
+     response.write(userAccount.getLogonuid())+response.write(request.getAttribute("userAccount").getLogonuid());
+     response.write(userAccount.getLogonUid())+response.write(request.getAttribute("userAccount").getLogonUid());
+
+
+
+ response.write(userAccount.getPassword())+response.write(request.getAttribute("userAccount").getPassword());response.write(userAdminLocale.get("PASSWORD"));
+
+
+
+
+     response.write(userAccount.getPassword())+response.write(request.getAttribute("userAccount").getPassword());
+     response.write(userAccount.getPassword())+response.write(request.getAttribute("userAccount").getPassword());
+     response.write(userAccount.getPassword())+response.write(request.getAttribute("userAccount").getPassword());
+
+
+ response.write(userAccount.getPasswordconfirm())+response.write(request.getAttribute("userAccount").getPasswordconfirm());response.write( userAdminLocale.get("PASSWORD_CONFIRM") );
+
+
+
+
+     response.write(userAccount.getPasswordconfirm())+response.write(request.getAttribute("userAccount").getPasswordconfirm());
+     response.write(userAccount.getPasswordconfirm())+response.write(request.getAttribute("userAccount").getPasswordconfirm());
+     response.write(userAccount.getPasswordConfirm())+response.write(request.getAttribute("userAccount").getPasswordConfirm());
+
+
+ response.write(user.getLastNameId())+response.write(request.getAttribute("user").getLastNameId());response.write( userAdminLocale.get("LAST_NAME") );
+
+
+
+
+
+   response.write(user.getLastNameId())+response.write(request.getAttribute("user").getLastNameId());
+   response.write(user.getLastNameId())+response.write(request.getAttribute("user").getLastNameId());
+   response.write(user.getLastName())+response.write(request.getAttribute("user").getLastName());
+
+
+ response.write(user.getFirstNameId())+response.write(request.getAttribute("user").getFirstNameId());response.write( userAdminLocale.get("FIRST_NAME") );
+
+
+
+
+     response.write(user.getFirstNameId())+response.write(request.getAttribute("user").getFirstNameId());
+     response.write(user.getFirstNameId())+response.write(request.getAttribute("user").getFirstNameId());
+     response.write(user.getFirstName())+response.write(request.getAttribute("user").getFirstName());
+
+
+
+ response.write(user.getEmailId())+response.write(request.getAttribute("user").getEmailId());response.write( userAdminLocale.get("EMAIL") );
+
+
+
+     response.write(user.getEmailId())+response.write(request.getAttribute("user").getEmailId());
+     response.write(user.getEmailId())+response.write(request.getAttribute("user").getEmailId());
+     response.write(user.getEmail())+response.write(request.getAttribute("user").getEmail());
+
+
+
+ response.write(user.getSalutationId())+response.write(request.getAttribute("user").getSalutationId());response.write( userAdminLocale.get("SALUTATION") );
+
+
+
+
+     response.write(user.getSalutationId())+response.write(request.getAttribute("user").getSalutationId());
+     response.write(user.getSalutationId())+response.write(request.getAttribute("user").getSalutationId());
+     response.write(user.getSalutation())+response.write(request.getAttribute("user").getSalutation());
+
+
+
+ response.write(user.getPreferredLanguageId())+response.write(request.getAttribute("user").getPreferredLanguageId());response.write(userAdminLocale.get("LANGUAGE"));
+
+     response.write(user.getPreferredLanguageId())+response.write(request.getAttribute("user").getPreferredLanguageId());response.write(user.getPreferredLanguageId())+response.write(request.getAttribute("user").getPreferredLanguageId());
+       response.write((user.getLocale()!=null)?"":" selected");response.write(userAdminLocale.get("PLEASE_SELECT"));
+      response.write(languages.getHtmlOptions(user.getPreferredLanguage()))+response.write(request.getAttribute("languages").getHtmlOptions(user.getPreferredLanguage()));
+
+
+  if ( cEnabled ) { 
+      if ( susEnabled ) { 
+
+     response.write(user.getRegId())+response.write(request.getAttribute("user").getRegId());response.write(userAdminLocale.get("REG_ID"));
+
+
+
+
+ response.write(user.getRegId())+response.write(request.getAttribute("user").getRegId());
+ response.write(user.getRegId())+response.write(request.getAttribute("user").getRegId());
+ response.write(user.getRegId())+response.write(request.getAttribute("user").getRegId());
+
+      } else { 
+
+     response.write(companySelect.getCompanySearchNameId())+response.write(request.getAttribute("companySelect").getCompanySearchNameId());response.write( userAdminLocale.get("COMPANY") );
+
+
+
+
+
+     response.write(companySelect.getCompanySearchNameId())+response.write(request.getAttribute("companySelect").getCompanySearchNameId());
+     response.write(companySelect.getCompanySearchNameId())+response.write(request.getAttribute("companySelect").getCompanySearchNameId());
+     response.write(util.getFilteringSpecialChar(companySelect().getCompanySearchName()))+response.write(request.getAttribute("util").getFilteringSpecialChar(companySelect().getCompanySearchName()));
+ response.write(userAdminLocale.get("SEARCHCOMPANY"));
+  response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+  response.write(userAdminLocale.get("SEARCHCOMPANY"));
+    response.write(userAdminLocale.get("SEARCHCOMPANY"));
+      response.write(SelfRegLogic.searchCompanyAction)+response.write(request.getAttribute("SelfRegLogic").searchCompanyAction);
+
+
+
+      } 
+  } 
+
+
+response.write(userAdminLocale.get("ACCESSIBILITY_LEVEL"));
+
+
+ response.write(user.accessibilitylevelId)+response.write(request.getAttribute("user").accessibilitylevelId);
+
+     response.write( (addCheckBoxStyle==true)?"class=\"noborder\"":"" );
+   response.write(user.accessibilitylevelId)+response.write(request.getAttribute("user").accessibilitylevelId);
+    response.write(user.getAccessibilityLevel())+response.write(request.getAttribute("user").getAccessibilityLevel());
+     response.write((user.getAccessibilityLevel()==IUser.SCREENREADER_ACCESSIBILITY_LEVEL)?"checked":"");
+      response.write(user.getAccessibilitylevelId())+response.write(request.getAttribute("user").getAccessibilitylevelId());response.write(userAdminLocale.get("SCREENREADER_NEEDED"));
+
+
+
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+String submit = " "+userAdminLocale.get("SUBMIT")+" ";
+     		   String reset = " "+userAdminLocale.get("RESET")+" ";
+     		   String cancel = " "+userAdminLocale.get("CANCEL")+" "; 
+   response.write(SelfRegLogic.getApplyUserAction())+response.write(request.getAttribute("SelfRegLogic").getApplyUserAction());
+
+
+
+   response.write(SelfRegLogic.getApplyUserAction())+response.write(request.getAttribute("SelfRegLogic").getApplyUserAction());
+   response.write(submit)+response.write(request.getAttribute("submit"));
+   response.write(SelfRegLogic.getResetApplyUserAction())+response.write(request.getAttribute("SelfRegLogic").getResetApplyUserAction());
+
+
+
+   response.write(SelfRegLogic.getResetApplyUserAction())+response.write(request.getAttribute("SelfRegLogic").getResetApplyUserAction());
+   response.write(reset);
+   response.write(SelfRegLogic.getCancelRegAction())+response.write(request.getAttribute("SelfRegLogic").getCancelRegAction());
+
+
+
+   response.write(SelfRegLogic.getCancelRegAction())+response.write(request.getAttribute("SelfRegLogic").getCancelRegAction());
+   response.write(cancel);
+
+
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+}
+
+}

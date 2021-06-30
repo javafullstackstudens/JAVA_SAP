@@ -1,0 +1,111 @@
+﻿ package PackageNo1905050437;import proxy_txt;import contextspecific_includes_top_txt;import contextspecific_includes_bottom_txt;import com.sap.security.core.admin.*; public class users_pswd_bulkexpire_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+ UserBean user = new UserBean();
+
+
+
+     if (!inPortal) {
+
+
+ response.write(userAdminLocale.get("USER_MANAGEMENT"));
+
+
+
+
+     }
+
+
+
+
+
+
+   response.write(userAdminLocale.get("PSWD_BULKEXPIRE_HEADER"));
+
+
+
+
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+ response.write(userAdminLocale.get("PSWD_BULKEXPIRE_DESCRIPTION"));
+
+
+
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+   response.write(userAdminAlias)+response.write(request.getAttribute("userAdminAlias"));
+
+
+
+
+
+      response.write(userAdminLocale.get("EXPIRED_BY"));
+
+
+    StringBuffer displayname = new StringBuffer(performer.getDisplayName());
+      if ( null!=performer.getFirstName() && null!=performer.getLastName() ) {
+  displayname.replace(0, displayname.length(), performer.getFirstName());
+  displayname.append(" ").append(performer.getLastName());
+      }
+   response.write(displayname.toString())+response.write(request.getAttribute("displayname").toString());
+
+
+
+
+      response.write(userAdminLocale.get("EXPIRE_DATE"));
+
+
+      DateUtil du = new DateUtil(DateUtil.MEDIEM, proxy.getLocale());
+  response.write( du.getTime(new java.util.Date()) )+response.write(request.getAttribute(" du").getTime(new java.util.Date()) );
+
+
+
+    response.write(user.getMessageToRequestor())+response.write(request.getAttribute("user").getMessageToRequestor());response.write(userAdminLocale.get("REASON"));
+
+   response.write(user.getMessageToRequestor())+response.write(request.getAttribute("user").getMessageToRequestor());
+   response.write(user.getMessageToRequestor())+response.write(request.getAttribute("user").getMessageToRequestor());
+
+   response.write(util.getFilteringSpecialChar(user().getMessageToRequestor()))+response.write(request.getAttribute("util").getFilteringSpecialChar(user().getMessageToRequestor()));
+
+
+
+
+
+
+
+
+
+
+
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+  String name = UserAdminLogic.performPswdExpireAction;
+    String value = " "+userAdminLocale.get("EXPIRE")+" "; 
+
+       response.write(name)+response.write(request.getAttribute("name"));
+
+       response.write(value);
+
+
+
+
+   response.write(UserAdminLogic.cancelPswdExpireAction)+response.write(request.getAttribute("UserAdminLogic").cancelPswdExpireAction);
+  response.write(userAdminLocale.get("CANCEL"));
+}
+
+}

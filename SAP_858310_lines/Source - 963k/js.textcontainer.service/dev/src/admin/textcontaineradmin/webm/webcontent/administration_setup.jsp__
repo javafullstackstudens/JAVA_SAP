@@ -1,0 +1,114 @@
+﻿ package PackageNo453906573;import com.sap.engine.services.textcontainer.admin.AdministrationTool; public class administration_setup_jsp {  /* 1 */ 	public String getDeepMessage(Exception e) /* 4 */ 	{ /* 5 */ 		String msg = "Exception:"; /* 6 */ 		Throwable t = e; /* 7 */ 		while (t != null) /* 8 */ 		{ /* 9 */ 			msg += "<br>" + t.toString(); /* 10 */ 			t = t.getCause(); /* 11 */ 		} /* 12 */ 		return msg; /* 13 */ 	} /* 14 */  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+     	String err = "";
+     	String msg = "";
+     
+     	String txv = request.getParameter("TXVRemote");
+     
+     	try
+     	{
+     		AdministrationTool.checkLogin(request, response);
+     
+     		String vcv = request.getParameter("ValueContextAttributeValues");
+     		String vlv = request.getParameter("ValueLanguageValues");
+     		String vlc = request.getParameter("ValueLocaleChains");
+     		String vsc = request.getParameter("ValueSystemContext");
+     		if (txv != null)
+     		{
+     			if (txv.equals("R"))
+     			{
+     				AdministrationTool.retrieve(request.getParameter("TXVDestination"), vcv != null, vlv != null, vlc != null, vsc != null);
+     				msg = "Data retrieval successfully done!";
+     			}
+     		}
+     	}
+     	catch (Exception e)
+     	{
+     		err = getDeepMessage(e);
+     	}
+     
+      try { 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+     	if (err.length() > 0)
+     	{
+     
+
+
+     response.write( err );
+
+     
+     	}
+     
+     
+     	if (msg.length() > 0)
+     	{
+     
+
+
+       response.write( msg );
+
+     
+     	}
+     
+
+
+
+
+      } catch (Exception e) { 
+       response.write( getDeepMessage(e) )+response.write(request.getAttribute(" getDeepMessage(e) "));
+      } 
+}
+
+}

@@ -1,0 +1,19 @@
+﻿ package PackageNo2081970803;import com.sap.archtech.daservice.admin.*;import java.net.*; public class cas_update_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();   page.errorPage = "cas_update_error.jsp";   
+
+     
+     
+     String authorization = (String) session.getAttribute("AuthRequHead");
+     if (authorization == null)
+     	authorization = "";  
+     
+     // Update archive store
+     String archivestore = request.getParameter("archivestore");
+     ConfigureArchiveStores cas = new ConfigureArchiveStores(request);
+     cas.update();
+     
+     
+
+request.getRequestDispatcher("cas_list.jsp").forward(request,response);
+}
+
+}

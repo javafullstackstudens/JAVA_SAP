@@ -1,0 +1,297 @@
+﻿ package PackageNo1976826466;import _logon_proxy_txt;import _umLogonTopArea_txt;import _umLogonBotArea_txt;import com.sap.security.core.sapmimp.logon.*;import com.sap.security.core.sapmimp.rendering.Browsers;import com.sap.security.core.util.taglib.EncodeHtmlTag;import com.sap.security.api.UMFactory;import com.sap.security.api.logon.IAuthScheme;import com.sap.security.api.logon.ILoginConstants;import com.sap.security.api.IPrincipal;import com.sap.security.api.IUser;import com.sap.security.core.util.*; public class umlogonpage_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+
+
+
+
+      SAPMLogonLogic.setUnicodeEnabled(proxy); 
+     //LanguagesBean languages = (LanguagesBean) proxy.getSessionAttribute(LanguagesBean.beanId);
+
+LanguagesBean languages = new LanguagesBean();
+  LogonLocaleBean logonLocale = new LogonLocaleBean();
+   LogonMessageBean logonMessage = new LogonMessageBean();
+LogonBean logonBean = new LogonBean();
+    ErrorBean error = new ErrorBean();
+
+      if (inPortal) {
+   IUser user = proxy.getActiveUser ();
+   boolean bUseEPCM = true;
+   if (user!=null) {
+       String attr = (String) user.getTransientAttribute (IPrincipal.DEFAULT_NAMESPACE,
+   ILoginConstants.LOGON_AUTHSCHEME_ALIAS);
+       if (attr!=null  && !"anonymous".equals (attr)) {
+   //System.out.println ("AuthScheme is " + attr);
+   bUseEPCM = false;
+       }
+       else {
+   //System.out.println ("No Authscheme available.");
+       }
+   }
+   else {
+       //System.out.println ("in logon jsp user is not null");
+   }
+}
+     
+
+      if( !inPortal ) { 
+
+
+
+
+      
+     proxy.setResponseHeader ("pragma", "no-cache");
+     proxy.setResponseHeader ("cache-control", "no-cache");
+     proxy.setResponseHeader ("expires", "0");
+      } 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+     	String tenantPrefix = com.sap.security.core.imp.TenantFactory.getInstance().getTenantLogonPrefix(request);
+     	if (!"".equals(tenantPrefix))
+     	{
+     	
+response.write(ILoginConstants.LOGON_USER_ID)+response.write(request.getAttribute("ILoginConstants").LOGON_USER_ID);
+  response.write(tenantPrefix);
+
+       response.write(ILoginConstants.LOGON_USER_ID)+response.write(request.getAttribute("ILoginConstants").LOGON_USER_ID);response.write(tenantPrefix);
+
+      
+     	}
+     	
+
+
+
+
+      if( !inPortal ) { 
+
+      } 
+
+
+
+       response.write(inPortal?"":" j_security_check");response.write(com.sap.security.core.imp.TenantFactory.getInstance().isBPOEnabled()&&UMFactory.getProperties().getBoolean(com.sap.security.core.imp.TenantFactory.MULTI_TENANCY_PREFIXING, true)?"onSubmit=\"javascript:addTenantPrefix();\"":"");
+      if( inPortal ) { 
+
+  if (UMFactory.getProperties().getBoolean ("ume.login.do_redirect", true)==true) { 
+
+  } 
+      } 
+
+
+
+  if ( logonBean.getSelfReg() ) { 
+
+
+
+
+
+response.write(logonLocale.get("NEW_USERS"));
+   response.write(proxy.getAlias("/useradmin/selfReg","redirectURL"));
+     response.write(logonLocale.get("SIGN_UP"));
+
+
+
+
+
+
+  } 
+
+  if ( error.getLocalizedMessage() != null ) { 
+
+
+
+
+
+
+ response.write(webpath)+response.write(request.getAttribute("webpath"));
+    response.write(EncodeHtmlTag.encode(error.getLocalizedMessage()))+response.write(request.getAttribute("EncodeHtmlTag").encode(error.getLocalizedMessage()));
+
+
+
+
+
+
+  } else if ( error.getMessage() != null ) { 
+
+
+
+
+
+
+ response.write(webpath)+response.write(request.getAttribute("webpath"));
+    response.write(EncodeHtmlTag.encode(logonMessage.print(error.getMessage())))+response.write(request.getAttribute("EncodeHtmlTag").encode(logonMessage.print(error.getMessage())));
+
+
+
+
+
+
+  } else { 
+
+
+
+
+  } 
+
+
+
+
+    response.write(logonLocale.get("USER"));
+
+
+
+
+   response.write(ILoginConstants.LOGON_USER_ID)+response.write(request.getAttribute("ILoginConstants").LOGON_USER_ID);response.write(EncodeHtmlTag.encode(logonBean.getLongUid(proxy)!=null?logonBean.getLongUid(proxy):UMFactory.getProperties().getBoolean(com.sap.security.core.imp.TenantFactory.MULTI_TENANCY_PREFIXING, true)?"":com.sap.security.core.imp.TenantFactory.getInstance().getTenantLogonPrefix(request)));
+
+
+
+
+
+
+    response.write(logonLocale.get("PASSWORD"));
+
+
+
+
+   response.write(ILoginConstants.getLOGON_PWD_ALIAS())+response.write(request.getAttribute("ILoginConstants").getLOGON_PWD_ALIAS());
+
+
+
+  if( inPortal ) {
+     String reqscheme = proxy.getRequiredAuthScheme();
+     if( reqscheme != null )
+     {
+     
+       response.write(ILoginConstants.getLOGON_AUTHSCHEME_ALIAS())+response.write(request.getAttribute("ILoginConstants").getLOGON_AUTHSCHEME_ALIAS());response.write(EncodeHtmlTag.getEncode(reqscheme))+response.write(request.getAttribute("EncodeHtmlTag").getEncode(reqscheme));
+     
+     }
+     else
+     {
+ IAuthScheme[] asarr = proxy.getAuthSchemes();
+ 
+
+
+
+      response.write(logonLocale.get("xfld_AUTHSCHEME"));
+
+
+
+       response.write(ILoginConstants.getLOGON_AUTHSCHEME_ALIAS())+response.write(request.getAttribute("ILoginConstants").getLOGON_AUTHSCHEME_ALIAS());
+ 
+     for (int i = 0; i < asarr.length; i++)
+     {
+ if( !"anonymous".equals(asarr[i].getName()) )
+ {
+ 
+   response.write(asarr[i].getName())+response.write(request.getAttribute("asarr[i]").getName());response.write(asarr[i].getName())+response.write(request.getAttribute("asarr[i]").getName());
+ 
+ }
+     }
+ 
+
+
+
+ 
+   }
+ }
+ 
+ 
+ 	if( UMFactory.getProperties().getBoolean("ume.logon.locale", false) ) {
+     
+ 
+
+
+
+      response.write(logonLocale.get("LANGUAGE"));
+
+
+
+
+
+
+response.write(logonLocale.get("PLEASE_SELECT"));response.write(languages.getHtmlOptions((logonLocale != null)?logonLocale.getLocale().getLanguage():"-"));
+
+
+      	
+ }
+ 
+
+
+
+
+
+
+
+  response.write(SAPMLogonLogic.uidPasswordLogonAction)+response.write(request.getAttribute("SAPMLogonLogic").uidPasswordLogonAction);response.write(logonLocale.get("LOGON"));
+
+
+
+  if ( !inPortal && logonBean.getAllowCertLogon() ) { 
+
+
+
+
+
+   response.write(inPortal?proxy.getAlias("com.sap.portal.runtime.logon.certlogon",null):logonBean.getHttpsCertURL(proxy, null));
+     response.write(logonLocale.get("GOTO_CERT_LOGON_PAGE1"));
+
+
+
+
+
+
+  } 
+
+  if ( logonBean.getLogonHelp() ) { 
+
+
+
+
+
+ response.write(logonLocale.get("LOGON_IN_PROBLEM"));
+     response.write(inPortal?proxy.getAlias("gotoHelpPage"):logonBean.getLogonURL(proxy,"gotoHelpPage="));
+       response.write(logonLocale.get("GET_SUPPORT"));
+
+
+
+
+
+
+  } 
+
+
+
+
+
+      if(!inPortal) proxy.sessionInvalidate(); 
+     if(inPortal) { 
+      } else { 
+
+      } 
+}
+
+}

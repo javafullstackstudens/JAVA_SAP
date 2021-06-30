@@ -1,0 +1,285 @@
+﻿ package PackageNo1967478836;import com.sap.security.core.admin.*;import com.sap.security.api.IUser;import com.sap.security.core.admin.role.RoleAdminServlet;import com.sap.security.core.admin.group.GroupAdminLogic;import com.sap.security.api.ISearchResult; public class v_menu_bar_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+      IUser performer= proxy.getActiveUser();
+String slcAction = new String();  
+if ( null != proxy.getSessionAttribute(UserAdminLogic.currentAction) ) {
+   slcAction = (String)proxy.getSessionAttribute(UserAdminLogic.currentAction);
+}
+String toAction = new String();
+boolean isSlc = false;
+if ( null != proxy.getSessionAttribute("notToSkip") ) {
+    proxy.setSessionAttribute("notToSkip", Boolean.TRUE);
+}   
+     
+
+      if (!inPortal) { 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+      } 
+
+      String sideMenu = userAdminLocale.get("SIDEMENU");
+if ( entryExit.length() > 0 ) entryExit.delete(0, entryExit.length());		   
+entryExit.append(userAdminMessages.print(new Message("START_OF", sideMenu))); 
+
+
+
+
+
+
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+      response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+
+      response.write(sideMenu)+response.write(request.getAttribute("sideMenu"));
+
+
+
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+
+
+      if ( UserAdminHelper.isCompanyConceptEnabled() 
+     				   && UserAdminHelper.hasAccess(performer, UserAdminHelper.APPROVE_USERS) ) {
+     				       toAction = UserAdminLogic.getUnapprovedUsersAction;
+    isSlc = false;
+    if ( slcAction.equals(toAction) ) {isSlc = true;} 
+
+response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(userAdminLocale.get("BULLET"));
+    response.write(userAdminAlias)+response.write(request.getAttribute("userAdminAlias"));response.write(UserAdminLogic.getUnapprovedUsersAction)+response.write(request.getAttribute("UserAdminLogic").getUnapprovedUsersAction);response.write(isSlc?"SIDE_XS_CNT_SEL":" SIDE_XS_CNT_N");response.write(userAdminLocale.get("UNAPPROVED_USER"));
+
+      } 
+
+  if ( UserAdminHelper.hasAccess(performer, UserAdminHelper.SEARCH_USERS)
+|| UserAdminHelper.hasAccess(performer, UserAdminHelper.CREATE_USERS) ) { 
+       boolean toSearch = false;
+    String _search = UserAdminLogic.searchUsersAction;
+    String _last = UserAdminLogic.viewLastSearchResultAction;
+    String _deactivated = UserAdminLogic.getDeactivatedUsersAction;
+    String _create = UserAdminLogic.createNewUserAction;
+    if (   slcAction.equals(_search)
+|| slcAction.equals(_last)
+|| slcAction.equals(_deactivated) 
+|| slcAction.equals(_create)) {
+toSearch = true; }     
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));      response.write(userAdminLocale.get("RETRACT"));
+  response.write(userAdminLocale.get("USERS"));
+
+
+ if ( UserAdminHelper.hasAccess(performer, UserAdminHelper.CREATE_USERS) ) {
+     		   isSlc = false; if ( slcAction.equals(_create) ) {isSlc = true;} 
+
+       response.write(userAdminAlias)+response.write(request.getAttribute("userAdminAlias"));response.write(util.filteringSpecialChar(_create));response.write(isSlc?"SIDE_XS_CNT_SUB_SEL":" SIDE_XS_CNT_SUB");response.write(userAdminLocale.get("CREATE_NEW"));
+
+ } 
+
+    isSlc = false; if ( slcAction.equals(_search) ) {isSlc = true;}
+
+      response.write(userAdminAlias)+response.write(request.getAttribute("userAdminAlias"));response.write(util.filteringSpecialChar(_search));response.write(isSlc?"SIDE_XS_CNT_SUB_SEL":" SIDE_XS_CNT_SUB");response.write(userAdminLocale.get("SEARCH"));
+
+    isSlc = false; if ( slcAction.equals(_last) ) {isSlc = true;}
+
+      response.write(userAdminAlias)+response.write(request.getAttribute("userAdminAlias"));response.write(util.filteringSpecialChar(_last));response.write(isSlc?"SIDE_XS_CNT_SUB_SEL":" SIDE_XS_CNT_SUB");response.write(userAdminLocale.get("LAST_SEARCH_RESULTS"));
+
+    isSlc = false; if ( slcAction.equals(_deactivated) ) {isSlc = true;}
+
+      response.write(userAdminAlias)+response.write(request.getAttribute("userAdminAlias"));response.write(util.filteringSpecialChar(_deactivated));response.write(isSlc?"SIDE_XS_CNT_SUB_SEL":" SIDE_XS_CNT_SUB");response.write(userAdminLocale.get("INACTIVE_USERS"));
+
+
+
+  } 
+
+
+ if (!inPortal) { 
+   if ( UserAdminHelper.hasAccess(performer, UserAdminHelper.VIEW_ROLES) ) {
+     						String _role = RoleAdminServlet.ROLE_MANAGEMENT_MAIN;
+     			  	isSlc = false;
+     			 	if ( slcAction.equals(_role) ) {isSlc = true;} 
+
+
+       if ( UserAdminHelper.hasAccess(performer, UserAdminHelper.MANAGE_ALL_COMPANIES) ) { 
+     response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(userAdminLocale.get("BULLET"));
+response.write(RoleAdminServlet.alias)+response.write(request.getAttribute("RoleAdminServlet").alias);response.write(isSlc?"SIDE_XS_CNT_SEL":" SIDE_XS_CNT_N");response.write(userAdminLocale.get("ROLES"));
+       } else { 
+   response.write(userAdminLocale.get("BULLET"));
+response.write(RoleAdminServlet.alias)+response.write(request.getAttribute("RoleAdminServlet").alias);response.write(performer.isCompanyUser()?util.filteringSpecialChar(performer.getCompany()):"");response.write(isSlc?"SIDE_XS_CNT_SEL":" SIDE_XS_CNT_N");response.write(userAdminLocale.get("ROLES"));
+       } 
+
+
+   } 
+
+
+   if ( UserAdminHelper.hasAccess(performer, UserAdminHelper.VIEW_GROUPS) ) {
+     						String _group = GroupAdminLogic.GROUP_MANAGEMENT_MAIN;
+     			  	isSlc = false;
+     			 	if ( slcAction.equals(_group) ) {isSlc = true;} 
+
+
+       if ( UserAdminHelper.hasAccess(performer, UserAdminHelper.MANAGE_ALL_COMPANIES) ) { 
+     response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(userAdminLocale.get("BULLET"));
+response.write(groupAdminAlias)+response.write(request.getAttribute("groupAdminAlias"));response.write(isSlc?"SIDE_XS_CNT_SEL":" SIDE_XS_CNT_N");response.write(userAdminLocale.get("GROUPS"));
+       } else { 
+   response.write(userAdminLocale.get("BULLET"));
+response.write(groupAdminAlias)+response.write(request.getAttribute("groupAdminAlias"));response.write(performer.isCompanyUser()?util.filteringSpecialChar(performer.getCompany()):"");response.write(isSlc?"SIDE_XS_CNT_SEL":" SIDE_XS_CNT_N");response.write(userAdminLocale.get("GROUPS"));
+       } 
+
+
+   } 
+     } 
+
+
+
+ if ( UserAdminHelper.hasAccess(performer, UserAdminHelper.BATCH_ADMIN) ) {
+     			   boolean toCreate = false;
+    String _upload = BatchLogic.uploadAction;
+    String _download = BatchLogic.downloadAction;
+    if (slcAction.equals(_upload)
+|| slcAction.equals(_download) ) {
+toCreate = true; }     
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));      response.write(userAdminLocale.get("RETRACT"));
+  response.write(userAdminLocale.get("IMPORTEXPORT"));
+
+    if ( UserAdminHelper.hasAccess(performer, UserAdminHelper.CREATE_USERS) ) {
+isSlc = false; if ( slcAction.equals(_upload) ) {isSlc = true;} 
+
+      response.write(batchAlias)+response.write(request.getAttribute("batchAlias"));response.write(util.filteringSpecialChar(_upload));response.write(isSlc?"SIDE_XS_CNT_SUB_SEL":" SIDE_XS_CNT_SUB");response.write(userAdminLocale.get("IMPORT"));
+
+      } 
+    isSlc = false;
+if ( slcAction.equals(_download) ) {isSlc = true;}  
+
+      response.write(batchAlias)+response.write(request.getAttribute("batchAlias"));response.write(util.filteringSpecialChar(_download));response.write(isSlc?"SIDE_XS_CNT_SUB_SEL":" SIDE_XS_CNT_SUB");response.write(userAdminLocale.get("EXPORT"));
+
+
+
+
+ } 
+
+
+
+if ( UserAdminCustomization.isCompanyFieldEnabled(proxy) ) {
+    String _listC = CompanyListLogic.listCompaniesAction;
+    if ( slcAction.equals(_listC) ) {isSlc = true;} 
+
+ response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(userAdminLocale.get("BULLET"));
+     response.write(companyListAlias)+response.write(request.getAttribute("companyListAlias"));response.write(util.filteringSpecialChar(_listC))+response.write(request.getAttribute("util").filteringSpecialChar(_listC));response.write(isSlc?"SIDE_XS_CNT_SEL":" SIDE_XS_CNT_N");response.write(userAdminLocale.get("COMPANY_LIST"));
+
+} 
+
+
+  response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+
+
+response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+ boolean createBoolean = UserAdminHelper.hasAccess(performer, UserAdminHelper.CREATE_USERS); //ES
+      						    if ( createBoolean ) { 
+
+      } else { 
+
+      } 
+
+
+
+
+response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+    response.write(webpath)+response.write(request.getAttribute("webpath"));
+ response.write(userAdminLocale.get("CLOSE_SIDEMENU"));response.write(userAdminLocale.get("CLOSE_SIDEMENU"));
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+ response.write(userAdminLocale.get("OPEN_SIDEMENU"));response.write(userAdminLocale.get("OPEN_SIDEMENU"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+  response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+ response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+
+
+
+ entryExit.delete(0, entryExit.length());
+     			   entryExit.append(userAdminMessages.print(new Message("END_OF", sideMenu))); 
+      response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+      response.write(sideMenu)+response.write(request.getAttribute("sideMenu"));
+      response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+}
+
+}

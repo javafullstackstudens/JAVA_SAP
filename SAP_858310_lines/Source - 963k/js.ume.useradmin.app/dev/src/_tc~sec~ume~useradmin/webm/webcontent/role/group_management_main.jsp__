@@ -1,0 +1,162 @@
+﻿ package PackageNo1693648467;import _proxy_txt;import _contextspecific_includes_top_txt;import _contextspecific_includes_bottom_txt;import com.sap.security.core.role.*;import com.sap.security.core.role.imp.*;import com.sap.security.core.*;import com.sap.security.core.admin.role.*;import com.sap.security.core.admin.group.*;import com.sap.security.api.*;import java.util.Iterator;import java.util.*;import com.sap.security.core.util.*; public class group_management_main_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+
+
+   InfoBean info = new InfoBean();
+    ErrorBean error = new ErrorBean();
+     com.sap.security.core.admin.role.RoleAdminMessagesBean roleAdminMessages = (com.sap.security.core.admin.role.RoleAdminMessagesBean) proxy.getSessionAttribute("roleAdminMessages");
+     com.sap.security.core.admin.role.RoleAdminLocaleBean roleAdminLocale = (com.sap.security.core.admin.role.RoleAdminLocaleBean) proxy.getSessionAttribute("roleAdminLocale");
+
+     
+     Iterator groups = (Iterator)HelperClass.getAttr(proxy,"list_groups");
+     String searchFilter = (String)HelperClass.getAttr(proxy, "searchFilter");
+     
+     String myUrl= groupAdminAlias+"?cmd=group-management-main";
+     
+     String redirectURL= (String)HelperClass.getAttr(proxy,"redirectURL");
+     String principal = (String)HelperClass.getAttr(proxy,"principal");
+     String GROUP = "group";
+     String USER = "user";
+     
+     
+
+     if (!inPortal) {
+
+ response.write(roleAdminLocale.get("MAIN_MENU"));
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   response.write(groupAdminAlias)+response.write(request.getAttribute("groupAdminAlias"));
+
+
+
+
+
+       response.write(roleAdminLocale.get("MAIN_HEADER_GROUP"));
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+   response.write(roleAdminLocale.get("ASSIGN_MAIN_GROUP"));
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+      if ( info.isInfo() ) { 
+
+
+response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(roleAdminMessages.print(info.getMessage()))+response.write(request.getAttribute("roleAdminMessages").print(info.getMessage()));
+
+
+      } 
+
+
+      if ( error.isError() ) { 
+
+
+response.write(webpath)+response.write(request.getAttribute("webpath"));      response.write(roleAdminMessages.print(error.getMessage()))+response.write(request.getAttribute("roleAdminMessages").print(error.getMessage()));
+
+
+      } 
+
+
+
+
+
+  response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+response.write(userAdminLocale.get("NEW_SEARCH"));
+ response.write(searchFilter);
+      response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(userAdminLocale.get("SEARCH"));
+
+
+
+
+response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+      response.write(roleAdminLocale.get("AVAILABLE_GROUPS"));
+
+
+
+      
+     	if ((null == groups) || !(groups.hasNext())) { 
+
+       }
+     	else { 
+
+      
+     		while (groups.hasNext())
+     		{
+     			IGroup group = (IGroup) groups.next();
+     			String groupID = "";
+     			String displayGroupName = "";
+     			if (null != group)
+     			{
+     				displayGroupName = (String) group.getDisplayName();
+     				groupID = (String) group.getUniqueID();
+     			}
+     	
+  response.write(util.getURLEncoder(groupID));    response.write(displayGroupName);
+       } } 
+
+
+ response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+if ( UserAdminHelper.hasAccess(performer, UserAdminHelper.ADD_GROUPS) ) { 
+      response.write(webpath)+response.write(request.getAttribute("webpath"));  response.write(roleAdminLocale.get("ADD_ROLE"));
+
+}
+     		   if ( UserAdminHelper.hasAccess(performer, UserAdminHelper.MODIFY_GROUPS) ) { 
+      response.write(webpath)+response.write(request.getAttribute("webpath"));   response.write(roleAdminLocale.get("MODIFY"));
+     response.write(roleAdminLocale.get("ONLY_ONE_GROUP_NOTIFICATION"));response.write(roleAdminLocale.get("CHOOSE_GROUP_NOTIFICATION"));
+}
+     		   if ( UserAdminHelper.hasAccess(performer, UserAdminHelper.ASSIGN_GROUPS) ) { 
+      response.write(webpath)+response.write(request.getAttribute("webpath"));   response.write(roleAdminLocale.get("ASSIGNMENT_USERS"));
+      response.write(roleAdminLocale.get("ATLEAST_ONE_GROUP_NOTIFICATION"));response.write(USER);
+      response.write(webpath)+response.write(request.getAttribute("webpath"));  response.write(roleAdminLocale.get("ASSIGNMENT_GROUP"));
+      response.write(roleAdminLocale.get("ATLEAST_ONE_GROUP_NOTIFICATION"));response.write(GROUP);
+}
+     		   if ( UserAdminHelper.hasAccess(performer, UserAdminHelper.DELETE_GROUPS) ) { 
+      response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(roleAdminLocale.get("DELETE"));
+  response.write(roleAdminLocale.get("GROUP_CONFIRM_DELETION"));response.write(roleAdminLocale.get("ATLEAST_ONE_GROUP_NOTIFICATION"));
+} 
+      response.write(webpath)+response.write(request.getAttribute("webpath"));   response.write(userAdminLocale.get("DOWNLOAD_USERS_NOW"));
+  response.write(roleAdminLocale.get("ATLEAST_ONE_GROUP_NOTIFICATION"));
+
+
+
+
+
+
+
+   response.write(principal);
+}
+
+}

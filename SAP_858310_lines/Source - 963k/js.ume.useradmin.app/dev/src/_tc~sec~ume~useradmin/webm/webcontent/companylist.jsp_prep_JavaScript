@@ -1,0 +1,324 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function script___1174350595() {src("js/basic.js");}
+
+
+
+
+
+
+
+
+
+function setLinesNo()
+{
+    var frm, _linesNoObj, linesNoObj, itemString;
+
+    if( -1 != navigator.userAgent.indexOf("MSIE") ) {
+        frm = document.getElementById("listform");
+        _linesNoObj = document.all["_linesNo"];
+         linesNoObj = document.all["linesNo"];
+    } else {
+        frm = document.listform;
+        _linesNoObj = frm.elements["_linesNo"];
+         linesNoObj = frm.elements["linesNo"];
+    }
+
+    linesNoObj.selectedIndex=_linesNoObj.selectedIndex;
+    linesNoObj.text =  _linesNoObj.options[_linesNoObj.selectedIndex].text;
+    frm.submit();
+}
+
+function setPageNo()
+{
+    var frm, _pageNoObj, pageNoObj, itemString;
+
+    if( -1 != navigator.userAgent.indexOf("MSIE") ) {
+        frm = document.getElementById("listform");
+        _pageNoObj = document.all["_pageNo"];
+         pageNoObj = document.all["pageNo"];
+    } else {
+        frm = document.listform;
+        _linesNoObj = frm.elements["_pageNo"];
+         linesNoObj = frm.elements["pageNo"];
+    }
+
+    pageNoObj.selectedIndex=_pageNoObj.selectedIndex;
+    pageNoObj.text =  _pageNoObj.options[_pageNoObj.selectedIndex].text;
+    frm.submit();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        function onChange____1580560698() {setLinesNo();}
+
+
+
+
+
+
+
+
+                                     function onChange____1901543534() {setPageNo();}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

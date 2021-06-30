@@ -1,0 +1,180 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function script___1174350595() {src("js/basic.js");}
+
+
+
+
+
+
+
+
+  function toSearch(searchName) {
+        object = document.forms["searchorgunit"];
+        inputTag1 = document.createElement("input");
+        inputTag1.setAttribute("name", "Cx_0dummy");
+        inputTag1.setAttribute("type","hidden");
+        inputTag1.setAttribute("value", "");
+        object.appendChild( inputTag1 );
+        inputTag2 = document.createElement("input");
+        inputTag2.setAttribute("name", "orgUnitSearchName");
+        inputTag2.setAttribute("type","hidden");
+        inputTag2.setAttribute("value", searchName);
+        object.appendChild( inputTag2 );
+        object.submit();
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function onkeypress____382073356() {if(event.keyCode=='115') {document.getElementById('Cx_0dummy').focus();}}
+
+
+
+
+
+    function onClick___1283661359() {toSearch('Cx_0dummy')}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

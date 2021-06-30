@@ -1,0 +1,19 @@
+﻿ package PackageNo580012403;import com.sap.archtech.daservice.admin.*;import java.net.*; public class pre_execute_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();   page.errorPage = "pre_error.jsp";   
+
+     
+     String archivepath = request.getParameter("archivepath");
+     String user = (String) session.getAttribute("SessionUser");
+     String authorization = (String) session.getAttribute("AuthRequHead");
+     if (authorization == null)
+     	authorization = "";  
+     URL url = new URL(request.getScheme() + "://localhost:" + request.getServerPort() + AdminMaster.DASPATH);
+     PackResources pre = new PackResources(url, authorization, archivepath, user);
+     String responsecode = pre.execute();
+     
+
+request.getRequestDispatcher("pre_result.jsp").forward(request,response);
+     response.write(responsecode);
+     response.write(archivepath)+response.write(request.getAttribute("archivepath"));
+}
+
+}

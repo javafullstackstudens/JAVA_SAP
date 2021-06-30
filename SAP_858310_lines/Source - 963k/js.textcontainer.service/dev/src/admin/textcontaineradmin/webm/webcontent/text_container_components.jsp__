@@ -1,0 +1,123 @@
+﻿ package PackageNo1019632457;import com.sap.engine.services.textcontainer.admin.AdministrationTool;import java.util.*;import com.sap.engine.services.textcontainer.admin.dbaccess.ComponentData; public class text_container_components_jsp {  /* 1 */ 	public String getDeepMessage(Exception e) /* 6 */ 	{ /* 7 */ 		String msg = "Exception:"; /* 8 */ 		Throwable t = e; /* 9 */ 		while (t != null) /* 10 */ 		{ /* 11 */ 			msg += "<br>" + t.toString(); /* 12 */ 			t = t.getCause(); /* 13 */ 		} /* 14 */ 		return msg; /* 15 */ 	} /* 16 */  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+     	String err = "";
+     
+     	try
+     	{
+     		AdministrationTool.checkLogin(request, response);
+     		AdministrationTool.checkAdministrationPermission(request, response);
+     	}
+     	catch (Exception e)
+     	{
+     		err = getDeepMessage(e);
+     	}
+     
+      try { 
+
+
+
+
+
+
+
+
+
+
+
+     
+     	if (err.length() == 0)
+     	{
+     		try
+     		{
+     			int lines = 0;
+     
+     			HashMap<String, ComponentData> components = AdministrationTool.getComponents();
+     
+
+
+
+
+
+
+     
+     			Vector<String> vector = new Vector<String>(components.keySet());
+     			Collections.sort(vector);
+     			Iterator<String> iterComponents = vector.iterator();
+     			while (iterComponents.hasNext())
+     			{
+     				ComponentData component = components.get(iterComponents.next());
+     				String componentHashString = AdministrationTool.ByteArrayToString(component.getComponentHash());
+     
+
+ response.write(componentHashString);    response.write(component.getComponent() );
+
+response.write(componentHashString );
+
+     
+     				lines++;
+     			}
+     
+
+
+  response.write(lines )+response.write(request.getAttribute("lines "));
+     
+     		}
+     		catch (Exception e)
+     		{
+     			err = getDeepMessage(e);
+     		}
+     		finally
+     		{
+     			AdministrationTool.closeConnection();
+     		}
+     	}
+     
+     
+     	if (err.length() > 0)
+     	{
+     
+
+
+     response.write( err );
+
+     
+     	}
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      } catch (Exception e) { 
+       response.write( getDeepMessage(e) )+response.write(request.getAttribute(" getDeepMessage(e) "));
+      } 
+}
+
+}

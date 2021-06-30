@@ -1,0 +1,132 @@
+﻿ package PackageNo327463943;import com.sap.security.core.imp.AbstractUserAccount; public class useraccount_change_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+ response.write(parent)+response.write(request.getAttribute("parent"));
+      StringBuffer calSB = new StringBuffer(userAdminAlias);
+calSB.append("?");
+calSB.append("callCalendar");
+calSB.append("=").append("&").append("formID").append("="); 
+     response.write(calSB.toString());
+
+
+
+
+      String acH = userAdminLocale.get("ACCOUNT_INFO");   
+if ( entryExit.length() > 0 ) entryExit.delete(0, entryExit.length());
+entryExit.append(userAdminMessages.print(new Message("START_GROUP_BOX", acH))); 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+   response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+
+   response.write(acH);
+
+
+
+       response.write(acH);
+
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+     response.write(altmin)+response.write(request.getAttribute("altmin"));
+     response.write(altmin)+response.write(request.getAttribute("altmin"));response.write(altmax)+response.write(request.getAttribute("altmax"));response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+      _readOnly = UserAdminFactory.isAttributeReadOnly(account.getUniqueID(), AbstractUserAccount.VALID_FROM); 
+
+if ( _readOnly ) { 
+  if ( spanTitle.length() > 0 ) spanTitle.delete(0, spanTitle.length());
+    spanTitle.append(userAdminLocale.get("VALID_FROM")).append(" ");
+    spanTitle.append(userAccount.getValidFrom()).append(" ");
+    spanTitle.append(userAdminLocale.get("NOT_AVAILABLE")); 
+       response.write(spanTitle.getToString())+response.write(request.getAttribute("spanTitle").getToString());response.write(userAccount.getValidfrom())+response.write(request.getAttribute("userAccount").getValidfrom());response.write(userAdminLocale.get("VALID_FROM"));
+} else { 
+       response.write(userAccount.getValidfrom())+response.write(request.getAttribute("userAccount").getValidfrom());response.write(userAdminLocale.get("VALID_FROM"));
+} 
+
+
+       response.write(userAccount.validfrom)+response.write(request.getAttribute("userAccount").validfrom);
+ response.write(userAccount.validfrom)+response.write(request.getAttribute("userAccount").validfrom);
+  response.write(userAccount.getValidFrom())+response.write(request.getAttribute("userAccount").getValidFrom());
+
+
+
+
+       if ( _readOnly ) {     }
+       if ( !_readOnly ) { 
+       response.write(userAdminLocale.get("CALENDAR"));
+response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+response.write(userAdminLocale.get("CALENDAR"));
+      response.write(userAdminLocale.get("CALENDAR"));
+
+ response.write(userAccount.validfrom)+response.write(request.getAttribute("userAccount").validfrom);
+       } 
+if ( _readOnly ) { response.write(userAccount.getValidfrom())+response.write(request.getAttribute("userAccount").getValidfrom());response.write(userAccount.getValidFrom())+response.write(request.getAttribute("userAccount").getValidFrom()); } 
+
+
+
+
+      _readOnly = UserAdminFactory.isAttributeReadOnly(account.getUniqueID(), AbstractUserAccount.VALID_TO); 
+
+if ( _readOnly ) { 
+  if ( spanTitle.length() > 0 ) spanTitle.delete(0, spanTitle.length());
+    spanTitle.append(userAdminLocale.get("VALID_TO")).append(" ");
+    spanTitle.append(userAccount.getValidTo()).append(" ");
+    spanTitle.append(userAdminLocale.get("NOT_AVAILABLE")); 
+       response.write(spanTitle.getToString())+response.write(request.getAttribute("spanTitle").getToString());response.write(userAccount.getValidto())+response.write(request.getAttribute("userAccount").getValidto());response.write(userAdminLocale.get("VALID_TO"));
+} else { 
+       response.write(userAccount.getValidto())+response.write(request.getAttribute("userAccount").getValidto());response.write(userAdminLocale.get("VALID_TO"));
+} 
+
+
+       response.write(userAccount.validto)+response.write(request.getAttribute("userAccount").validto);
+ response.write(userAccount.validto)+response.write(request.getAttribute("userAccount").validto);
+  response.write(userAccount.getValidTo())+response.write(request.getAttribute("userAccount").getValidTo());
+
+
+
+
+       if ( _readOnly ) {     }
+       if ( !_readOnly ) { 
+       response.write(userAdminLocale.get("CALENDAR"));
+response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+response.write(userAdminLocale.get("CALENDAR"));
+      response.write(userAdminLocale.get("CALENDAR"));
+
+ response.write(userAccount.validto)+response.write(request.getAttribute("userAccount").validto);
+       } 
+if ( _readOnly ) { response.write(userAccount.getValidto())+response.write(request.getAttribute("userAccount").getValidto());response.write(userAccount.getValidTo())+response.write(request.getAttribute("userAccount").getValidTo()); } 
+
+
+
+
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+      entryExit.delete(0, entryExit.length());
+entryExit.append(userAdminMessages.print(new Message("END_GROUP_BOX", acH))); 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+   response.write(acH);
+   response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+}
+
+}

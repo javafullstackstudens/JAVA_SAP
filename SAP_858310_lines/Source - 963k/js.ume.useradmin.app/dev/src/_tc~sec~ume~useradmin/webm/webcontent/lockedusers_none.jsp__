@@ -1,0 +1,44 @@
+﻿ package PackageNo1884032919;import proxy_txt;import contextspecific_includes_top_txt;import contextspecific_includes_bottom_txt;import com.sap.security.api.IUser; public class lockedusers_none_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+     if (!inPortal) {
+
+
+ response.write(userAdminLocale.get("USER_MANAGEMENT"));
+
+
+
+
+     }
+
+
+
+
+
+
+
+   response.write(userAdminLocale.get("LOCKED_USERS_LIST_HEADER"));
+
+
+
+
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+ response.write(userAdminLocale.get("NO_LOCKED_USERS_DESCRIPTION"));
+
+
+
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+}
+
+}

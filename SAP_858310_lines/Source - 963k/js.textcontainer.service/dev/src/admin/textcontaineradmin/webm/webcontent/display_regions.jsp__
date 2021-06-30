@@ -1,0 +1,101 @@
+﻿ package PackageNo1518256369;import com.sap.engine.services.textcontainer.admin.AdministrationTool;import java.util.*;import com.sap.engine.interfaces.textcontainer.TextContainerRegion; public class display_regions_jsp {  /* 1 */ 	public String getDeepMessage(Exception e) /* 6 */ 	{ /* 7 */ 		String msg = "Exception:"; /* 8 */ 		Throwable t = e; /* 9 */ 		while (t != null) /* 10 */ 		{ /* 11 */ 			msg += "<br>" + t.toString(); /* 12 */ 			t = t.getCause(); /* 13 */ 		} /* 14 */ 		return msg; /* 15 */ 	} /* 16 */  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+     	String err = "";
+     
+     	try
+     	{
+     		AdministrationTool.checkLogin(request, response);
+     	}
+     	catch (Exception e)
+     	{
+     		err = getDeepMessage(e);
+     	}
+     
+      try { 
+
+
+
+
+
+
+
+
+
+
+
+     
+     	try
+     	{
+     		HashMap<String, TextContainerRegion> regions = AdministrationTool.getRegions();
+     
+
+
+
+
+
+
+
+     
+     		Vector<String> vector = new Vector<String>(regions.keySet());
+     		Collections.sort(vector);
+     		Iterator<String> iterRegions = vector.iterator();
+     		while (iterRegions.hasNext())
+     		{
+     			TextContainerRegion region = regions.get(iterRegions.next());
+     			if (region.getRegion().length() > 0)
+     			{
+     
+
+response.write(region.getRegion() );
+response.write(region.getFather() );
+response.write(region.getTermDomain() );
+response.write(region.getCollKey() );
+
+     
+     			}
+     		}
+     
+
+     				
+     	}
+     	catch (Exception e)
+     	{
+     		err = getDeepMessage(e);
+     	}
+     
+     
+     	if (err.length() > 0)
+     	{
+     
+
+
+     response.write( err );
+
+     
+     	}
+     
+
+
+
+      } catch (Exception e) { 
+       response.write( getDeepMessage(e) )+response.write(request.getAttribute(" getDeepMessage(e) "));
+      } 
+}
+
+}

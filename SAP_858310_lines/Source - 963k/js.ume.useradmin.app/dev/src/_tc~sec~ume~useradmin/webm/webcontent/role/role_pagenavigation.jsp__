@@ -1,0 +1,112 @@
+﻿ package PackageNo1605039382; public class role_pagenavigation_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       response.write(RoleAdminServlet.alias)+response.write(request.getAttribute("RoleAdminServlet").alias);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       response.write(RoleAdminServlet.alias)+response.write(request.getAttribute("RoleAdminServlet").alias);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       response.write(RoleAdminServlet.alias)+response.write(request.getAttribute("RoleAdminServlet").alias);
+
+
+
+
+
+       response.write(colspan)+response.write(request.getAttribute("colspan"));
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+  if ( currentPage < 2 ) { 
+response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(userAdminLocale.get("PREVIOUS_PAGE"));response.write(userAdminLocale.get("PREVIOUS_PAGE"));
+  } else {
+     					int previous = currentPage -1; 
+       response.write(previous);      response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(userAdminLocale.get("PREVIOUS_PAGE"));response.write(userAdminLocale.get("PREVIOUS_PAGE"));
+  } 
+  response.write(userAdminLocale.get("TOTAL"));response.write(totalItems)+response.write(request.getAttribute("totalItems"));response.write(userAdminLocale.get("ITEMS"));response.write(userAdminLocale.get("DISPLAY"));
+
+   for (int i=0; i<itemPerPageOptions.length; i++ ) {
+     int item = itemPerPageOptions[i].intValue();
+     boolean selected = false;
+     if (item==currentItemPerPage) {
+ selected = true;
+     }
+       response.write(item);response.write(selected?"SELECTED":"");response.write(itemPerPageOptions[i].intValue())+response.write(request.getAttribute("itemPerPageOptions[i]").intValue());
+   } 
+     response.write(userAdminLocale.get("PER_PAGE"));response.write(userAdminLocale.get("THIS_IS"));
+
+   for(int i=1;i<=totalPages;i++) {
+      boolean selected = false;
+      if ( i == currentPage ) {
+ selected = true;
+      } 
+       response.write(i)+response.write(request.getAttribute("i"));response.write(selected?"SELECTED":"");response.write(i)+response.write(request.getAttribute("i"));
+   } 
+     response.write(userAdminLocale.get("OF"));response.write(totalPages)+response.write(request.getAttribute("totalPages"));response.write(userAdminLocale.get("PAGES"));
+   if ( currentPage < totalPages ) {
+     					    int next = currentPage + 1; 
+   response.write(next); response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(userAdminLocale.get("NEXT_PAGE"));response.write(userAdminLocale.get("NEXT_PAGE"));
+      } else {
+response.write(webpath)+response.write(request.getAttribute("webpath")); response.write(userAdminLocale.get("NEXT_PAGE"));response.write(userAdminLocale.get("NEXT_PAGE"));
+  } 
+}
+
+}

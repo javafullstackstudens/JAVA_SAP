@@ -1,0 +1,239 @@
+﻿ package PackageNo1833792599;import proxy_txt;import contextspecific_includes_bottom_txt;import com.sap.security.api.IUser;import com.sap.security.api.IUserAccount;import com.sap.security.api.logon.ILoginConstants;import com.sap.security.core.admin.*;import com.sap.security.core.util.*; public class user_pswd_modify_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+ UserBean user = new UserBean();
+
+
+ UserAccountBean userAccount = new UserAccountBean();
+
+
+ ErrorBean error = new ErrorBean();
+
+
+ InfoBean info = new InfoBean();
+
+
+
+      IUser performer = proxy.getActiveUser();
+boolean toDisable = false;
+IUserAccount[] account = performer.getUserAccounts();
+String logonId = "";
+if ( account.length > 0 ) {
+    logonId = account[0].getLogonUid();
+}   
+if ( !UserAdminCustomization.isPasswordChangeAllowed() ) {
+    toDisable = true;
+} else {	
+     	   if ( account.length > 0 ) {
+     	       if (UserAdminFactory.isAttributeReadOnly(account[0].getUniqueID(), ILoginConstants.LOGON_PWD_ALIAS)) {
+     	   toDisable = true; 
+     	       }      
+     	   }
+}
+     
+String altmin = userAdminLocale.get("MINIMIZE_THIS_SECTION");
+String altmax = userAdminLocale.get("MAXIMIZE_THIS_SECTION");
+     
+
+
+
+
+     if (!inPortal) {
+
+     }
+
+
+
+
+  response.write(userAccount.oldpassword)+response.write(request.getAttribute("userAccount").oldpassword);
+  response.write(userAccount.password)+response.write(request.getAttribute("userAccount").password);
+      response.write(userAccount.passwordconfirm)+response.write(request.getAttribute("userAccount").passwordconfirm);
+
+     response.write(userAdminLocale.get("FILL_IN_PSWDS"));
+
+
+
+
+     response.write(userAdminLocale.get("PASSWORDS_MISMATCH"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   response.write(userAdminAlias)+response.write(request.getAttribute("userAdminAlias"));
+
+
+
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+      if ( info.isInfo() ) { 
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+    response.write(userAdminMessages.print(info.getMessage()))+response.write(request.getAttribute("userAdminMessages").print(info.getMessage()));
+
+
+
+      } 
+
+      if ( error.isError() ) { 
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+    response.write(userAdminMessages.print(error.getMessage()))+response.write(request.getAttribute("userAdminMessages").print(error.getMessage()));
+
+
+
+      } 
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+     response.write(userAdminLocale.get("USER_PSWD"));
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+       response.write(altmin);
+       response.write(altmin);response.write(altmax);response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+    if (toDisable) { 
+       response.write(userAdminLocale.get("PASSWORD_CHANGE_PROHIBITED"));
+    } 
+     response.write(user.getUidId())+response.write(request.getAttribute("user").getUidId());response.write(util.getFilteringSpecialChar(performer().getUniqueID()))+response.write(request.getAttribute("util").getFilteringSpecialChar(performer().getUniqueID()));
+     response.write(userAccount.getLogonuid())+response.write(request.getAttribute("userAccount").getLogonuid());response.write(util.getFilteringSpecialChar(logonId));
+
+
+if ( toDisable ) { 
+if ( spanTitle.length() > 0 ) spanTitle.delete(0, spanTitle.length());
+  spanTitle.append(userAdminLocale.get("OLD_PASSWORD")).append(" ");
+  spanTitle.append(userAccount.getOldPassword()).append(" ");
+  spanTitle.append(userAdminLocale.get("NOT_AVAILABLE")); 
+     response.write(spanTitle.getToString())+response.write(request.getAttribute("spanTitle").getToString());response.write(userAccount.getOldpassword())+response.write(request.getAttribute("userAccount").getOldpassword());response.write(userAdminLocale.get("OLD_PASSWORD"));
+} else {  
+     response.write(userAccount.getOldpassword())+response.write(request.getAttribute("userAccount").getOldpassword());response.write(userAdminLocale.get("OLD_PASSWORD"));
+} 
+
+
+       response.write(userAccount.oldpassword)+response.write(request.getAttribute("userAccount").oldpassword);
+ response.write(userAccount.oldpassword)+response.write(request.getAttribute("userAccount").oldpassword);
+  response.write(userAccount.getOldPassword())+response.write(request.getAttribute("userAccount").getOldPassword());
+
+
+
+       if (toDisable) {    }
+
+
+
+if ( toDisable ) { 
+if ( spanTitle.length() > 0 ) spanTitle.delete(0, spanTitle.length());
+  spanTitle.append(userAdminLocale.get("NEW_PASSWORD")).append(" ");
+  spanTitle.append(userAccount.getPassword()).append(" ");
+  spanTitle.append(userAdminLocale.get("NOT_AVAILABLE")); 
+     response.write(spanTitle.getToString())+response.write(request.getAttribute("spanTitle").getToString());response.write(userAccount.getPassword())+response.write(request.getAttribute("userAccount").getPassword());response.write(userAdminLocale.get("NEW_PASSWORD"));
+} else {  
+     response.write(userAccount.getPassword())+response.write(request.getAttribute("userAccount").getPassword());response.write(userAdminLocale.get("NEW_PASSWORD"));
+} 
+
+
+       response.write(userAccount.password)+response.write(request.getAttribute("userAccount").password);
+ response.write(userAccount.password)+response.write(request.getAttribute("userAccount").password);
+  response.write(userAccount.getPassword())+response.write(request.getAttribute("userAccount").getPassword());
+
+
+
+       if (toDisable) {    }
+
+
+
+if ( toDisable ) { 
+if ( spanTitle.length() > 0 ) spanTitle.delete(0, spanTitle.length());
+  spanTitle.append(userAdminLocale.get("PASSWORD_CONFIRM")).append(" ");
+  spanTitle.append(userAccount.getPasswordConfirm()).append(" ");
+  spanTitle.append(userAdminLocale.get("NOT_AVAILABLE")); 
+     response.write(spanTitle.getToString())+response.write(request.getAttribute("spanTitle").getToString());response.write(userAccount.getPasswordconfirm())+response.write(request.getAttribute("userAccount").getPasswordconfirm());response.write(userAdminLocale.get("PASSWORD_CONFIRM"));
+} else {  
+     response.write(userAccount.getPasswordconfirm())+response.write(request.getAttribute("userAccount").getPasswordconfirm());response.write(userAdminLocale.get("PASSWORD_CONFIRM"));
+} 
+
+
+       response.write(userAccount.passwordconfirm)+response.write(request.getAttribute("userAccount").passwordconfirm);
+ response.write(userAccount.passwordconfirm)+response.write(request.getAttribute("userAccount").passwordconfirm);
+  response.write(userAccount.getPasswordConfirm())+response.write(request.getAttribute("userAccount").getPasswordConfirm());
+
+
+
+       if (toDisable) {    }
+
+
+
+
+
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+  String apply = " "+userAdminLocale.get("APPLY")+" ";
+    String clear = " "+userAdminLocale.get("CLEAR")+" ";
+    String close = " "+userAdminLocale.get("CLOSE")+" "; 
+
+    response.write(UserAdminLogic.getPerformUserPswdChangeAction())+response.write(request.getAttribute("UserAdminLogic").getPerformUserPswdChangeAction());
+    response.write(apply)+response.write(request.getAttribute("apply"));
+
+    response.write(UserAdminLogic.getPerformUserPswdChangeAction())+response.write(request.getAttribute("UserAdminLogic").getPerformUserPswdChangeAction());
+
+
+    response.write(clear);
+
+
+
+    response.write(close);
+}
+
+}

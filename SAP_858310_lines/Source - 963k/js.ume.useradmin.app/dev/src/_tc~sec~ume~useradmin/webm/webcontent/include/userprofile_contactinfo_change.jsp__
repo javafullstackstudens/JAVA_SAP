@@ -1,0 +1,313 @@
+﻿ package PackageNo656596326; public class userprofile_contactinfo_change_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+     com.sap.security.core.admin.TimeZonesBean timezones = (com.sap.security.core.admin.TimeZonesBean) proxy.getSessionAttribute("timezones");
+
+      String contactInfo = userAdminLocale.get("CONTACT_INFO");
+if ( entryExit.length() > 0 ) entryExit.delete(0, entryExit.length());		   
+entryExit.append(userAdminMessages.print(new Message("START_GROUP_BOX", contactInfo))); 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+   response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+
+   response.write(contactInfo);
+
+
+
+
+   response.write(contactInfo);
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+       response.write(altmin)+response.write(request.getAttribute("altmin"));
+       response.write(altmin)+response.write(request.getAttribute("altmin"));response.write(altmax)+response.write(request.getAttribute("altmax"));response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+    if(null!=self)
+  _readOnly = UserAdminFactory.isAttributeReadOnly(self.getUniqueID(), UserBean.telephoneId);
+      else
+  _readOnly = false; 
+
+    if ( _readOnly) { 
+    if ( spanTitle.length() > 0 ) spanTitle.delete(0, spanTitle.length());
+      spanTitle.append(userAdminLocale.get("PHONE")).append(" ");
+      spanTitle.append(user.getTelephone()).append(" ");
+      spanTitle.append(userAdminLocale.get("NOT_AVAILABLE")); 
+ response.write(spanTitle.getToString())+response.write(request.getAttribute("spanTitle").getToString());response.write(user.getTelephoneId())+response.write(request.getAttribute("user").getTelephoneId());response.write(userAdminLocale.get("PHONE"));
+    } else {  
+ response.write(user.getTelephoneId())+response.write(request.getAttribute("user").getTelephoneId());response.write(userAdminLocale.get("PHONE"));
+    } 
+
+
+       response.write(user.telephoneId)+response.write(request.getAttribute("user").telephoneId);
+ response.write(user.telephoneId)+response.write(request.getAttribute("user").telephoneId);
+
+  response.write(user.getTelephone())+response.write(request.getAttribute("user").getTelephone());
+
+
+
+       if ( _readOnly ) {     }
+if ( _readOnly) { response.write(user.getTelephoneId())+response.write(request.getAttribute("user").getTelephoneId());response.write(user.getTelephone())+response.write(request.getAttribute("user").getTelephone()); } 
+
+
+
+
+    if(null!=self)
+  _readOnly = UserAdminFactory.isAttributeReadOnly(self.getUniqueID(), UserBean.faxId);
+      else
+  _readOnly = false; 
+
+     if ( _readOnly) { 
+     if ( spanTitle.length() > 0 ) spanTitle.delete(0, spanTitle.length());
+     	 spanTitle.append(userAdminLocale.get("FAX")).append(" ");
+     	 spanTitle.append(user.getFax()).append(" ");
+     	 spanTitle.append(userAdminLocale.get("NOT_AVAILABLE")); 
+  response.write(spanTitle.getToString())+response.write(request.getAttribute("spanTitle").getToString());response.write(user.getFaxId())+response.write(request.getAttribute("user").getFaxId());response.write(userAdminLocale.get("FAX"));
+     } else {  
+  response.write(user.getFaxId())+response.write(request.getAttribute("user").getFaxId());response.write(userAdminLocale.get("FAX"));
+     } 
+
+
+       response.write(user.faxId)+response.write(request.getAttribute("user").faxId);
+ response.write(user.faxId)+response.write(request.getAttribute("user").faxId);
+
+  response.write(user.getFax())+response.write(request.getAttribute("user").getFax());
+
+
+
+       if ( _readOnly ) {     }
+if ( _readOnly) { response.write(user.getFaxId())+response.write(request.getAttribute("user").getFaxId());response.write(user.getFax())+response.write(request.getAttribute("user").getFax()); } 
+
+
+
+
+    if(null!=self)
+  _readOnly = UserAdminFactory.isAttributeReadOnly(self.getUniqueID(), UserBean.mobileId);
+      else
+  _readOnly = false; 
+
+     if ( _readOnly) { 
+     if ( spanTitle.length() > 0 ) spanTitle.delete(0, spanTitle.length());
+     	 spanTitle.append(userAdminLocale.get("MOBILE")).append(" ");
+     	 spanTitle.append(user.getMobile()).append(" ");
+     	 spanTitle.append(userAdminLocale.get("NOT_AVAILABLE")); 
+  response.write(spanTitle.getToString())+response.write(request.getAttribute("spanTitle").getToString());response.write(user.getMobileId())+response.write(request.getAttribute("user").getMobileId());response.write(userAdminLocale.get("MOBILE"));
+     } else {  
+  response.write(user.getMobileId())+response.write(request.getAttribute("user").getMobileId());response.write(userAdminLocale.get("MOBILE"));
+     } 
+
+
+       response.write(user.mobileId)+response.write(request.getAttribute("user").mobileId);
+ response.write(user.mobileId)+response.write(request.getAttribute("user").mobileId);
+
+  response.write(user.getMobile())+response.write(request.getAttribute("user").getMobile());
+
+
+
+       if ( _readOnly ) {     }
+if ( _readOnly) { response.write(user.getMobileId())+response.write(request.getAttribute("user").getMobileId());response.write(user.getMobile())+response.write(request.getAttribute("user").getMobile()); } 
+
+
+
+
+    if(null!=self)
+  _readOnly = UserAdminFactory.isAttributeReadOnly(self.getUniqueID(), UserBean.streetAddressId);
+      else
+  _readOnly = false; 
+
+     if ( _readOnly) { 
+     if ( spanTitle.length() > 0 ) spanTitle.delete(0, spanTitle.length());
+     	 spanTitle.append(userAdminLocale.get("STREET")).append(" ");
+     	 spanTitle.append(user.getStreetAddress()).append(" ");
+     	 spanTitle.append(userAdminLocale.get("NOT_AVAILABLE")); 
+  response.write(spanTitle.getToString())+response.write(request.getAttribute("spanTitle").getToString());response.write(user.getStreetAddressId())+response.write(request.getAttribute("user").getStreetAddressId());response.write(userAdminLocale.get("STREET"));
+     } else {  
+  response.write(user.getStreetAddressId())+response.write(request.getAttribute("user").getStreetAddressId());response.write(userAdminLocale.get("STREET"));
+     } 
+
+
+       response.write(user.streetAddressId)+response.write(request.getAttribute("user").streetAddressId);
+ response.write(user.streetAddressId)+response.write(request.getAttribute("user").streetAddressId);
+
+  response.write(user.getStreetAddress())+response.write(request.getAttribute("user").getStreetAddress());
+
+
+
+       if ( _readOnly ) {     }
+if ( _readOnly) { response.write(user.getStreetAddressId())+response.write(request.getAttribute("user").getStreetAddressId());response.write(user.getStreetAddress())+response.write(request.getAttribute("user").getStreetAddress()); } 
+
+
+
+
+    if(null!=self)
+  _readOnly = UserAdminFactory.isAttributeReadOnly(self.getUniqueID(), UserBean.cityId);
+      else
+  _readOnly = false; 
+
+     if ( _readOnly) { 
+     if ( spanTitle.length() > 0 ) spanTitle.delete(0, spanTitle.length());
+     	 spanTitle.append(userAdminLocale.get("CITY")).append(" ");
+     	 spanTitle.append(user.getCity()).append(" ");
+     	 spanTitle.append(userAdminLocale.get("NOT_AVAILABLE")); 
+  response.write(spanTitle.getToString())+response.write(request.getAttribute("spanTitle").getToString());response.write(user.getCityId())+response.write(request.getAttribute("user").getCityId());response.write(userAdminLocale.get("CITY"));
+     } else {  
+  response.write(user.getCityId())+response.write(request.getAttribute("user").getCityId());response.write(userAdminLocale.get("CITY"));
+     } 
+
+
+       response.write(user.cityId)+response.write(request.getAttribute("user").cityId);
+ response.write(user.cityId)+response.write(request.getAttribute("user").cityId);
+
+  response.write(user.getCity())+response.write(request.getAttribute("user").getCity());
+
+
+
+       if ( _readOnly ) {     }
+if ( _readOnly) { response.write(user.getCityId())+response.write(request.getAttribute("user").getCityId());response.write(user.getCity())+response.write(request.getAttribute("user").getCity()); } 
+
+
+
+
+    if(null!=self)
+  _readOnly = UserAdminFactory.isAttributeReadOnly(self.getUniqueID(), UserBean.stateId);
+      else
+  _readOnly = false; 
+
+     if ( _readOnly) { 
+     if ( spanTitle.length() > 0 ) spanTitle.delete(0, spanTitle.length());
+     	 spanTitle.append(userAdminLocale.get("STATE")).append(" ");
+     	 spanTitle.append(user.getState()).append(" ");
+     	 spanTitle.append(userAdminLocale.get("NOT_AVAILABLE")); 
+       response.write(user.getStateId())+response.write(request.getAttribute("user").getStateId());response.write(userAdminLocale.get("STATE"));
+     } else {  
+  response.write(user.getStateId())+response.write(request.getAttribute("user").getStateId());response.write(userAdminLocale.get("STATE"));
+     } 
+
+
+       response.write(user.stateId)+response.write(request.getAttribute("user").stateId);
+ response.write(user.stateId)+response.write(request.getAttribute("user").stateId);
+
+  response.write(user.getState())+response.write(request.getAttribute("user").getState());
+
+
+
+       if ( _readOnly ) {     }
+if ( _readOnly) { response.write(user.getStateId())+response.write(request.getAttribute("user").getStateId());response.write(user.getState())+response.write(request.getAttribute("user").getState()); } 
+
+
+
+
+    if(null!=self)
+  _readOnly = UserAdminFactory.isAttributeReadOnly(self.getUniqueID(), UserBean.zipId);
+      else
+  _readOnly = false; 
+
+     if ( _readOnly) { 
+     if ( spanTitle.length() > 0 ) spanTitle.delete(0, spanTitle.length());
+     	 spanTitle.append(userAdminLocale.get("ZIP")).append(" ");
+     	 spanTitle.append(user.getZip()).append(" ");
+     	 spanTitle.append(userAdminLocale.get("NOT_AVAILABLE")); 
+  response.write(spanTitle.getToString())+response.write(request.getAttribute("spanTitle").getToString());response.write(user.getZipId())+response.write(request.getAttribute("user").getZipId());response.write(userAdminLocale.get("ZIP"));
+     } else {  
+  response.write(user.getZipId())+response.write(request.getAttribute("user").getZipId());response.write(userAdminLocale.get("ZIP"));
+     } 
+
+
+       response.write(user.zipId)+response.write(request.getAttribute("user").zipId);
+ response.write(user.zipId)+response.write(request.getAttribute("user").zipId);
+
+  response.write(user.getZip())+response.write(request.getAttribute("user").getZip());
+
+
+
+       if ( _readOnly ) {     }
+if ( _readOnly) { response.write(user.getZipId())+response.write(request.getAttribute("user").getZipId());response.write(user.getZip())+response.write(request.getAttribute("user").getZip()); } 
+
+
+
+
+    if(null!=self)
+  _readOnly = UserAdminFactory.isAttributeReadOnly(self.getUniqueID(), UserBean.countryId);
+      else
+  _readOnly = false; 
+
+     if ( _readOnly) { 
+     if ( spanTitle.length() > 0 ) spanTitle.delete(0, spanTitle.length());
+     	 spanTitle.append(userAdminLocale.get("COUNTRY")).append(" ");
+     	 spanTitle.append(user.getCountry()).append(" ");
+     	 spanTitle.append(userAdminLocale.get("NOT_AVAILABLE")); 
+  response.write(spanTitle.getToString())+response.write(request.getAttribute("spanTitle").getToString());response.write(user.getCountryId())+response.write(request.getAttribute("user").getCountryId());response.write(userAdminLocale.get("COUNTRY"));if(orgReq){}
+     } else {  
+  response.write(user.getCountryId())+response.write(request.getAttribute("user").getCountryId());response.write(userAdminLocale.get("COUNTRY"));if(orgReq){}
+     } 
+
+
+response.write(user.countryId)+response.write(request.getAttribute("user").countryId);
+  response.write(user.countryId)+response.write(request.getAttribute("user").countryId);
+
+
+       if( _readOnly ){     }
+       response.write(userAdminLocale.get("PLEASE_SELECT"));response.write(countries.getHtmlOptions(user.getCountry()))+response.write(request.getAttribute("countries").getHtmlOptions(user.getCountry()));
+if ( _readOnly) { response.write(user.getCountryId())+response.write(request.getAttribute("user").getCountryId());response.write(user.getCountry())+response.write(request.getAttribute("user").getCountry()); } 
+
+
+
+
+    if(null!=self)
+  _readOnly = UserAdminFactory.isAttributeReadOnly(self.getUniqueID(), UserBean.timeZoneId);
+      else
+  _readOnly = false; 
+
+    if ( _readOnly) { 
+    if ( spanTitle.length() > 0 ) spanTitle.delete(0, spanTitle.length());
+      spanTitle.append(userAdminLocale.get("TIME_ZONE")).append(" ");
+      spanTitle.append(user.getTimeZone()).append(" ");
+      spanTitle.append(userAdminLocale.get("NOT_AVAILABLE")); 
+ response.write(spanTitle.getToString())+response.write(request.getAttribute("spanTitle").getToString());response.write(user.getTimeZoneId())+response.write(request.getAttribute("user").getTimeZoneId());response.write(userAdminLocale.get("TIME_ZONE"));
+    } else {  
+ response.write(user.getTimeZoneId())+response.write(request.getAttribute("user").getTimeZoneId());response.write(userAdminLocale.get("TIME_ZONE"));
+    } 
+
+
+response.write(user.timeZoneId)+response.write(request.getAttribute("user").timeZoneId);
+  response.write(user.timeZoneId)+response.write(request.getAttribute("user").timeZoneId);
+
+
+       if( _readOnly ) {     }
+       response.write(userAdminLocale.get("PLEASE_SELECT"));response.write(timezones.getHtmlOptions(user.getTimeZone()));
+if ( _readOnly) { response.write(user.getTimeZoneId())+response.write(request.getAttribute("user").getTimeZoneId());response.write(user.getTimeZone())+response.write(request.getAttribute("user").getTimeZone()); } 
+
+
+
+
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+      entryExit.delete(0, entryExit.length());
+entryExit.append(userAdminMessages.print(new Message("END_GROUP_BOX", contactInfo))); 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+   response.write(contactInfo);
+   response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+}
+
+}

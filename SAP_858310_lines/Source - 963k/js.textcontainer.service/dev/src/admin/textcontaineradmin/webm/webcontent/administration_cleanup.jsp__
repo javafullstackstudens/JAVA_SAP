@@ -1,0 +1,97 @@
+﻿ package PackageNo1237985430;import com.sap.engine.services.textcontainer.admin.AdministrationTool; public class administration_cleanup_jsp {  /* 1 */ 	public String getDeepMessage(Exception e) /* 4 */ 	{ /* 5 */ 		String msg = "Exception:"; /* 6 */ 		Throwable t = e; /* 7 */ 		while (t != null) /* 8 */ 		{ /* 9 */ 			msg += "<br>" + t.toString(); /* 10 */ 			t = t.getCause(); /* 11 */ 		} /* 12 */ 		return msg; /* 13 */ 	} /* 14 */  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+     	String err = "";
+     	String msg = "";
+     
+     	String txv = request.getParameter("TXVRemote");
+     
+     	try
+     	{
+     		AdministrationTool.checkLogin(request, response);
+     
+     		if (txv != null)
+     		{
+     			if (txv.equals("L"))
+     			{
+     				AdministrationTool.deleteLanguageAttributeValues();
+     				msg = "Processed languages sucessfully deleted!";
+     			}
+     			else if (txv.equals("D"))
+     			{
+     				AdministrationTool.deleteContextAttributeValues();
+     				msg = "Context attribute values sucessfully deleted!";
+     			}
+     		}
+     	}
+     	catch (Exception e)
+     	{
+     		err = getDeepMessage(e);
+     	}
+     
+      try { 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+     	if (err.length() > 0)
+     	{
+     
+
+
+     response.write( err );
+
+     
+     	}
+     
+     
+     	if (msg.length() > 0)
+     	{
+     
+
+
+       response.write( msg );
+
+     
+     	}
+     
+
+
+
+
+      } catch (Exception e) { 
+       response.write( getDeepMessage(e) )+response.write(request.getAttribute(" getDeepMessage(e) "));
+      } 
+}
+
+}

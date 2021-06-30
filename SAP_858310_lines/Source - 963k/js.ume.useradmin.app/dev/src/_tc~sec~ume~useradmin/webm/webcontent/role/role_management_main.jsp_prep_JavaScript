@@ -1,0 +1,192 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function script____1672578772() {src("Cx_0dummyjs/util-role.js");}
+function script___281776209() {src("Cx_0dummyjs/basic.js");}
+
+
+function setCmd(value)
+{
+  document.frmRoleInfo.cmd.value = value;
+}
+function setNewSF()
+{
+  document.frmRoleInfo.newSearchFilter.value = 'true';
+  document.frmRoleInfo.cmd.value = 'role-management-main';
+}
+function setNewSFPost()
+{
+  document.frmRoleInfo.newSearchFilter.value = 'true';
+}
+function expandME(el) {
+ whichEl = eval(el);
+ whichIm = event.srcElement;
+ if (whichEl.style.display == "none") {
+  whichEl.style.display = "block";
+  whichIm.src = "Cx_0dummylayout/icon_open.gif";
+ }
+ else {
+  whichEl.style.display = "none";
+  whichIm.src = "Cx_0dummylayout/icon_close.gif";
+ }
+}
+function newWindow() {
+  window.open("05_2_1.htm", "sub", "WIDTH=200, HEIGHT=460, status=yes, resizable=yes scrollbars=yes")
+}
+function newWindow2() {
+  window.open("12.htm", "sub", "WIDTH=400, HEIGHT=400, status=yes, resizable=yes scrollbars=yes")
+}
+
+
+
+
+                                      function onSubmit____1516172928() {setNewSFPost()}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

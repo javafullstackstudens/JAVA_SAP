@@ -1,0 +1,168 @@
+﻿ package PackageNo801354938;import com.sap.engine.services.textcontainer.admin.AdministrationTool;import java.util.*;import com.sap.engine.services.textcontainer.admin.dbaccess.BundleData; public class text_container_bundles_jsp {  /* 1 */ 	public String getDeepMessage(Exception e) /* 6 */ 	{ /* 7 */ 		String msg = "Exception:"; /* 8 */ 		Throwable t = e; /* 9 */ 		while (t != null) /* 10 */ 		{ /* 11 */ 			msg += "<br>" + t.toString(); /* 12 */ 			t = t.getCause(); /* 13 */ 		} /* 14 */ 		return msg; /* 15 */ 	} /* 16 */  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+     	String err = "";
+     
+     	String component = null;
+     	String recipient = null;
+     
+     	try
+     	{
+     		AdministrationTool.checkLogin(request, response);
+     		AdministrationTool.checkAdministrationPermission(request, response);
+     
+     		component = request.getParameter("component");
+     		recipient = request.getParameter("recipient");
+     	}
+     	catch (Exception e)
+     	{
+     		err = getDeepMessage(e);
+     	}
+     
+      try { 
+
+
+
+
+
+
+
+
+
+
+
+     
+     	if (err.length() == 0)
+     	{
+     		try
+     		{
+     			int lines = 0;
+     
+     			HashMap<String, HashMap<String, BundleData>> bundles = AdministrationTool.getBundles(component, recipient);
+     
+     			if ((component != null) && (component.length() > 0))
+     			{
+     
+       response.write(bundles.keySet().iterator().next() )+response.write(request.getAttribute("bundles").keySet().iterator().next() );
+     
+     			}
+     
+     			if ((recipient != null) && (recipient.length() > 0))
+     			{
+     
+       response.write(recipient );
+     
+     			}
+     
+
+
+
+
+
+
+
+
+
+     
+     			Vector<String> vector = new Vector<String>(bundles.keySet());
+     			Collections.sort(vector);
+     			Iterator<String> iterComponentBundles = vector.iterator();
+     			while (iterComponentBundles.hasNext())
+     			{
+     				String componentName = iterComponentBundles.next();
+     				HashMap<String, BundleData> componentBundles = bundles.get(componentName);
+     				Vector<String> vector2 = new Vector<String>(componentBundles.keySet());
+     				Collections.sort(vector2);
+     				Iterator<String> iterBundles = vector2.iterator();
+     				while (iterBundles.hasNext())
+     				{
+     					BundleData bundle = componentBundles.get(iterBundles.next());
+     					String componentHashString = AdministrationTool.ByteArrayToString(bundle.getComponentHash());
+     					String bundleHashString = AdministrationTool.ByteArrayToString(bundle.getBundleHash());
+     
+
+ response.write(componentHashString);    response.write(componentName );
+ response.write(componentHashString);response.write(bundleHashString); response.write(bundle.getBundle() );
+ response.write(bundle.getRecipient()); response.write(bundle.getRecipient() );
+
+response.write(componentHashString );
+response.write(bundleHashString );
+
+     
+     					lines++;
+     				}
+     			}
+     
+
+
+  response.write(lines )+response.write(request.getAttribute("lines "));
+     
+     		}
+     		catch (Exception e)
+     		{
+     			err = getDeepMessage(e);
+     		}
+     		finally
+     		{
+     			AdministrationTool.closeConnection();
+     		}
+     	}
+     
+     
+     	if (err.length() > 0)
+     	{
+     
+
+
+     response.write( err );
+
+     
+     	}
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      } catch (Exception e) { 
+       response.write( getDeepMessage(e) )+response.write(request.getAttribute(" getDeepMessage(e) "));
+      } 
+}
+
+}

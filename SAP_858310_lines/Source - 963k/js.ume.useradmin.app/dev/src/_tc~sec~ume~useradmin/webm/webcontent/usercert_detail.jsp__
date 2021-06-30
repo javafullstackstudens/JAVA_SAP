@@ -1,0 +1,145 @@
+﻿ package PackageNo1073729919;import proxy_txt;import java.util.Date;import java.text.DateFormat;import java.security.cert.X509Certificate; public class usercert_detail_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+      X509Certificate cert = (X509Certificate) proxy.getRequestAttribute(UserAdminLogic.userCertificate);
+DateFormat dateFormat = DateFormat.getDateInstance();
+String begin = dateFormat.format(cert.getNotBefore());
+String end = dateFormat.format(cert.getNotAfter());
+Boolean imported = (Boolean) proxy.getRequestAttribute(UserAdminLogic.certImported);
+String parent = UserAdminLogic.userModifyPage;
+     
+
+     if (!inPortal) {
+
+
+ response.write(userAdminLocale.get("USER_MANAGEMENT"));
+
+
+
+
+     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+      response.write(userAdminLocale.get("CERT_HEADER"));
+
+
+
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+    response.write(userAdminLocale.get("CERT_DESCRIPTION"));
+
+
+
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+     response.write(userAdminLocale.get("VERSION"));
+      response.write(cert.getVersion())+response.write(request.getAttribute("cert").getVersion());
+
+
+     response.write(userAdminLocale.get("SERIAL_NUM"));
+      response.write(cert.getSerialNumber())+response.write(request.getAttribute("cert").getSerialNumber());
+
+
+     response.write(userAdminLocale.get("ISSUER"));
+      response.write(cert.getIssuerDN())+response.write(request.getAttribute("cert").getIssuerDN());
+
+
+     response.write(userAdminLocale.get("VALID_FROM"));
+      response.write(begin);
+
+
+     response.write(userAdminLocale.get("VALID_TO"));
+      response.write(end);
+
+
+     response.write(userAdminLocale.get("SUBJECT"));
+      response.write(cert.getSubjectDN())+response.write(request.getAttribute("cert").getSubjectDN());
+
+
+
+
+
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+      if ( null == imported ) { 
+
+
+
+
+
+
+    response.write(userAdminLocale.get("OK"));
+
+
+
+      } else { 
+   response.write(parent);response.write(userAdminAlias)+response.write(request.getAttribute("userAdminAlias"));
+
+
+
+
+
+     response.write(UserAdminLogic.backToUserModifyAction)+response.write(request.getAttribute("UserAdminLogic").backToUserModifyAction);
+    response.write(userAdminLocale.get("OK"));
+
+
+
+      } 
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+   response.write(userAdminLocale.get("COPY_RIGHT"));
+      response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(userAdminLocale.get("SAP"));response.write(userAdminLocale.get("SAP"));
+}
+
+}

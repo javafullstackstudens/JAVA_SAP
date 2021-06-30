@@ -1,0 +1,170 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function script___1174350595() {src("js/basic.js");}
+
+
+                                             function onLoad___1943997095() {putFocus(0,0);}
+
+
+
+function checkRequired() {
+ var countryField = document.getElementById("Cx_0dummy");
+ var frm = document.getElementById("applyCompanyUser");
+ if ( countryField.value == "" ) {
+  alert("Cx_0dummy");
+  return false;
+ } else {
+  todoWhat = document.createElement("input");
+  todoWhat.setAttribute("name", "Cx_0dummy");
+  todoWhat.setAttribute("type", "hidden");
+  todoWhat.setAttribute("value", "");
+  frm.appendChild(todoWhat);    
+  frm.submit();
+  return true;
+ }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

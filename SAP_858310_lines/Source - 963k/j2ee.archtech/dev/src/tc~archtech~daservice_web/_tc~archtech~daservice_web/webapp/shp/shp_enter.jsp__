@@ -1,0 +1,152 @@
+﻿ package PackageNo1800545926;import com.sap.security.api.*;import com.sap.archtech.daservice.mbeans.*;import com.sap.archtech.daservice.admin.*;import com.sap.archtech.daservice.ejb.*;import java.util.*;import javax.naming.*; public class shp_enter_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();   page.errorPage = "shp_error.jsp";   
+
+     
+       String isUserValid = (String) session.getAttribute("isUserValid");
+       if (!(isUserValid != null && isUserValid.equals("x")))
+       {
+     
+
+  request.getRequestDispatcher("../index.jsp").forward(request,response);
+
+     
+       }     
+       Set storeList = new TreeSet();
+       try
+       {
+     
+     	// Get all archive stores
+     	Context ctx = new InitialContext();
+     	ArchStoreConfigLocalHome beanLocalHome =
+     		(ArchStoreConfigLocalHome) ctx.lookup("java:comp/env/ArchStoreConfigBean");
+     	Collection col = beanLocalHome.findAll();
+     	Iterator iter = col.iterator();
+     	while(iter.hasNext())
+     	{
+     	  ArchStoreConfigLocal ascl = (ArchStoreConfigLocal) iter.next();
+     		storeList.add(ascl.getArchivestore());
+     	}
+       }
+       catch (Exception ex)
+       {
+       
+ // Forward Exception 
+ throw ex;
+       }
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ IUser user = UMFactory.getAuthenticator().getLoggedInUser();
+ boolean hasPermission = user.hasPermission(new XmldasAdminPermission("write", "*"));
+ if (hasPermission == true)
+ {
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+ 
+   Iterator i = storeList.iterator();
+   while (i.hasNext())
+   {
+     				String archiveStore = (String) i.next();
+   
+
+   response.write(archiveStore);    response.write(archiveStore);
+
+   
+   }
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+     
+ }
+ else
+ {
+     
+ 
+
+
+
+
+
+
+ 
+ 
+ }
+ 
+ 
+}
+
+}

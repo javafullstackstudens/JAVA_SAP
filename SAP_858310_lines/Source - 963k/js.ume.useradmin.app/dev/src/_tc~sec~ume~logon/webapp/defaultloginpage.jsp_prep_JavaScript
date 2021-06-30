@@ -1,0 +1,119 @@
+﻿
+
+
+
+function script___1174350595() {src("js/basic.js");}
+
+    var inPortalScript = false;
+    
+    function clearEntries() {
+      document.logonForm.longUid.value="";
+      document.logonForm.password.value="";
+    }
+
+    function setFocusToFirstField() {
+      myform = document.logonForm;
+      for(i=0; i<myform.length; i++) {
+        elem = myform.elements[i];
+        if(elem.readOnly==false && elem.type=="text") {
+          elem.focus();
+          break;
+        }
+      }
+    }
+
+    function addTenantPrefix() {
+      return true;
+    }
+  
+
+
+                  function onload___2106693954() {setFocusToFirstField()}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

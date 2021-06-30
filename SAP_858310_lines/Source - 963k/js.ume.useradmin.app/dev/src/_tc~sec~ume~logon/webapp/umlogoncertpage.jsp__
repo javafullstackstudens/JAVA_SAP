@@ -1,0 +1,208 @@
+﻿ package PackageNo1488599292;import certlogon_proxy_txt;import _umLogonTopArea_txt;import _umLogonBotArea_txt;import com.sap.security.core.sapmimp.logon.*;import com.sap.security.core.sapmimp.rendering.Browsers;import com.sap.security.core.util.taglib.EncodeHtmlTag;import com.sap.security.api.logon.IAuthScheme;import com.sap.security.api.logon.ILoginConstants;import com.sap.security.api.UMFactory;import com.sap.security.core.util.*; public class umlogoncertpage_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+      SAPMLogonCertLogic.setUnicodeEnabled(proxy); 
+
+  LogonLocaleBean logonLocale = new LogonLocaleBean();
+   LogonMessageBean logonMessage = new LogonMessageBean();
+LogonBean logonBean = new LogonBean();
+    ErrorBean error = new ErrorBean();
+
+      if (inPortal) { 
+
+
+
+
+
+      } 
+
+     if( !inPortal ) { 
+
+
+
+
+
+      } 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+     String stop = (String)proxy.getSessionAttribute("STOP");
+     if (stop != null)
+ proxy.removeSessionAttribute("STOP");
+     
+
+
+
+   response.write(inPortal?"":logonBean.getLogonCertURL(proxy, null));
+      if( inPortal ) { 
+
+  if (UMFactory.getProperties().getBoolean ("ume.login.do_redirect", true)==true) { 
+
+  } 
+}
+     
+
+
+  if ( logonBean.getSelfReg() ) { 
+
+
+
+
+
+   response.write(logonLocale.get("NEW_USERS"));
+   response.write(proxy.getAlias("/useradmin/selfReg","redirectURL"));
+     response.write(logonLocale.get("SIGN_UP"));
+
+
+
+
+
+
+  } 
+
+  if ( error.getMessage() != null ) { 
+
+
+
+
+
+
+ response.write(webpath)+response.write(request.getAttribute("webpath"));
+    response.write(EncodeHtmlTag.encode(logonMessage.print(error.getMessage())))+response.write(request.getAttribute("EncodeHtmlTag").encode(logonMessage.print(error.getMessage())));
+
+
+
+
+
+
+  } else { 
+
+
+
+
+  } 
+
+
+
+ response.write(logonLocale.get("xmsg_SAVE_CERT_INFO"));
+     response.write(inPortal?proxy.getAlias("gotouidpwlogon"):logonBean.getLogonURL(proxy,null));   response.write(logonLocale.get("xlnk_goto_normal_logon"));
+
+
+
+
+
+
+    response.write(logonLocale.get("USER"));
+
+
+
+
+   response.write(ILoginConstants.LOGON_USER_ID)+response.write(request.getAttribute("ILoginConstants").LOGON_USER_ID);response.write(EncodeHtmlTag.encode(logonBean.getLongUid(proxy)!=null?logonBean.getLongUid(proxy):""));
+
+
+
+
+
+
+    response.write(logonLocale.get("PASSWORD"));
+
+
+
+
+   response.write(ILoginConstants.getLOGON_PWD_ALIAS())+response.write(request.getAttribute("ILoginConstants").getLOGON_PWD_ALIAS());
+
+
+
+  if( inPortal ) {
+     String reqscheme = proxy.getRequiredAuthScheme();
+     if( reqscheme != null )
+     {
+     
+       response.write(ILoginConstants.getLOGON_AUTHSCHEME_ALIAS())+response.write(request.getAttribute("ILoginConstants").getLOGON_AUTHSCHEME_ALIAS());response.write(EncodeHtmlTag.getEncode(reqscheme))+response.write(request.getAttribute("EncodeHtmlTag").getEncode(reqscheme));
+     
+     }
+     else
+     {
+ IAuthScheme[] asarr = proxy.getAuthSchemes();
+ 
+
+
+
+      response.write(logonLocale.get("xfld_AUTHSCHEME"));
+
+
+
+       response.write(ILoginConstants.getLOGON_AUTHSCHEME_ALIAS())+response.write(request.getAttribute("ILoginConstants").getLOGON_AUTHSCHEME_ALIAS());
+ 
+     for (int i = 0; i < asarr.length; i++)
+     {
+ if( !"anonymous".equals(asarr[i].getName()) )
+ {
+ 
+   response.write(asarr[i].getName())+response.write(request.getAttribute("asarr[i]").getName());response.write(asarr[i].getName())+response.write(request.getAttribute("asarr[i]").getName());
+ 
+ }
+     }
+ 
+
+
+
+ 
+   }
+ }
+ 
+
+
+
+  response.write(SAPMLogonCertLogic.uidPasswordLogonAction)+response.write(request.getAttribute("SAPMLogonCertLogic").uidPasswordLogonAction);response.write(logonLocale.get("LOGON"));
+
+
+
+
+
+
+
+
+     response.write(logonLocale.get("LOGON_IN_PROBLEM"));
+ response.write(inPortal?proxy.getAlias("gotoHelpPage"):logonBean.getLogonURL(proxy,"gotoHelpPage="));
+   response.write(logonLocale.get("GET_SUPPORT"));
+
+
+
+
+
+
+
+
+
+
+
+
+      if(!inPortal) proxy.sessionInvalidate(); 
+     if(inPortal) { 
+
+      } else { 
+
+
+      } 
+}
+
+}

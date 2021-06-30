@@ -1,0 +1,74 @@
+﻿ package PackageNo885925388;import logon_proxy_txt;import _umLogonTopArea_txt;import _umLogonBotArea_txt;import com.sap.security.core.sapmimp.logon.*;import com.sap.security.core.sapmimp.rendering.Browsers;import com.sap.security.core.util.*; public class umlogoffpage_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+      SAPMLogonLogic.setUnicodeEnabled(proxy); 
+
+LogonBean logonBean = new LogonBean();
+   LogonMessageBean logonMessage = new LogonMessageBean();
+  LogonLocaleBean logonLocale = new LogonLocaleBean();
+    ErrorBean error = new ErrorBean();
+
+
+
+     if( !inPortal ) { 
+
+
+
+ response.write(logonLocale.get("LOG_OUT"));
+
+      } 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+response.write(webpath)+response.write(request.getAttribute("webpath"));
+    response.write(logonLocale.get("LOGOUT_SUCCEEDED"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+     response.write(logonLocale.get("RE_LOGIN"));
+
+
+
+
+
+
+
+
+
+
+      if(!inPortal) proxy.sessionInvalidate(); 
+     if(inPortal) { 
+
+      } else { 
+
+
+      } 
+}
+
+}

@@ -1,0 +1,171 @@
+﻿ package PackageNo515621733;import _proxy_txt;import _contextspecific_includes_top_txt;import _contextspecific_includes_bottom_txt;import com.sap.security.core.role.*;import com.sap.security.core.role.imp.*;import com.sap.security.core.*;import com.sap.security.core.admin.util;import com.sap.security.core.admin.role.*;import com.sap.security.core.admin.group.*;import com.sap.security.api.*;import java.util.Iterator;import java.util.*;import com.sap.security.core.util.*; public class group_management_add_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+
+
+
+
+   InfoBean info = new InfoBean();
+    ErrorBean error = new ErrorBean();
+     com.sap.security.core.admin.role.RoleAdminMessagesBean roleAdminMessages = (com.sap.security.core.admin.role.RoleAdminMessagesBean) proxy.getSessionAttribute("roleAdminMessages");
+     com.sap.security.core.admin.role.RoleAdminLocaleBean roleAdminLocale = (com.sap.security.core.admin.role.RoleAdminLocaleBean) proxy.getSessionAttribute("roleAdminLocale");
+
+      
+     String groupDisplayName = "";
+     String groupNamesReport = (String) HelperClass.getAttr(proxy,"groupNamesReport");
+     String groupID = "";
+     String groupDescription = "";
+     
+     String principal = (String)HelperClass.getAttr(proxy,"principal");
+     IGroup group = (IGroup)proxy.getRequestAttribute("groupObj");
+     if( null != group)
+     {
+groupDisplayName = group.getUniqueName();
+groupID = group.getUniqueID();
+groupDescription = group.getDescription();
+if (null == groupDescription)
+{
+	groupDescription = "";
+}
+     }
+     
+     String disabled = "";
+     
+     String modifyGroup = (String)HelperClass.getAttr(proxy,"modifyGroup");
+     String Header;
+     if ("true".equals(modifyGroup))
+     {
+     	Header = roleAdminLocale.get("MODIFY_GROUP_HEADER");
+     	disabled = "disabled";
+     }
+     else {
+     	Header = roleAdminLocale.get("CREATE_GROUP_HEADER");
+     }
+     
+     Boolean tempReadOnly = (Boolean)proxy.getRequestAttribute("readOnly");
+     boolean readonly = (tempReadOnly!=null)?tempReadOnly.booleanValue():false;
+     
+     int  maxGroupNameLength = GroupAdminLogic.MAX_GROUP_NAME_LENGTH;
+     int  maxGroupDescriptionLength = GroupAdminLogic.MAX_GROUP_DESCRIPTION_LENGTH;
+     
+     
+
+     if (!inPortal) {
+
+ response.write(roleAdminLocale.get("ROLE_MANAGEMENT"));
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+     }
+
+
+
+
+
+
+
+
+      response.write(util.convertDbQuotationToSingle(roleAdminLocale.get("BLANK_NOTIFICATION")));response.write(roleAdminLocale.get("ILLEGAL_GROUP_NAME"));       response.write(groupAdminAlias)+response.write(request.getAttribute("groupAdminAlias"));
+
+
+
+
+
+
+
+     response.write(Header);
+
+
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+       if ( info.isInfo() ) { 
+
+
+ response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(roleAdminMessages.print(info.getMessage()))+response.write(request.getAttribute("roleAdminMessages").print(info.getMessage()));
+
+
+       } 
+
+
+       if ( error.isError() ) { 
+
+
+ response.write(webpath)+response.write(request.getAttribute("webpath"));      response.write(roleAdminMessages.print(error.getMessage()))+response.write(request.getAttribute("roleAdminMessages").print(error.getMessage()));
+
+
+       } 
+
+
+
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+       response.write(roleAdminLocale.get("GROUP_NAME"));
+    response.write(groupDisplayName);  response.write(disabled);     response.write(maxGroupNameLength);
+
+  if (disabled.equals("disabled"))	{ 
+     response.write(groupDisplayName);
+  } 
+
+ response.write(roleAdminLocale.get("DESCRIPTION"));
+
+
+
+
+
+  response.write(maxGroupDescriptionLength);
+  response.write(maxGroupDescriptionLength);
+
+
+   response.write(util.filteringSpecialChar(groupDescription));
+
+
+
+
+
+
+  response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+if (!readonly) { 
+response.write(roleAdminLocale.get("APPLY"));
+
+} 
+      response.write(roleAdminLocale.get("CANCEL"));
+
+
+
+
+
+   response.write(modifyGroup);
+   response.write(util.getURLEncoder(groupID));
+   response.write(groupNamesReport);
+
+   response.write(principal);
+}
+
+}

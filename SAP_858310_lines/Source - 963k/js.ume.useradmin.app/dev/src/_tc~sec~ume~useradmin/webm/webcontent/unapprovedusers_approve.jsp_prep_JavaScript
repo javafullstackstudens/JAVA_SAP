@@ -1,0 +1,335 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function script___1174350595() {src("js/basic.js");}
+function script____2071901817() {src("js/roleList.js");}
+
+
+
+
+
+  function doOrgUnitSearch() {
+      var frm = document.getElementById("approveUsers");
+      inputTag = document.createElement("input");
+      inputTag.setAttribute("name", "Cx_0dummy");
+      inputTag.setAttribute("type", "hidden");
+      inputTag.setAttribute("value", "");
+      frm.appendChild( inputTag );
+      inputTag2 = document.createElement("input");
+      inputTag2.setAttribute("name","Cx_0dummy");
+      inputTag2.setAttribute("type","hidden");
+      inputTag2.setAttribute("value","Cx_0dummy");
+      frm.appendChild( inputTag2 );
+      frm.submit();
+  }
+  
+  function setPaging() {
+    var frm = document.getElementById("approveUsers");
+    var pageObj = document.getElementById("reqPage");
+    var itemObj = document.getElementById("itemPerPage");
+    var pageInteger, pageString;
+    var itemInteger, itemString;
+
+    pageInteger = pageObj.selectedIndex;
+    pageString = pageObj.options[pageInteger].text;
+
+    itemInteger = itemObj.selectedIndex;
+    itemString = itemObj.options[itemInteger].text;
+
+    inputTag1 = document.createElement("input");
+    inputTag1.setAttribute("name", "requestPage");
+    inputTag1.setAttribute("type", "hidden");
+    inputTag1.setAttribute("value", pageString);
+    frm.appendChild( inputTag1 );
+
+    inputTag2 = document.createElement("input");
+    inputTag2.setAttribute("name", "currentItemPerPage");
+    inputTag2.setAttribute("type", "hidden");
+    inputTag2.setAttribute("value", itemString);
+    frm.appendChild( inputTag2 );
+    frm.submit();
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function onkeypress___141707975() {if(event.keyCode=='115') {document.getElementById('Cx_0dummy').focus();}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

@@ -1,0 +1,170 @@
+﻿ package PackageNo254110340;import proxy_txt;import contextspecific_includes_bottom_txt;import com.sap.security.core.admin.*;import com.sap.security.core.util.*; public class selfreg_searchcompany_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+      if ( util.isServlet23() ) proxy.setResponseContentType("text/html; charset=utf-8"); 
+
+
+
+ CompanySelectBean companySelect = new CompanySelectBean();
+
+
+ InfoBean info = new InfoBean();
+
+
+      StringBuffer urlSB = new StringBuffer(selfRegAlias);
+urlSB.append("?");
+urlSB.append(SelfRegLogic.performCompanySearchAction);
+urlSB.append("=");
+urlSB.append("&");
+urlSB.append(companySelect.companySearchNameId);
+urlSB.append("=");
+String urlt = new String(urlSB);
+     
+
+     if (!inPortal) {
+
+
+   response.write(userAdminLocale.get("SELF_REGISTRATION"));
+
+
+
+
+     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+     response.write(userAdminLocale.get("SEARCHCOMPANY"));
+
+
+
+
+
+
+
+
+
+
+ response.write(userAdminLocale.get("SEARCH_COMPANY_HEADER"));
+
+
+
+
+
+
+  if ( info.isInfo() ) { 
+
+
+ response.write(webpath)+response.write(request.getAttribute("webpath"));
+      response.write(userAdminMessages.print(info.getMessage()))+response.write(request.getAttribute("userAdminMessages").print(info.getMessage()));
+
+
+
+  } 
+
+       response.write(selfRegAlias)+response.write(request.getAttribute("selfRegAlias"));
+
+
+ response.write(companySelect.getCompanySearchNameId())+response.write(request.getAttribute("companySelect").getCompanySearchNameId());response.write(userAdminLocale.get("COMPANY_NAME"));
+
+       response.write(companySelect.getCompanySearchNameId())+response.write(request.getAttribute("companySelect").getCompanySearchNameId());
+
+
+
+
+       response.write(companySelect.getCompanySearchNameId())+response.write(request.getAttribute("companySelect").getCompanySearchNameId());
+       response.write(util.getFilteringSpecialChar(companySelect().getCompanySearchName()))+response.write(request.getAttribute("util").getFilteringSpecialChar(companySelect().getCompanySearchName()));
+
+      response.write(SelfRegLogic.getPerformCompanySearchAction())+response.write(request.getAttribute("SelfRegLogic").getPerformCompanySearchAction());
+
+
+
+
+
+    response.write(userAdminLocale.get("PART_OR_COMP_NAME"));
+
+
+ response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+       String nameLinks = userAdminLocale.get("PART_OR_COMP_NAME");
+     	   if ( entryExit.length() > 0 ) entryExit.delete(0, entryExit.length());		   
+     	   entryExit.append(userAdminMessages.print(new Message("START_GROUP_LINKS", nameLinks))); 
+    response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+    response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+
+    response.write(nameLinks)+response.write(request.getAttribute("nameLinks"));
+  StringBuffer urlASB = new StringBuffer(urlt); 
+  String[] alphabet = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
+     "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T",
+     "U", "V", "W", "X", "Y", "Z" };
+    String numeric = "0123456789";
+    urlASB.append(numeric);
+    urlASB.append("&");
+    urlASB.append("array");
+    urlASB.append("="); 
+     response.write(urlASB.getToString());
+  for (int i=0; i<alphabet.length; i++) {
+    String lt = alphabet[i];
+    StringBuffer urlLSB = new StringBuffer(urlt);
+    urlLSB.append(lt).append("*"); 
+ if (lt.equals("I") || lt.equals("S")) {      response.write(urlLSB.getToString()); } response.write(lt);
+  } 
+       entryExit.delete(0, entryExit.length());
+     	   entryExit.append(userAdminMessages.print(new Message("END_GROUP_LINKS", nameLinks))); 
+    response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+    response.write(nameLinks)+response.write(request.getAttribute("nameLinks"));
+    response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+    String search = " "+userAdminLocale.get("SEARCH")+" ";
+String cancel = " "+userAdminLocale.get("CANCEL")+" "; 
+
+
+
+       response.write(SelfRegLogic.getPerformCompanySearchAction())+response.write(request.getAttribute("SelfRegLogic").getPerformCompanySearchAction());
+       response.write(search)+response.write(request.getAttribute("search"));
+
+
+       response.write(SelfRegLogic.getCancelCompanySearchAction())+response.write(request.getAttribute("SelfRegLogic").getCancelCompanySearchAction());
+       response.write(cancel);
+}
+
+}

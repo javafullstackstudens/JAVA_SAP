@@ -1,0 +1,110 @@
+﻿ package PackageNo804753129;import com.sap.engine.services.textcontainer.admin.AdministrationTool;import com.sap.engine.services.textcontainer.admin.dbaccess.ContextIterator; public class text_container_contexts_jsp {  /* 1 */ 	public String getDeepMessage(Exception e) /* 5 */ 	{ /* 6 */ 		String msg = "Exception:"; /* 7 */ 		Throwable t = e; /* 8 */ 		while (t != null) /* 9 */ 		{ /* 10 */ 			msg += "<br>" + t.toString(); /* 11 */ 			t = t.getCause(); /* 12 */ 		} /* 13 */ 		return msg; /* 14 */ 	} /* 15 */  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+     	String err = "";
+     
+     	try
+     	{
+     		AdministrationTool.checkLogin(request, response);
+     		AdministrationTool.checkAdministrationPermission(request, response);
+     	}
+     	catch (Exception e)
+     	{
+     		err = getDeepMessage(e);
+     	}
+     
+      try { 
+
+
+
+
+
+
+
+
+
+
+
+     
+     	if (err.length() == 0)
+     	{
+     		try
+     		{
+     			int lines = 0;
+     
+     		ContextIterator iterContext = AdministrationTool.getContexts();
+     
+
+
+
+
+
+
+
+
+     
+     			if (iterContext != null)
+     			{
+     				while (iterContext.next())
+     				{
+     
+
+response.write(iterContext.contextId() );
+response.write(iterContext.locale() );
+response.write(iterContext.industry() );
+response.write(iterContext.region() );
+response.write(iterContext.extension() );
+
+     
+     					lines++;
+     				}
+     			}
+     
+
+
+  response.write(lines )+response.write(request.getAttribute("lines "));
+     
+     		}
+     		catch (Exception e)
+     		{
+     			err = getDeepMessage(e);
+     		}
+     		finally
+     		{
+     			AdministrationTool.closeConnection();
+     		}
+     	}
+     
+     
+     	if (err.length() > 0)
+     	{
+     
+
+
+     response.write( err );
+
+     
+     	}
+     
+
+
+      } catch (Exception e) { 
+       response.write( getDeepMessage(e) )+response.write(request.getAttribute(" getDeepMessage(e) "));
+      } 
+}
+
+}

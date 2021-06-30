@@ -1,0 +1,238 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function script___1174350595() {src("js/basic.js");}
+
+
+
+
+  
+    function doCompanySelect() {
+      var frm = document.getElementById("changeUserOwnProfile");
+      actionTag = document.createElement("input");
+      actionTag.setAttribute("name", "Cx_0dummy");
+      actionTag.setAttribute("type", "hidden");
+      actionTag.setAttribute("value", "");
+      frm.appendChild( actionTag );
+      preReqTag = document.createElement("input");
+      preReqTag.setAttribute("name","Cx_0dummy");
+      preReqTag.setAttribute("type","hidden");
+      preReqTag.setAttribute("value","Cx_0dummy");
+      frm.appendChild( preReqTag );
+      frm.submit();
+    }
+    
+ function checkRequired() {
+  var frm = document.getElementById("changeUserOwnProfile");
+  var countryField = document.getElementById("Cx_0dummy");  
+  if ( countryField.value == "" ) {
+   alert("Cx_0dummy");
+   return false;
+  } else {
+   todoWhat = document.createElement("input");
+   todoWhat.setAttribute("name", "Cx_0dummy");
+   todoWhat.setAttribute("type", "hidden");
+   todoWhat.setAttribute("value", "");
+   frm.appendChild(todoWhat);    
+   frm.submit();
+   return true;
+  }
+ }   
+ 
+ function doOrgUnitSearch() {
+   var frm = document.getElementById("changeUserOwnProfile");
+   inputTag = document.createElement("input");
+   inputTag.setAttribute("name", "Cx_0dummy");
+   inputTag.setAttribute("type", "hidden");
+   inputTag.setAttribute("value", "");
+   frm.appendChild( inputTag );
+   inputTag2 = document.createElement("input");
+   inputTag2.setAttribute("name", "Cx_0dummy");
+   inputTag2.setAttribute("type", "hidden");
+   inputTag2.setAttribute("value", "Cx_0dummy");
+   frm.appendChild( inputTag2 );
+   frm.submit();
+ }  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

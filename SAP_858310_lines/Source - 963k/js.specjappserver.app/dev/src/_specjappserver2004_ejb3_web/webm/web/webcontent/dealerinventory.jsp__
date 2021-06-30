@@ -1,0 +1,237 @@
+﻿ package PackageNo2042903877;import java.util.Collection;import java.util.Iterator;import java.util.HashMap;import java.math.BigDecimal;import org.spec.jappserver.corp.helper.*;import org.spec.jappserver.orders.helper.*;import org.spec.jappserver.servlet.helper.*; public class dealerinventory_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+
+
+SpecUtils specUtils = new SpecUtils();
+/* ?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealerinventory.jsp */ /* 13?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealerinventory.jsp */ /* 1?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_header.jsp */ /* 2?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_header.jsp */ /* 3?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_header.jsp */ /* 4?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_header.jsp */ /* 5?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_header.jsp */ /* 6?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_header.jsp */ /* 7?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_header.jsp */ /* 8?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_header.jsp */ /* 9?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_header.jsp */ /* 10?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_header.jsp */ /* 11?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_header.jsp */ /* 12?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_header.jsp */ /* 13?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_header.jsp */ /* 14?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_header.jsp */ /* 15?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_header.jsp */ /* 16?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_header.jsp */ /* 17?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_header.jsp */ /* 18?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_header.jsp */ /* 19?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_header.jsp */ /* 20?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_header.jsp */ /* 21?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_header.jsp */ /* 22?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_header.jsp */ /* 23?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_header.jsp */ response.write( new java.util.Date() )+response.write(request.getAttribute(" new java").util.Date() ); /* 24?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_header.jsp */ /* 25?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_header.jsp */ /* 26?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_header.jsp */ /* 27?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_header.jsp */ /* 28?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_header.jsp */ response.write(CxResponseWrite)+response.write(request.getAttribute("CxResponseWrite")); /* 13?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealerinventory.jsp */
+
+     
+     	String message = (String) request.getAttribute("results_cancel"); 
+     	if(message!=null){
+     
+
+
+
+   response.write( message)+response.write(request.getAttribute(" message"));
+
+
+
+     		
+     	}
+     
+     
+     	message = (String) request.getAttribute("results_sell"); 
+     	if(message!=null){
+     
+
+
+
+   response.write( message)+response.write(request.getAttribute(" message"));
+
+
+
+     		
+     	}
+     
+     
+     	Iterator invItr = inventory.iterator();
+     	int numVehicles = 0;
+     	while (invItr.hasNext()){
+     		CustomerInventoryDataBean csrdb = (CustomerInventoryDataBean) invItr.next();
+     		numVehicles += csrdb.getQuantity();
+     	}
+     
+
+
+
+
+
+
+
+
+
+
+
+
+     response.write( numVehicles);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+     BigDecimal totalValue = SpecUtils.zeroBigDec;
+     
+     try{
+     	invItr = inventory.iterator();
+     	
+     	while (invItr.hasNext()){
+     		CustomerInventoryDataBean csrdb = (CustomerInventoryDataBean) invItr.next();
+     		ItemsDataBean itemdb = (ItemsDataBean) itemInfo.get(csrdb.getVehicle());
+     		BigDecimal currentTotal = itemdb.getPrice().multiply(new BigDecimal(csrdb.getQuantity()));
+     		BigDecimal quantity = new BigDecimal(csrdb.getQuantity());
+     		BigDecimal discountedPrice = csrdb.getTotalCost().divide(quantity, 2, BigDecimal.ROUND_DOWN);
+     		totalValue = totalValue.add(currentTotal);
+     
+
+  response.write( csrdb.getId() );
+  response.write( itemdb.getName() );
+  response.write( itemdb.getDescription() );
+  response.write( csrdb.getQuantity() );
+  response.write( specUtils.formatCurrency(itemdb.getPrice()) );
+  response.write( specUtils.formatCurrency(discountedPrice) );
+  response.write( specUtils.formatNumber(SpecUtils.oneBigDec.subtract(discountedPrice.divide(itemdb.getPrice(), 4, BigDecimal.ROUND_UP)).multiply(SpecUtils.onehundredBigDec).setScale(2, BigDecimal.ROUND_UP)      ) );
+  response.write( specUtils.formatCurrency(itemdb.getPrice().multiply(quantity)) );
+  response.write( "app?action=sellinventory&vehicleToSell="+csrdb.getId()+"&total="+csrdb.getTotalCost());   response.write(csrdb.getQuantity());
+
+      
+     	}
+     }
+     catch (Exception e)
+     {
+  System.out.println("portfolio.jsp: error displaying user holdings");
+     }
+     				
+
+
+
+
+
+
+
+
+ response.write( specUtils.formatCurrency(totalValue) )+response.write(request.getAttribute(" specUtils").formatCurrency(totalValue) );
+
+
+
+
+
+
+
+
+
+      
+      Iterator orderItr = openOrders.iterator();
+      if(orderItr.hasNext()){
+      
+
+
+
+
+
+
+
+
+
+
+     
+     while (orderItr.hasNext()){
+     	OrderDataBean odb = (OrderDataBean) orderItr.next();
+     
+
+
+
+
+
+
+
+
+      response.write( odb.getOrderID() )+response.write(request.getAttribute(" odb").getOrderID() );
+response.write( specUtils.formatDate(odb.getEntryDate()) )+response.write(request.getAttribute(" specUtils").formatDate(odb.getEntryDate()) );
+    response.write( "\" app?action=cancelorder&orderID="+odb.getOrderID()+"\"" );
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+     try{	
+     	Iterator lineItr = odb.getOrderLines().iterator();
+     	
+     	while (lineItr.hasNext()){
+     		OrderLineDataBean oldb = (OrderLineDataBean) lineItr.next();
+     		ItemsDataBean itemdb = (ItemsDataBean) itemInfo.get(oldb.getItemID());
+     		BigDecimal itemPrice = oldb.getTotalValue().divide(new BigDecimal(oldb.getQuantity()), 2, BigDecimal.ROUND_DOWN);
+     		//BigDecimal itemPrice = itemdb.getPrice().multiply((SpecUtils.oneBigDec.subtract(itemdb.getDiscount()))).setScale(2, BigDecimal.ROUND_DOWN);
+     		//BigDecimal currentTotal = itemPrice.multiply(new BigDecimal(oldb.getQuantity()));
+     
+
+    response.write( oldb.getID() );
+  response.write( itemdb.getName() );
+  response.write( itemdb.getDescription() );
+  response.write( oldb.getQuantity() );
+  response.write( specUtils.formatCurrency(itemPrice) );
+  response.write( specUtils.formatCurrency(oldb.getTotalValue()) );
+
+      
+     	}
+     }
+     catch (Exception e)
+     {
+  System.out.println("portfolio.jsp: error displaying user holdings");
+     }
+     				
+
+
+      response.write( odb.getOrderStatus() )+response.write(request.getAttribute(" odb").getOrderStatus() );
+
+    response.write( specUtils.formatNumber(odb.getDiscount()) )+response.write(request.getAttribute(" specUtils").formatNumber(odb.getDiscount()) );
+
+  response.write( specUtils.formatCurrency(odb.getTotal()) )+response.write(request.getAttribute(" specUtils").formatCurrency(odb.getTotal()) );
+
+
+
+
+
+
+
+
+     
+     }
+     }
+     
+
+
+
+
+
+
+
+
+
+
+/* ?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealerinventory.jsp */ /* 234?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealerinventory.jsp */ /* 1?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 2?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 3?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 4?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 5?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 6?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 7?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 8?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 9?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 10?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 11?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 12?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 13?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 14?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 15?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 16?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 17?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 18?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 19?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 20?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 21?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 22?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 23?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 24?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 25?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 26?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 27?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 28?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 29?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 30?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 31?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 32?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 33?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 34?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 35?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 36?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 37?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ /* 38?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealership_incl_footer.jsp */ response.write(CxResponseWrite)+response.write(request.getAttribute("CxResponseWrite")); /* 234?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.specjappserver.app\dev\src\_specjappserver2004_ejb3_web\webm\web\webcontent\dealerinventory.jsp */
+}
+
+}

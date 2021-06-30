@@ -1,0 +1,203 @@
+﻿ package PackageNo791897113;import proxy_txt;import contextspecific_includes_top_txt;import contextspecific_includes_bottom_txt;import com.sap.security.core.util.*;import com.sap.security.core.admin.*; public class unapproveduser_approvedeny_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+     CountriesBean countries = (CountriesBean) proxy.getSessionAttribute("countries");
+
+
+ ErrorBean error = new ErrorBean();
+
+
+ UserBean user = new UserBean();
+
+
+ UserAccountBean userAccount = new UserAccountBean();
+
+
+      IUser self = user.getUser();
+String orgUnitName = (String) proxy.getRequestAttribute(UserAdminLogic.orgUnitName);
+String messageToRequestor = (String) proxy.getRequestAttribute(user.messageToRequestor);
+     
+if ( null ==  messageToRequestor) {
+    messageToRequestor =  new String();
+}
+if ( null == orgUnitName ) {
+    orgUnitName = new String();
+}
+     
+UserAdminCustomization uac = (UserAdminCustomization)proxy.getSessionAttribute(UserAdminCustomization.beanId);
+boolean orgReq = uac.isOrgUnitRequired(proxy, self);
+     
+String parent = (String) proxy.getSessionAttribute(UserAdminLogic.parent);
+String altmin = userAdminLocale.get("MINIMIZE_THIS_SECTION");
+String altmax = userAdminLocale.get("MAXIMIZE_THIS_SECTION");
+     
+
+
+     if (!inPortal) {
+
+
+ response.write(userAdminLocale.get("USER_MANAGEMENT"));
+
+
+
+
+     }
+
+
+
+
+
+       response.write(UserAdminLogic.searchOrgUnitAction)+response.write(request.getAttribute("UserAdminLogic").searchOrgUnitAction);
+
+
+
+
+       response.write(UserAdminLogic.preRequest)+response.write(request.getAttribute("UserAdminLogic").preRequest);
+
+response.write(UserAdminLogic.userApproveOrDenyAction)+response.write(request.getAttribute("UserAdminLogic").userApproveOrDenyAction);
+
+
+
+
+
+
+
+
+
+
+
+
+ response.write(userAdminLocale.get("NEWUSER_REQ_DETLS_HEADER"));
+
+
+
+
+
+
+
+ response.write(userAdminLocale.get("NEWUSER_REQ_DETLS_DESP"));
+
+
+
+      if ( error.isError() ) { 
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+    response.write(userAdminMessages.print(error.getMessage()))+response.write(request.getAttribute("userAdminMessages").print(error.getMessage()));
+
+
+
+      } 
+
+
+
+
+   response.write(userAdminAlias)+response.write(request.getAttribute("userAdminAlias"));
+
+
+    /* ?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\unapproveduser_approvedeny.jsp */ /* 100?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\unapproveduser_approvedeny.jsp */ /* 1?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 2?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 3?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 4?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 5?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 6?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 7?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 8?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 9?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ String basicInfo = userAdminLocale.get("BASIC_INFO"); /* 10?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ if ( entryExit.length() > 0 ) entryExit.delete(0, entryExit.length()); /* 11?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ entryExit.append(userAdminMessages.print(new Message("START_GROUP_BOX", basicInfo))); /* 12?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ response.write(webpath)+response.write(request.getAttribute("webpath")); /* 13?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 14?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 15?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString()); /* 16?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 17?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ response.write(basicInfo)+response.write(request.getAttribute("basicInfo")); /* 18?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 19?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 20?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 21?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 22?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ response.write(userAdminLocale.get("BASIC_INFO")); /* 23?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 24?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 25?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 26?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ response.write(webpath)+response.write(request.getAttribute("webpath")); /* 27?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 28?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 29?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 30?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ response.write(altmin); /* 31?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ response.write(altmin);response.write(altmax);response.write(webpath)+response.write(request.getAttribute("webpath")); /* 32?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 33?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 34?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 35?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 36?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 37?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 38?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ response.write(webpath)+response.write(request.getAttribute("webpath")); response.write(user.getUidId())+response.write(request.getAttribute("user").getUidId());response.write(user.getUid())+response.write(request.getAttribute("user").getUid()); /* 39?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 40?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ response.write(userAdminLocale.get("USER_ID")); /* 41?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ response.write(userAccount.getLogonUid())+response.write(request.getAttribute("userAccount").getLogonUid());response.write(userAccount.getLogonuid())+response.write(request.getAttribute("userAccount").getLogonuid());response.write(userAccount.getLogonUid())+response.write(request.getAttribute("userAccount").getLogonUid()); /* 42?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 43?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 44?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 45?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ response.write(userAdminLocale.get("LAST_NAME")); /* 46?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ response.write(user.getLastName())+response.write(request.getAttribute("user").getLastName());response.write(user.getLastNameId())+response.write(request.getAttribute("user").getLastNameId());response.write(user.getLastName())+response.write(request.getAttribute("user").getLastName()); /* 47?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 48?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 49?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 50?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ response.write(userAdminLocale.get("FIRST_NAME")); /* 51?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ response.write(user.getFirstName())+response.write(request.getAttribute("user").getFirstName());response.write(user.getFirstNameId())+response.write(request.getAttribute("user").getFirstNameId());response.write(user.getFirstName())+response.write(request.getAttribute("user").getFirstName()); /* 52?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 53?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 54?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 55?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ response.write(userAdminLocale.get("EMAIL")); /* 56?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ response.write(user.getEmail())+response.write(request.getAttribute("user").getEmail());response.write(user.getEmailId())+response.write(request.getAttribute("user").getEmailId());response.write(user.getEmail())+response.write(request.getAttribute("user").getEmail()); /* 57?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 58?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 59?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 60?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ if ( UserAdminHelper.hasAccess(proxy.getActiveUser(), UserAdminHelper.MANAGE_ALL_COMPANIES) ) { /* 61?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ response.write(userAdminLocale.get("COMPANY")); /* 62?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ response.write(self.getAttribute(UserBean.UM, UserBean.UUCOMPANYID)[0])+response.write(request.getAttribute("self").getAttribute(UserBean.UM, UserBean.UUCOMPANYID)[0]); /* 63?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 64?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 65?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ } /* 66?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 67?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ if (orgReq) { /* 68?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 69?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ response.write(userAdminLocale.get("COUNTRY")); /* 70?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ response.write(user.getCountry())+response.write(request.getAttribute("user").getCountry());response.write(user.getCountryId())+response.write(request.getAttribute("user").getCountryId());response.write(user.getCountry())+response.write(request.getAttribute("user").getCountry()); /* 71?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 72?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ } /* 73?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 74?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 75?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ response.write(userAdminLocale.get("COMMENTS")); /* 76?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ response.write(user.getNoteToAdmin())+response.write(request.getAttribute("user").getNoteToAdmin());response.write(user.getNoteToAdmin())+response.write(request.getAttribute("user").getNoteToAdmin());response.write(user.getNoteToAdmin())+response.write(request.getAttribute("user").getNoteToAdmin()); /* 77?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 78?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 79?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 80?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ response.write(webpath)+response.write(request.getAttribute("webpath")); /* 81?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 82?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 83?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 84?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 85?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ entryExit.delete(0, entryExit.length()); /* 86?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ entryExit.append(userAdminMessages.print(new Message("END_GROUP_BOX", basicInfo))); /* 87?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ response.write(webpath)+response.write(request.getAttribute("webpath")); /* 88?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 89?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 90?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ response.write(basicInfo)+response.write(request.getAttribute("basicInfo")); /* 91?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString()); /* 92?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ /* 93?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\include\userprofile_basicinfo_view_unapproveduser.jsp */ response.write(CxResponseWrite)+response.write(request.getAttribute("CxResponseWrite")); /* 100?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\unapproveduser_approvedeny.jsp */
+
+
+
+
+
+
+
+
+
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+
+
+
+
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+    if ( orgReq ) { 
+
+
+  StringBuffer content= new StringBuffer(100);
+     		     content.append(UserAdminLogic.orgUnitName).append(" ");
+     		     content.append(orgUnitName).append(" ");
+     		     content.append(userAdminLocale.get("NOT_AVAILABLE"));
+       response.write(content.getToString())+response.write(request.getAttribute("content").getToString());response.write(UserAdminLogic.getOrgUnitName())+response.write(request.getAttribute("UserAdminLogic").getOrgUnitName());response.write(userAdminLocale.get("ORGUNIT"));
+
+
+      response.write(user.orgUnitId)+response.write(request.getAttribute("user").orgUnitId);response.write(util.filteringSpecialChar(user.getOrgUnit()))+response.write(request.getAttribute("util").filteringSpecialChar(user.getOrgUnit()));
+     response.write(UserAdminLogic.getOrgUnitName())+response.write(request.getAttribute("UserAdminLogic").getOrgUnitName());
+
+     response.write(UserAdminLogic.getOrgUnitName())+response.write(request.getAttribute("UserAdminLogic").getOrgUnitName());
+     response.write(util.getFilteringSpecialChar(orgUnitName));
+
+
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(userAdminLocale.get("SELECT_ORGUNIT"));
+
+
+    } 
+
+
+
+
+  response.write(userAdminLocale.get("MESSAGES_TO_REQUESTOR"));
+
+
+
+
+
+
+     response.write(user.getMessageToRequestor())+response.write(request.getAttribute("user").getMessageToRequestor());response.write(userAdminLocale.get("MESSAGE"));
+
+
+     response.write(user.getMessageToRequestor())+response.write(request.getAttribute("user").getMessageToRequestor());
+     response.write(user.getMessageToRequestor())+response.write(request.getAttribute("user").getMessageToRequestor());
+
+
+
+
+
+
+     response.write(util.getFilteringSpecialChar(messageToRequestor));      response.write(messageToRequestor);
+
+
+
+
+
+
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+
+
+
+   response.write(UserAdminLogic.performUserApproveAction)+response.write(request.getAttribute("UserAdminLogic").performUserApproveAction);
+  response.write(userAdminLocale.get("APPROVE"));
+
+
+
+   response.write(UserAdminLogic.performUserDenyAction)+response.write(request.getAttribute("UserAdminLogic").performUserDenyAction);
+  response.write(userAdminLocale.get("DENY"));
+
+
+
+   response.write(UserAdminLogic.backToUnapprovedUserListAction)+response.write(request.getAttribute("UserAdminLogic").backToUnapprovedUserListAction);
+  response.write(userAdminLocale.get("CANCEL"));
+}
+
+}

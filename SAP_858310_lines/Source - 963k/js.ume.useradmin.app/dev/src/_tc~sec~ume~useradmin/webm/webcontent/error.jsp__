@@ -1,0 +1,248 @@
+﻿ package PackageNo504344814;import proxy_txt;import contextspecific_includes_top_txt;import contextspecific_includes_bottom_txt;import com.sap.security.api.UMFactory;import java.lang.*; public class error_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+ Throwable throwable = new Throwable();
+
+     
+String altmin = userAdminLocale.get("MINIMIZE_THIS_SECTION");
+String altmax = userAdminLocale.get("MAXIMIZE_THIS_SECTION");
+     
+
+     if (!inPortal) {
+
+
+   response.write(userAdminLocale.get("EXCEPTION_PAGE_HEADER"));
+
+
+
+
+
+     }
+
+
+
+
+
+
+    response.write(userAdminLocale.get("EXCEPTION_PAGE_HEADER"));
+
+
+
+
+
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+  response.write(userAdminLocale.get("EXCEPTION_HAS_OCCURED"));response.write(userAdminLocale.get("INFORM_SYSTEM_ADMIN"));
+
+
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+      if (UMFactory.getProperties().getBoolean("ume.admin.debug_internal", false) ) { 
+
+
+
+   response.write(userAdminLocale.get("EXCEPTION_REASON"));
+
+
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+      response.write(altmin)+response.write(request.getAttribute("altmin"));
+      response.write(altmin)+response.write(request.getAttribute("altmin"));response.write(altmax);response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+  String message = throwable.getLocalizedMessage();
+     				   if ( null == message ) {
+     				       message = userAdminLocale.get("EXCEPTION_NO_DETAILED_MSG");
+     				   } 
+ response.write(message)+response.write(request.getAttribute("message"));
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+   response.write(userAdminLocale.get("CALLING_STACK"));
+
+
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+      response.write(altmin)+response.write(request.getAttribute("altmin"));
+      response.write(altmin)+response.write(request.getAttribute("altmin"));response.write(altmax);response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+   throwable.printStackTrace(new java.io.PrintWriter(out));
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+   response.write(userAdminLocale.get("REQUEST_URL"));
+
+
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+      response.write(altmin)+response.write(request.getAttribute("altmin"));
+      response.write(altmin)+response.write(request.getAttribute("altmin"));response.write(altmax);response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+      response.write(HttpUtils.getRequestURL(proxy.getServletRequest()).toString())+response.write(request.getAttribute("HttpUtils").getRequestURL(proxy.getServletRequest()).toString());
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+   response.write(userAdminLocale.get("REQUEST_PARAMETER"));
+
+
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+      response.write(altmin)+response.write(request.getAttribute("altmin"));
+      response.write(altmin)+response.write(request.getAttribute("altmin"));response.write(altmax);response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+  java.util.Enumeration parameterNames = proxy.getRequestParameterNames();
+    String name = null;
+    while ( parameterNames.hasMoreElements() ) {
+       name = (String) parameterNames.nextElement(); 
+  response.write(name);
+if (name.indexOf("pass") == -1) {
+      String [] values = proxy.getRequestParameterValues(name);
+      for ( int i = 0; i < values.length; i++ ) { 
+   response.write(values [i]);
+       } 
+  } else { 
+
+} 
+  } 
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+      } else { 
+
+
+
+   response.write(userAdminLocale.get("WHAT_TO_DO_WITH_EXCEPTION"));
+
+
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+      response.write(altmin)+response.write(request.getAttribute("altmin"));
+      response.write(altmin)+response.write(request.getAttribute("altmin"));response.write(altmax);response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+   response.write(userAdminLocale.get("EXCEPTION_DETAILED_STEPS"));
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+      } 
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+}
+
+}

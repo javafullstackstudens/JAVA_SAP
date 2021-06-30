@@ -1,0 +1,11 @@
+﻿ package PackageNo1525820532;import logon_proxy_txt;import com.sap.security.core.sapmimp.logon.*; public class index_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+   response.write(SAPMLogonLogic.getAlias(proxy))+response.write(request.getAttribute("SAPMLogonLogic").getAlias(proxy));
+}
+
+}

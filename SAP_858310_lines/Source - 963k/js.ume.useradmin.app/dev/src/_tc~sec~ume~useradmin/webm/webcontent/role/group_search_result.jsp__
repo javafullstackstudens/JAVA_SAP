@@ -1,0 +1,293 @@
+﻿ package PackageNo1685302762;import _proxy_txt;import _contextspecific_includes_top_txt;import _contextspecific_includes_bottom_txt;import com.sap.security.core.role.*;import com.sap.security.core.role.imp.*;import com.sap.security.core.*;import com.sap.security.core.admin.role.*;import com.sap.security.core.admin.group.*;import com.sap.security.api.*;import java.util.Iterator;import java.util.*;import com.sap.security.core.util.*; public class group_search_result_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+
+
+   InfoBean info = new InfoBean();
+    ErrorBean error = new ErrorBean();
+     com.sap.security.core.admin.role.RoleAdminMessagesBean roleAdminMessages = (com.sap.security.core.admin.role.RoleAdminMessagesBean) proxy.getSessionAttribute("roleAdminMessages");
+     com.sap.security.core.admin.role.RoleAdminLocaleBean roleAdminLocale = (com.sap.security.core.admin.role.RoleAdminLocaleBean) proxy.getSessionAttribute("roleAdminLocale");
+
+      
+	int length = 0;
+	int colspan = 7;
+	int totalItems = 0;
+	int currentPage = 0;
+	int totalPages = 0;
+	Integer[] itemPerPageOptions = null;
+	int currentItemPerPage = 0;
+	IPrincipal[] assignedMembers = null;
+     	String principal = (String)HelperClass.getAttr(proxy,"principal");
+	ListBean list = (ListBean) proxy.getRequestAttribute(ListBean.beanId);
+	if (null != list)
+	{
+		java.util.Vector temp = list.getObjsOnCurrentPage();
+     		if ((null != temp) && (!temp.isEmpty()))
+     		{
+     			assignedMembers = HelperClass.getPrincipals(temp);
+     			length = temp.size();
+     			totalItems = list.getTotalItems();
+     			currentPage = list.getCurrentPage();
+     			totalPages = list.getTotalPages();
+     			itemPerPageOptions = list.getItemPerPageOptions();
+     			currentItemPerPage = list.getCurrentItemPerPage();
+		}
+	}
+     
+     	String groupnamesReport = 	(String) HelperClass.getAttr(proxy,"groupnamesReport");
+     	String groupIDs = 			(String) HelperClass.getAttr(proxy,"groupIDs");
+     	String rolenamesReport = 	(String) HelperClass.getAttr(proxy,"rolenamesReport");
+     	String roleIDs = 			(String) HelperClass.getAttr(proxy,"roleIDs");
+     	String groupDescription = 	(String) HelperClass.getAttr(proxy,"groupDescription");
+     	if ("MultiGroup".equals( groupDescription )) 
+     		groupDescription = roleAdminLocale.get("MULTI_USER_GROUP_ASSIGNMENT");
+     	principal = principal.toLowerCase();
+     	boolean useUserAsPrincipal = false;
+     	if ("user".equals( principal ))
+     	{
+		useUserAsPrincipal = true;
+     	}
+     	String searchFilter = (String)HelperClass.getAttr(proxy, "searchFilter");
+     	String memberSF = (String)HelperClass.getAttr(proxy, "memberSF");
+     
+
+     if (!inPortal) {
+
+  response.write(roleAdminLocale.get("ROLE_MANAGEMENT"));
+    response.write(webpath)+response.write(request.getAttribute("webpath"));
+    response.write(webpath)+response.write(request.getAttribute("webpath"));
+    response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+response.write(roleAdminLocale.get("SEARCH_GROUPS_HEAD"));
+
+
+ response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+       response.write(roleAdminLocale.get("SEARCH_GROUPS_DESC"));
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+       if ( info.isInfo() ) { 
+
+
+ response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(roleAdminMessages.print(info.getMessage()))+response.write(request.getAttribute("roleAdminMessages").print(info.getMessage()));
+
+
+       } 
+
+
+       if ( error.isError() ) { 
+
+
+ response.write(webpath)+response.write(request.getAttribute("webpath"));      response.write(roleAdminMessages.print(error.getMessage()))+response.write(request.getAttribute("roleAdminMessages").print(error.getMessage()));
+
+
+       } 
+
+
+
+ response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+ response.write(userAdminLocale.get("NEW_SEARCH"));
+  response.write(searchFilter);
+       response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(userAdminLocale.get("SEARCH"));
+
+
+
+
+ response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+      response.write(roleAdminLocale.get("FOUND_GROUPS"));
+
+
+
+
+
+
+  if ( length > 0 ) {
+     /* ?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_search_result.jsp */ /* 236?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_search_result.jsp */ /* 1?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 2?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 3?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 4?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 5?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 6?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 7?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 8?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 9?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 10?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 11?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 12?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 13?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 14?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 15?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 16?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 17?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 18?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 19?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 20?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 21?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 22?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 23?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 24?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 25?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 26?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ response.write(groupAdminAlias)+response.write(request.getAttribute("groupAdminAlias")); /* 27?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 28?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 29?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 30?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 31?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 32?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 33?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 34?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 35?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 36?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 37?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 38?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 39?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 40?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 41?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 42?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 43?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 44?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 45?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ response.write(groupAdminAlias)+response.write(request.getAttribute("groupAdminAlias")); /* 46?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 47?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 48?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 49?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 50?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 51?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 52?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 53?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 54?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 55?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 56?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 57?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 58?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 59?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 60?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 61?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 62?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 63?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 64?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 65?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 66?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 67?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 68?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ response.write(groupAdminAlias)+response.write(request.getAttribute("groupAdminAlias")); /* 69?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 70?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 71?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 72?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 73?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 74?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ response.write(colspan); /* 75?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 76?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ response.write(webpath)+response.write(request.getAttribute("webpath")); /* 77?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ if ( currentPage < 2 ) { /* 78?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(userAdminLocale.get("PREVIOUS_PAGE"));response.write(userAdminLocale.get("PREVIOUS_PAGE")); /* 79?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ } else { /* 80?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ 					int previous = currentPage -1; /* 81?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ response.write(previous)+response.write(request.getAttribute("previous")); response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(userAdminLocale.get("PREVIOUS_PAGE"));response.write(userAdminLocale.get("PREVIOUS_PAGE")); /* 82?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ } /* 83?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ response.write(userAdminLocale.get("TOTAL"));response.write(totalItems);response.write(userAdminLocale.get("ITEMS"));response.write(userAdminLocale.get("DISPLAY")); /* 84?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 85?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ for (int i=0; i<itemPerPageOptions.length; i++ ) { /* 86?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ int item = itemPerPageOptions[i].intValue(); /* 87?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ boolean selected = false; /* 88?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ if (item==currentItemPerPage) { /* 89?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ selected = true; /* 90?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ } /* 91?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ response.write(item)+response.write(request.getAttribute("item"));response.write(selected?"SELECTED":"");response.write(itemPerPageOptions[i].intValue())+response.write(request.getAttribute("itemPerPageOptions[i]").intValue()); /* 92?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ } /* 93?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ response.write(userAdminLocale.get("PER_PAGE"));response.write(userAdminLocale.get("THIS_IS")); /* 94?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 95?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ for(int i=1;i<=totalPages;i++) { /* 96?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ 				 boolean selected = false; /* 97?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ 				 if ( i == currentPage ) { /* 98?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ 				 selected = true; /* 99?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ 				 } /* 100?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ response.write(i);response.write(selected?"SELECTED":"");response.write(i); /* 101?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ } /* 102?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ response.write(userAdminLocale.get("OF"));response.write(totalPages);response.write(userAdminLocale.get("PAGES")); /* 103?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ if ( currentPage < totalPages ) { /* 104?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ 					 int next = currentPage + 1; /* 105?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ response.write(next)+response.write(request.getAttribute("next")); response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(userAdminLocale.get("NEXT_PAGE"));response.write(userAdminLocale.get("NEXT_PAGE")); /* 106?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ } else { /* 107?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ response.write(webpath)+response.write(request.getAttribute("webpath")); response.write(userAdminLocale.get("NEXT_PAGE"));response.write(userAdminLocale.get("NEXT_PAGE")); /* 108?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ } /* 109?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 110?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 111?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 112?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ response.write(CxResponseWrite)+response.write(request.getAttribute("CxResponseWrite")); /* 236?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_search_result.jsp */
+  } 
+
+
+   if ( length > 0 ) {
+  response.write(webpath)+response.write(request.getAttribute("webpath")); response.write(roleAdminLocale.get("SELECTING"));
+   } 
+     response.write(roleAdminLocale.get("NAME"));
+     response.write(roleAdminLocale.get("DESCRIPTION_TABLE_HEADER"));
+
+     for (int j=0; j < length; j++)
+     		      	{
+     			String displayName = assignedMembers [j].getDisplayName();
+     			  		String uid = assignedMembers [j].getUniqueID();
+     			  		String description = HelperClass.getPrincipalInfo(assignedMembers [j]);
+     			  		if (description == null) description = "";
+     		
+ response.write( (j % 2 == 0) ? "TBDATA_CNT_ODD_BG":" TBDATA_CNT_EVEN_BG");
+      response.write(util.getURLEncoder(uid));
+ response.write(displayName);
+     response.write(description);
+
+  } 
+      if ( length > 0 ) { 
+     /* ?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_search_result.jsp */ /* 260?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_search_result.jsp */ /* 1?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 2?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 3?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 4?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 5?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 6?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 7?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 8?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 9?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 10?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 11?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 12?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 13?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 14?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 15?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 16?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 17?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 18?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 19?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 20?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 21?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 22?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 23?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 24?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 25?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 26?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ response.write(groupAdminAlias)+response.write(request.getAttribute("groupAdminAlias")); /* 27?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 28?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 29?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 30?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 31?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 32?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 33?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 34?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 35?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 36?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 37?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 38?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 39?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 40?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 41?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 42?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 43?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 44?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 45?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ response.write(groupAdminAlias)+response.write(request.getAttribute("groupAdminAlias")); /* 46?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 47?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 48?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 49?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 50?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 51?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 52?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 53?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 54?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 55?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 56?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 57?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 58?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 59?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 60?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 61?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 62?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 63?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 64?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 65?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 66?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 67?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 68?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ response.write(groupAdminAlias)+response.write(request.getAttribute("groupAdminAlias")); /* 69?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 70?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 71?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 72?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 73?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 74?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ response.write(colspan); /* 75?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 76?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ response.write(webpath)+response.write(request.getAttribute("webpath")); /* 77?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ if ( currentPage < 2 ) { /* 78?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(userAdminLocale.get("PREVIOUS_PAGE"));response.write(userAdminLocale.get("PREVIOUS_PAGE")); /* 79?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ } else { /* 80?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ 					int previous = currentPage -1; /* 81?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ response.write(previous)+response.write(request.getAttribute("previous")); response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(userAdminLocale.get("PREVIOUS_PAGE"));response.write(userAdminLocale.get("PREVIOUS_PAGE")); /* 82?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ } /* 83?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ response.write(userAdminLocale.get("TOTAL"));response.write(totalItems);response.write(userAdminLocale.get("ITEMS"));response.write(userAdminLocale.get("DISPLAY")); /* 84?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 85?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ for (int i=0; i<itemPerPageOptions.length; i++ ) { /* 86?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ int item = itemPerPageOptions[i].intValue(); /* 87?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ boolean selected = false; /* 88?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ if (item==currentItemPerPage) { /* 89?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ selected = true; /* 90?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ } /* 91?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ response.write(item)+response.write(request.getAttribute("item"));response.write(selected?"SELECTED":"");response.write(itemPerPageOptions[i].intValue())+response.write(request.getAttribute("itemPerPageOptions[i]").intValue()); /* 92?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ } /* 93?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ response.write(userAdminLocale.get("PER_PAGE"));response.write(userAdminLocale.get("THIS_IS")); /* 94?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 95?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ for(int i=1;i<=totalPages;i++) { /* 96?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ 				 boolean selected = false; /* 97?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ 				 if ( i == currentPage ) { /* 98?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ 				 selected = true; /* 99?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ 				 } /* 100?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ response.write(i);response.write(selected?"SELECTED":"");response.write(i); /* 101?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ } /* 102?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ response.write(userAdminLocale.get("OF"));response.write(totalPages);response.write(userAdminLocale.get("PAGES")); /* 103?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ if ( currentPage < totalPages ) { /* 104?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ 					 int next = currentPage + 1; /* 105?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ response.write(next)+response.write(request.getAttribute("next")); response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(userAdminLocale.get("NEXT_PAGE"));response.write(userAdminLocale.get("NEXT_PAGE")); /* 106?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ } else { /* 107?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ response.write(webpath)+response.write(request.getAttribute("webpath")); response.write(userAdminLocale.get("NEXT_PAGE"));response.write(userAdminLocale.get("NEXT_PAGE")); /* 108?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ } /* 109?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 110?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 111?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ /* 112?inc?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_pagenavigation.jsp */ response.write(CxResponseWrite)+response.write(request.getAttribute("CxResponseWrite")); /* 260?\\storage\qa\Projects_new\Java\4_500k_1m\SAP_858310_lines\Source - 963k\js.ume.useradmin.app\dev\src\_tc~sec~ume~useradmin\webm\webcontent\role\group_search_result.jsp */
+      } 
+
+
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+ if ( length > 0 ) {
+     response.write(roleAdminLocale.get("SELECT"));
+
+ } 
+     response.write(roleAdminLocale.get("CANCEL"));
+
+
+
+
+
+   response.write(groupnamesReport);
+   response.write(groupIDs);
+   response.write(rolenamesReport);
+   response.write(roleIDs);
+
+
+
+   response.write(principal);
+
+   response.write(memberSF);
+}
+
+}

@@ -1,0 +1,21 @@
+﻿    public class CxXmlConfigClass521601432 { public CxXmlConfigClass() {
+if (WEB-APP) {    WEB_APP.XMLNS = "http://java.sun.com/xml/ns/j2ee";     WEB_APP.VERSION = "2.4";     WEB_APP.XMLNS_XSI = "http://www.w3.org/2001/XMLSchema-instance";     WEB_APP.XSI_SCHEMALOCATION = "http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd";     WEB_APP;
+if (SERVLET) {
+if (DESCRIPTION) {    WEB_APP.SERVLET.DESCRIPTION.TEXT = "Text Container Admin MBean Servlet";     WEB_APP.SERVLET.DESCRIPTION;}
+if (DISPLAY-NAME) {    WEB_APP.SERVLET.DISPLAY_NAME.TEXT = "Text Container Admin MBean Servlet";     WEB_APP.SERVLET.DISPLAY_NAME;}
+if (SERVLET-NAME) {    WEB_APP.SERVLET.SERVLET_NAME.TEXT = "TextContainerAdminMBeanServlet";     WEB_APP.SERVLET.SERVLET_NAME;}
+if (SERVLET-CLASS) {    WEB_APP.SERVLET.SERVLET_CLASS.TEXT = "com.sap.engine.services.textcontainer.admin.TextContainerAdminMBeanServlet";     WEB_APP.SERVLET.SERVLET_CLASS;}
+if (RUN-AS) {
+if (ROLE-NAME) {    WEB_APP.SERVLET.RUN_AS.ROLE_NAME.TEXT = "TextContainerAdminMBeanCreator";     WEB_APP.SERVLET.RUN_AS.ROLE_NAME;}}
+}
+
+
+if (SECURITY-ROLE) {
+if (DESCRIPTION) {    WEB_APP.SECURITY_ROLE.DESCRIPTION.TEXT = "Creator of Text Container Admin MBean";     WEB_APP.SECURITY_ROLE.DESCRIPTION;}
+if (ROLE-NAME) {    WEB_APP.SECURITY_ROLE.ROLE_NAME.TEXT = "TextContainerAdminMBeanCreator";     WEB_APP.SECURITY_ROLE.ROLE_NAME;}}
+
+
+if (WELCOME-FILE-LIST) {
+if (WELCOME-FILE) {    WEB_APP.WELCOME_FILE_LIST.WELCOME_FILE.TEXT = "index.jsp";     WEB_APP.WELCOME_FILE_LIST.WELCOME_FILE;}}
+}
+    } }

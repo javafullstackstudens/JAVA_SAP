@@ -1,0 +1,149 @@
+﻿ package PackageNo2060801105;import com.sap.engine.services.textcontainer.deploytest.TextContainerDeployTest;import java.util.*;import com.sap.engine.services.dc.api.model.Sdu;import com.sap.engine.services.dc.api.model.Sca;import com.sap.engine.services.dc.api.model.Sda; public class index_jsp {  /* 1 */ 	public String getDeepMessage(Exception e) /* 8 */ 	{ /* 9 */ 		String msg = "Exception:"; /* 10 */ 		Throwable t = e; /* 11 */ 		while (t != null) /* 12 */ 		{ /* 13 */ 			msg += "<br>" + t.toString(); /* 14 */ 			t = t.getCause(); /* 15 */ 		} /* 16 */ 		return msg; /* 17 */ 	} /* 18 */  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+     	String err = "";
+     	String msg = "";
+     
+     	try
+     	{
+     		TextContainerDeployTest.checkLogin(request, response);
+     	}
+     	catch (Exception e)
+     	{
+     		err = getDeepMessage(e);
+     	}
+     
+      try { 
+
+
+
+
+
+
+
+
+     
+     	Sdu[] sduArr = TextContainerDeployTest.getSduList();
+     
+
+
+
+
+
+
+     
+     	HashMap<String, Sdu> sdus = new HashMap<String, Sdu>();
+     	for (int i = 0; i < sduArr.length; i++)
+     	{
+     		Sdu sdu = sduArr[i];
+     		sdus.put(sdu.getId().toString(), sdu);
+     	}
+     	Vector<String> vector = new Vector<String>(sdus.keySet());
+     	Collections.sort(vector);
+     
+     	Iterator<String> iterScas = vector.iterator();
+     	while (iterScas.hasNext())
+     	{
+     		Sdu sdu = sdus.get(iterScas.next());
+     
+     		if (sdu instanceof Sca)
+     		{
+     
+
+ response.write(sdu.getName());response.write(sdu.getVendor());  response.write(sdu.getName() );response.write(sdu.getVendor() );
+response.write(sdu.getVersion() );
+
+     
+     		}
+     	}
+     
+
+
+
+
+
+
+
+
+
+
+     
+     	Iterator<String> iterSdus = vector.iterator();
+     	while (iterSdus.hasNext())
+     	{
+     		Sdu sdu = sdus.get(iterSdus.next());
+     
+     		if ((sdu instanceof Sda) && (((Sda) sdu).getScaId() == null))
+     		{
+     			Sda sda = (Sda) sdu;
+     
+
+response.write(sda.getName() );response.write(sda.getVendor() );
+response.write(sda.getVersion() );
+response.write(sda.getSoftwareType().toString() );
+response.write(sda.getLocation() );
+
+     
+     		}
+     	}
+     
+
+     
+     	if (err.length() > 0)
+     	{
+     
+
+
+     response.write( err );
+
+     
+     	}
+     
+     
+     	if (msg.length() > 0)
+     	{
+     
+
+
+       response.write( msg );
+
+     
+     	}
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      } catch (Exception e) { 
+       response.write( getDeepMessage(e) )+response.write(request.getAttribute(" getDeepMessage(e) "));
+      } 
+}
+
+}

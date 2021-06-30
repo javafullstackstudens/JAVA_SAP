@@ -1,0 +1,29 @@
+﻿ package PackageNo449673541; public class pst_result_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();   page.errorPage = "pst_error.jsp";   
+
+     
+     String archivepath = request.getParameter("archivepath");
+     String responsecode = request.getParameter("responsecode");
+     
+
+response.write(archivepath)+response.write(request.getAttribute("archivepath"));
+
+
+
+     
+     if (responsecode.startsWith("200"))
+     {
+       responsecode = responsecode.substring(6);
+     }	
+     
+
+response.write(responsecode);
+
+
+
+
+
+
+     response.write(archivepath)+response.write(request.getAttribute("archivepath"));
+}
+
+}

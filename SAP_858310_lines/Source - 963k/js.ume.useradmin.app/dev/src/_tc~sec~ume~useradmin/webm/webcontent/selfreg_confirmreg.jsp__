@@ -1,0 +1,96 @@
+﻿ package PackageNo220058235;import proxy_txt;import contextspecific_includes_bottom_txt; public class selfreg_confirmreg_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+     Boolean isOrNot = (Boolean) proxy.getSessionAttribute(SelfRegLogic.isCompanyUserId);
+       boolean isCompanyUser = isOrNot.booleanValue();
+       String errorMessage = (String)proxy.getRequestAttribute(SelfRegLogic.errorMessage);
+     
+
+      if ( util.isServlet23() ) proxy.setResponseContentType("text/html; charset=utf-8"); 
+
+     if (!inPortal) {
+
+
+   response.write(userAdminLocale.get("SELF_REGISTRATION"));
+
+
+
+
+     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+
+
+
+
+
+      response.write(userAdminLocale.get("CONFIRMATION_HEADER"));
+
+
+
+    response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+  if (!isCompanyUser){ 
+  response.write( userAdminLocale.get("INFO_TO_SELFREGED_USER") );
+  } else { 
+    response.write( userAdminLocale.get("INFO_TO_UNAPPROVED_COMPANYUSER") );
+   } 
+
+
+
+
+
+ response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+      if ( null == errorMessage ) { 
+
+
+  String goon = " "+userAdminLocale.get("CONTINUE")+" "; 
+       response.write(selfRegAlias)+response.write(request.getAttribute("selfRegAlias"));
+
+
+
+       response.write(SelfRegLogic.getRedirectToServiceAction())+response.write(request.getAttribute("SelfRegLogic").getRedirectToServiceAction());
+       response.write(goon)+response.write(request.getAttribute("goon"));
+
+
+
+      } else { 
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+ response.write(userAdminLocale.get(errorMessage));
+
+
+      } 
+
+  response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(userAdminLocale.get("SELFREG_PROCESS"));
+
+
+ response.write(webpath)+response.write(request.getAttribute("webpath"));
+}
+
+}

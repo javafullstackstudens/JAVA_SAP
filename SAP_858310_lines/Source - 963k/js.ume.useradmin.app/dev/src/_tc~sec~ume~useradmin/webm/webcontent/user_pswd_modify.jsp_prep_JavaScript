@@ -1,0 +1,251 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  function checkPassword(action) {
+    var frm = document.forms["passwordmodify"];
+    var oldpswd = frm.elements["Cx_0dummy"];
+    var newpswd = frm.elements["Cx_0dummy"];
+    var pswdconfirm = frm.elements["Cx_0dummy"];
+    if ( oldpswd.value == "" || newpswd.value == "" || pswdconfirm.value == "" ) {
+        var msg = "Cx_0dummy";
+        alert(msg);
+        return false;
+    } else {
+        if ( newpswd.value != pswdconfirm.value ) {
+            alert("Cx_0dummy");
+            return false;
+        } else {
+            actionTag = document.createElement("input");
+            actionTag.setAttribute("name", action);
+            actionTag.setAttribute("type", "hidden");
+            actionTag.setAttribute("value", "");
+            frm.appendChild(actionTag);
+            frm.submit();
+        }
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function onClick____1100311467() {expandME('cb', 0, 'Cx_0dummy', 'Cx_0dummy', 'Cx_0dummy');}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function onClick____2121708543() {checkPassword('Cx_0dummy')}
+
+
+
+
+
+
+
+
+function onClick____29098103() {top.close();}
+
+
+
+
+
+
+
+
+
+
+
+
+ 

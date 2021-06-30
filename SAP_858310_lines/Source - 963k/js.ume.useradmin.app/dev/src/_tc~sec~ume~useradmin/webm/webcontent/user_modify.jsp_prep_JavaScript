@@ -1,0 +1,249 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function script___1174350595() {src("js/basic.js");}
+function script____2071901817() {src("js/roleList.js");}
+
+
+
+
+
+ 
+    function doCompanySelect() {
+      var frm = document.getElementById("modifyuser");
+      inputTag1 = document.createElement("input");
+      inputTag1.setAttribute("name", "Cx_0dummy");
+      inputTag1.setAttribute("type", "hidden");
+      inputTag1.setAttribute("value", "");
+      frm.appendChild(inputTag1);
+      inputTag2 = document.createElement("input");
+      inputTag2.setAttribute("name", "Cx_0dummy");
+      inputTag2.setAttribute("type", "hidden");
+      inputTag2.setAttribute("value", "Cx_0dummy");
+      frm.appendChild( inputTag2 );
+      frm.submit();
+    }
+
+ function doOrgUnitSearch() {
+   var frm = document.getElementById("modifyuser");
+   inputTag = document.createElement("input");
+   inputTag.setAttribute("name", "Cx_0dummy");
+   inputTag.setAttribute("type", "hidden");
+   inputTag.setAttribute("value", "");
+   frm.appendChild( inputTag );
+   inputTag2 = document.createElement("input");
+   inputTag2.setAttribute("name", "Cx_0dummy");
+   inputTag2.setAttribute("type", "hidden");
+   inputTag2.setAttribute("value", "Cx_0dummy");
+   frm.appendChild( inputTag2 );
+   frm.submit();
+ }
+ 
+    function setSlctRoles() {
+        /*
+        var frm = document.forms[0];
+        setSlct(frm.elements['Cx_0dummy']);
+        setSlct(frm.elements['Cx_0dummy']);
+        */
+    }
+
+    function setSlct(slct) {
+        for(var i=0; i<slct.options.length; i++) {
+            if ( slct.options[i].value != "") {
+              slct.options[i].selected = true;
+            } else {
+              slct.options[i].selected = false;
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function onSubmit____1530181465() {setSlctRoles();}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

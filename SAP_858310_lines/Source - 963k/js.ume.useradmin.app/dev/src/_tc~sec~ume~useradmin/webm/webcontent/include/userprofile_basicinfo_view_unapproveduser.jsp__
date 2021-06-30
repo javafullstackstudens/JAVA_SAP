@@ -1,0 +1,95 @@
+﻿ package PackageNo1074893295; public class userprofile_basicinfo_view_unapproveduser_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+      String basicInfo = userAdminLocale.get("BASIC_INFO");
+if ( entryExit.length() > 0 ) entryExit.delete(0, entryExit.length());		   
+entryExit.append(userAdminMessages.print(new Message("START_GROUP_BOX", basicInfo))); 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+   response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+
+   response.write(basicInfo)+response.write(request.getAttribute("basicInfo"));
+
+
+
+
+     response.write(userAdminLocale.get("BASIC_INFO"));
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+       response.write(altmin)+response.write(request.getAttribute("altmin"));
+       response.write(altmin)+response.write(request.getAttribute("altmin"));response.write(altmax)+response.write(request.getAttribute("altmax"));response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));    response.write(user.getUidId())+response.write(request.getAttribute("user").getUidId());response.write(user.getUid())+response.write(request.getAttribute("user").getUid());
+
+     response.write(userAdminLocale.get("USER_ID"));
+response.write(userAccount.getLogonUid())+response.write(request.getAttribute("userAccount").getLogonUid());response.write(userAccount.getLogonuid())+response.write(request.getAttribute("userAccount").getLogonuid());response.write(userAccount.getLogonUid())+response.write(request.getAttribute("userAccount").getLogonUid());
+
+
+
+ response.write(userAdminLocale.get("LAST_NAME"));
+       response.write(user.getLastName())+response.write(request.getAttribute("user").getLastName());response.write(user.getLastNameId())+response.write(request.getAttribute("user").getLastNameId());response.write(user.getLastName())+response.write(request.getAttribute("user").getLastName());
+
+
+
+     response.write(userAdminLocale.get("FIRST_NAME"));
+   response.write(user.getFirstName())+response.write(request.getAttribute("user").getFirstName());response.write(user.getFirstNameId())+response.write(request.getAttribute("user").getFirstNameId());response.write(user.getFirstName())+response.write(request.getAttribute("user").getFirstName());
+
+
+
+     response.write(userAdminLocale.get("EMAIL"));
+   response.write(user.getEmail())+response.write(request.getAttribute("user").getEmail());response.write(user.getEmailId())+response.write(request.getAttribute("user").getEmailId());response.write(user.getEmail())+response.write(request.getAttribute("user").getEmail());
+
+
+
+      if ( UserAdminHelper.hasAccess(proxy.getActiveUser(), UserAdminHelper.MANAGE_ALL_COMPANIES) ) { 
+     response.write(userAdminLocale.get("COMPANY"));
+   response.write(self.getAttribute(UserBean.UM, UserBean.UUCOMPANYID)[0])+response.write(request.getAttribute("self").getAttribute(UserBean.UM, UserBean.UUCOMPANYID)[0]);
+
+
+      } 
+
+      if (orgReq) { 
+
+     response.write(userAdminLocale.get("COUNTRY"));
+response.write(user.getCountry())+response.write(request.getAttribute("user").getCountry());response.write(user.getCountryId())+response.write(request.getAttribute("user").getCountryId());response.write(user.getCountry())+response.write(request.getAttribute("user").getCountry());
+
+      } 
+
+
+     response.write(userAdminLocale.get("COMMENTS"));
+   response.write(user.getNoteToAdmin())+response.write(request.getAttribute("user").getNoteToAdmin());response.write(user.getNoteToAdmin())+response.write(request.getAttribute("user").getNoteToAdmin());response.write(user.getNoteToAdmin())+response.write(request.getAttribute("user").getNoteToAdmin());
+
+
+
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+      entryExit.delete(0, entryExit.length());
+entryExit.append(userAdminMessages.print(new Message("END_GROUP_BOX", basicInfo))); 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+   response.write(basicInfo)+response.write(request.getAttribute("basicInfo"));
+   response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+}
+
+}

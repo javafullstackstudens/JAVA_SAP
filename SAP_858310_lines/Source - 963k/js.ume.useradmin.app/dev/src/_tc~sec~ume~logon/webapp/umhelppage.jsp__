@@ -1,0 +1,102 @@
+﻿ package PackageNo450547448;import logon_proxy_txt;import _umLogonTopArea_txt;import _umLogonBotArea_txt;import com.sap.security.core.sapmimp.logon.*;import com.sap.security.core.sapmimp.rendering.Browsers;import com.sap.security.core.util.*; public class umhelppage_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+      SAPMLogonLogic.setUnicodeEnabled(proxy); 
+
+  LogonLocaleBean logonLocale = new LogonLocaleBean();
+   LogonMessageBean logonMessage = new LogonMessageBean();
+LogonBean logonBean = new LogonBean();
+    ErrorBean error = new ErrorBean();
+
+     if( !inPortal ) { 
+
+
+
+
+
+      } 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   response.write(inPortal?proxy.getAlias("HPFS"):logonBean.getLogonURL(proxy, null) );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+response.write(logonLocale.get("HAVE_TROUBLE"));
+
+
+
+
+ response.write(logonLocale.get("SELECT_HELP"));
+
+
+
+
+
+
+
+response.write(logonLocale.get("HOW_HELP"));
+
+
+
+ response.write(SAPMLogonLogic.getHelpActionPage())+response.write(request.getAttribute("SAPMLogonLogic").getHelpActionPage());
+      if ( logonBean.getPasswordReset() ) { 
+       response.write(SAPMLogonLogic.getHelpResetPasswordPage())+response.write(request.getAttribute("SAPMLogonLogic").getHelpResetPasswordPage());response.write(logonLocale.get("REQUEST_PASSWORD_RESET"));
+      } 
+   response.write(SAPMLogonLogic.getHelpLogonProblemPage())+response.write(request.getAttribute("SAPMLogonLogic").getHelpLogonProblemPage());response.write(logonLocale.get("OTHER_LOGON_PROBLEM"));
+
+
+
+
+
+
+
+
+
+
+       response.write(logonLocale.get("SUBMIT"));
+response.write(SAPMLogonLogic.showUidPasswordLogonPage)+response.write(request.getAttribute("SAPMLogonLogic").showUidPasswordLogonPage);response.write(logonLocale.get("CANCEL"));
+
+
+
+
+
+
+
+      if(!inPortal) proxy.sessionInvalidate(); 
+     if(inPortal) { 
+
+      } else { 
+
+
+      } 
+}
+
+}

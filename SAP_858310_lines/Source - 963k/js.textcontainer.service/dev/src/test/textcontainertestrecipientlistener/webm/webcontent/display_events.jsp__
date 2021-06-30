@@ -1,0 +1,131 @@
+﻿ package PackageNo1316829066;import com.sap.engine.services.textcontainer.test.recipientlistener.TextContainerTestRecipientListener; public class display_events_jsp {  /* 1 */ 	public String getDeepMessage(Exception e) /* 4 */ 	{ /* 5 */ 		String msg = "Exception:"; /* 6 */ 		Throwable t = e; /* 7 */ 		while (t != null) /* 8 */ 		{ /* 9 */ 			msg += "<br>" + t.toString(); /* 10 */ 			t = t.getCause(); /* 11 */ 		} /* 12 */ 		return msg; /* 13 */ 	} /* 14 */  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+     	String err = "";
+     	String msg = "";
+     
+     	String recipient = request.getParameter("recipient");
+     	String page_str = request.getParameter("page");
+     	int page_int = 0;
+     	if ((page_str != null) && (page_str.length() > 0))
+     		page_int = Integer.parseInt(page_str);
+     
+      try { 
+
+
+
+
+
+
+
+
+
+     
+     	if (err.length() > 0)
+     	{
+     
+
+
+     response.write( err );
+
+     
+     	}
+     
+     
+     	if (msg.length() > 0)
+     	{
+     
+
+
+       response.write( msg );
+
+     
+     	}
+     
+
+     
+     	if ("PCD".equals(recipient))
+     	{
+     
+
+     
+     	}
+     	if ("WD".equals(recipient))
+     	{
+     
+
+     
+     	}
+     
+
+     
+     	if (page_int > 0)
+     	{
+     
+
+
+     
+     	}
+     
+     	if ((("PCD".equals(recipient)) && (page_int * 100 + 100 < TextContainerTestRecipientListener.getNumberOfPCDEvents())) ||
+     		(("WD".equals(recipient)) && (page_int * 100 + 100 < TextContainerTestRecipientListener.getNumberOfWebDynproEvents())))
+     	{
+     
+
+
+     
+     	}
+     
+     	if ("PCD".equals(recipient))
+     	{
+     
+
+      response.write( TextContainerTestRecipientListener.getPCDEvents(page_int) );
+
+     
+     	}
+     	if ("WD".equals(recipient))
+     	{
+     
+
+      response.write( TextContainerTestRecipientListener.getWebDynproEvents(page_int) );
+
+     
+     	}
+     
+      response.write(recipient);
+      response.write(Integer.getToString(page_int));
+
+
+
+
+ response.write( Integer.toString(page_int-1) );
+
+
+
+
+ response.write( Integer.toString(page_int+1) );
+
+
+
+
+
+      } catch (Exception e) { 
+       response.write( getDeepMessage(e) )+response.write(request.getAttribute(" getDeepMessage(e) "));
+      } 
+}
+
+}

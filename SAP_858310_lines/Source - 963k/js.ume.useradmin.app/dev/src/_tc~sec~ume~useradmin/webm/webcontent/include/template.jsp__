@@ -1,0 +1,12 @@
+﻿ package PackageNo899491364;import contextspecific_includes_top_txt;import contextspecific_includes_bottom_txt; public class template_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+     com.sap.security.core.admin.UserAdminLocaleBean userAdminLocale = (com.sap.security.core.admin.UserAdminLocaleBean) proxy.getSessionAttribute("userAdminLocale");
+
+     if (!inPortal) {
+
+
+
+
+     }
+}
+
+}

@@ -1,0 +1,74 @@
+﻿ package PackageNo1469309712;import java.io.*;import java.lang.reflect.*; public class error_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+     		String error = (String) request.getAttribute("error");
+     		
+
+
+response.write( error )+response.write(request.getAttribute(" error "));
+
+
+
+
+
+
+ 
+     
+     	  String message = null;
+     	  int status_code = -1;
+     	  String exception_info = null;
+     	  String url = null;
+     	
+     	  Object myReport = null;
+     	  Exception theException = null;
+     	  Integer status = null;
+     	  message = (String) request.getAttribute("message");
+     	  status_code = Integer.parseInt((String)request.getAttribute("status_code"));
+     	  theException = (Exception) request.getAttribute("exception");
+     	  if (message == null)
+     	  {
+     	     message = error;
+     	  }
+     	  if (theException == null)
+     	  {
+     	     exception_info = "not available";
+     	  } else
+     	  {
+     	     exception_info = theException.toString();
+     	  }
+   try
+   {
+     			  url = request.getRequestURL().toString(); 
+   } catch (Exception e)
+   {
+      url = "information not available";
+   }
+     
+   //output is all done here. 
+     
+   out.println("<br><br><b>Processing request:</b>" +  url);      
+   out.println("<br><b>StatusCode:</b> " +  status_code);
+   out.println("<br><b>Message:</b>" + message);
+   out.println("<br><b>Exception:</b>" + exception_info);
+     
+     
+}
+
+}

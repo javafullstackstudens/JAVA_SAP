@@ -1,0 +1,65 @@
+﻿ package PackageNo711304909;import java.util.Collection;import java.util.Iterator;import java.util.HashMap;import java.math.BigDecimal;import org.spec.jappserver.servlet.helper.*;import org.spec.jappserver.orders.helper.*; public class atomicity_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+
+ Boolean test1 = (Boolean) request.getAttribute("test1"); 
+ Boolean test2 = (Boolean) request.getAttribute("test2"); 
+ Boolean test3 = (Boolean) request.getAttribute("test3"); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      		if(test1.booleanValue()==true){
+     				out.println("<LI>Atomicity Test One: <b><FONT color=\"#ff0000\">" +  "PASSED" + "</b></FONT></LI><BR></BR>");
+     			}else{
+     				out.println("<LI>Atomicity Test One: <b><FONT color=\"#ff0000\">" +  "FAILED" + "</b></FONT></LI><BR></BR>");
+     			}
+     	
+
+
+      
+     			if(test2.booleanValue()==true){
+     				out.println("<LI>Atomicity Test Two: <b><FONT color=\"#ff0000\">" +  "PASSED" + "</b></FONT></LI><BR></BR>");
+     			}else{
+     				out.println("<LI>Atomicity Test Two: <b><FONT color=\"#ff0000\">" +  "FAILED" + "</b></FONT></LI><BR></BR>");
+     			}
+     	
+
+
+
+
+
+
+
+
+
+      
+     			if(test3.booleanValue()==true){
+     				out.println("<LI>Atomicity Test Three: <b><FONT color=\"#ff0000\">" +  "PASSED" + "</b></FONT></LI><BR></BR>");
+     			}else{
+     				out.println("<LI>Atomicity Test Three: <b><FONT color=\"#ff0000\">" +  "FAILED" + "</b></FONT></LI><BR></BR>");
+     			}
+     	
+}
+
+}

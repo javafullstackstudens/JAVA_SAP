@@ -1,0 +1,74 @@
+﻿ package PackageNo213385457; public class userprofile_additionalinfo_search_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+      String addInfo = userAdminLocale.get("ADDITIONAL_INFO");
+if ( entryExit.length() > 0 ) entryExit.delete(0, entryExit.length());		   
+entryExit.append(userAdminMessages.print(new Message("START_GROUP_BOX", addInfo))); 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+   response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+
+   response.write(addInfo);
+
+
+
+
+ response.write(addInfo);
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+       response.write(altmin)+response.write(request.getAttribute("altmin"));
+       response.write(altmin)+response.write(request.getAttribute("altmin"));response.write(altmax)+response.write(request.getAttribute("altmax"));response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+ response.write(user.getPositionId())+response.write(request.getAttribute("user").getPositionId());response.write(userAdminLocale.get("POSITION"));
+
+     response.write(user.getPositionId())+response.write(request.getAttribute("user").getPositionId());
+     response.write(user.getPositionId())+response.write(request.getAttribute("user").getPositionId());
+
+     response.write(user.getPosition())+response.write(request.getAttribute("user").getPosition());
+
+
+
+
+
+     response.write(user.getDepartmentId())+response.write(request.getAttribute("user").getDepartmentId());response.write(userAdminLocale.get("DEPARTMENT"));
+
+     response.write(user.getDepartmentId())+response.write(request.getAttribute("user").getDepartmentId());
+     response.write(user.getDepartmentId())+response.write(request.getAttribute("user").getDepartmentId());
+     response.write(user.getDepartment())+response.write(request.getAttribute("user").getDepartment());
+
+
+
+
+
+
+
+
+      entryExit.delete(0, entryExit.length());
+entryExit.append(userAdminMessages.print(new Message("END_GROUP_BOX", addInfo))); 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+   response.write(addInfo);
+   response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+}
+
+}

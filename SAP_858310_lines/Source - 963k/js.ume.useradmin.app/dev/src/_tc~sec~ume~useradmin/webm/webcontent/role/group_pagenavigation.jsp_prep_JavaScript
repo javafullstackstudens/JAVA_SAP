@@ -1,0 +1,114 @@
+﻿
+
+function paging(pageObj,command) 
+{
+    var pageInteger, pageString;
+    var object = document.forms[0];
+    pageInteger = pageObj.selectedIndex;
+    pageString = pageObj.options[pageInteger].text;
+    var itemObj = document.getElementById("itemPerPage");
+    var itemInteger = itemObj.selectedIndex;
+    var itemString = itemObj.options[itemInteger].text; 
+      
+    object.cmd.value = command;
+
+    
+    inputTag2 = document.createElement("input");
+    inputTag2.setAttribute("name", "requestPage");
+    inputTag2.setAttribute("type", "hidden");
+    inputTag2.setAttribute("value", pageString);
+    object.appendChild( inputTag2 );
+   
+    inputTag3 = document.createElement("input");
+    inputTag3.setAttribute("name", "currentItemPerPage");
+    inputTag3.setAttribute("type", "hidden");
+    inputTag3.setAttribute("value", itemString);
+    object.appendChild( inputTag3 );     
+    object.action = "Cx_0dummy";
+    object.submit();
+}
+
+function changeNumber(itemObj,command) 
+{
+    var itemInteger, itemString;
+    var object = document.forms[0];
+ 
+    var itemInteger = itemObj.selectedIndex;
+    var itemString = itemObj.options[itemInteger].text;    
+   
+    object.cmd.value = command;
+
+    inputTag2 = document.createElement("input");
+    inputTag2.setAttribute("name", "currentItemPerPage");
+    inputTag2.setAttribute("type", "hidden");
+    inputTag2.setAttribute("value", itemString);
+    object.appendChild( inputTag2 );     
+    object.action = "Cx_0dummy";
+    object.submit();
+}
+ 
+function jump(value,command) 
+{
+    var object = document.forms[0];
+    var itemObj = document.getElementById("itemPerPage");
+    var itemInteger = itemObj.selectedIndex;
+    var itemString = itemObj.options[itemInteger].text; 
+     
+    object.cmd.value = command;
+
+    inputTag2 = document.createElement("input");
+    inputTag2.setAttribute("name", "requestPage");
+    inputTag2.setAttribute("type", "hidden");
+    inputTag2.setAttribute("value", value);
+    object.appendChild( inputTag2 );
+    inputTag3 = document.createElement("input");
+    inputTag3.setAttribute("name", "currentItemPerPage");
+    inputTag3.setAttribute("type", "hidden");
+    inputTag3.setAttribute("value", itemString);
+    object.appendChild( inputTag3 );    
+    object.action = "Cx_0dummy";
+    object.submit();
+} 
+
+
+
+
+
+
+
+
+
+
+function onClick___1951909201() {jump('Cx_0dummy','group-assignment-page-navigation')}
+
+
+                                   function onChange___258135406() {changeNumber(this,'group-assignment-page-navigation')}
+
+
+
+
+
+
+
+
+
+                              function onChange___1642981941() {paging(this,'group-assignment-page-navigation')}
+
+
+
+
+
+
+
+
+
+
+     function onClick___1735013243() {jump('Cx_0dummy','group-assignment-page-navigation')}
+
+
+
+
+
+
+
+ 

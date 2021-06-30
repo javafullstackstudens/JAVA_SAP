@@ -1,0 +1,6 @@
+﻿    public class CxXmlConfigClass1893113374 { public CxXmlConfigClass() {
+if (WEB-APP) {    WEB_APP.XMLNS = "http://java.sun.com/xml/ns/j2ee";     WEB_APP.VERSION = "2.4";     WEB_APP.XMLNS_XSI = "http://www.w3.org/2001/XMLSchema-instance";     WEB_APP.XSI_SCHEMALOCATION = "http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd";     WEB_APP;
+if (WELCOME-FILE-LIST) {
+if (WELCOME-FILE) {    WEB_APP.WELCOME_FILE_LIST.WELCOME_FILE.TEXT = "index.jsp";     WEB_APP.WELCOME_FILE_LIST.WELCOME_FILE;}}
+}
+    } }

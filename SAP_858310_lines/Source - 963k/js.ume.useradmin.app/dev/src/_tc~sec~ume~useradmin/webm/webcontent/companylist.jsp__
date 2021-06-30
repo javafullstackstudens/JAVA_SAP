@@ -1,0 +1,316 @@
+﻿ package PackageNo125059963;import proxy_txt;import contextspecific_includes_top_txt;import contextspecific_includes_bottom_txt;import com.sapmarkets.tpd.master.TradingPartnerInterface;import com.sap.security.core.*;import com.sap.security.api.IUser;import com.sap.security.core.admin.role.RoleAdminServlet;import com.sap.security.core.role.*;import java.util.*;import com.sap.security.core.util.*; public class companylist_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+
+     com.sap.security.core.admin.CompanyListBean companyList = (com.sap.security.core.admin.CompanyListBean) proxy.getSessionAttribute("companyList");
+
+ InfoBean info = new InfoBean();
+
+
+     
+TradingPartnerInterface [] companies = companyList.getPagedCompanies();
+int csize = companies.length;
+Boolean roleFlag=(Boolean)proxy.getRequestAttribute("roleFlag");
+//IUser performer= proxy.getActiveUser();
+Locale locale = proxy.getLocale();
+if ( null == locale ) locale = Locale.getDefault();
+int currentPage = companyList.getCurrentPage();
+int linesNo = companyList.getCurrentLines();
+IGroupDefinition group = null;
+     
+     
+
+     if (!inPortal) {
+
+
+ response.write(userAdminLocale.get("COMPANY_LIST"));
+
+
+
+
+
+     }
+   response.write(companyListAlias)+response.write(request.getAttribute("companyListAlias"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   response.write(userAdminLocale.get("COMPANY_LIST"));
+
+
+
+
+
+
+ response.write(CompanyListLogic.searchAgainAction)+response.write(request.getAttribute("CompanyListLogic").searchAgainAction);response.write(userAdminLocale.get("COMP_SELECT_AGAIN"));
+
+
+
+
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+      if ( info.isInfo() ) { 
+
+
+    response.write(userAdminMessages.print(info.getMessage()))+response.write(request.getAttribute("userAdminMessages").print(info.getMessage()));
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+      } 
+
+
+
+
+
+
+
+
+
+
+
+     
+      if (currentPage>1)
+     {
+     
+response.write(util.alias(proxy, CompanyListLogic.servlet_name, CompanyListLogic.component_name))+response.write(request.getAttribute("util").alias(proxy, CompanyListLogic.servlet_name, CompanyListLogic.component_name));response.write(CompanyListLogic.listCompaniesAction)+response.write(request.getAttribute("CompanyListLogic").listCompaniesAction);response.write(CompanyListLogic.pageNo)+response.write(request.getAttribute("CompanyListLogic").pageNo);response.write(currentPage-1);response.write(CompanyListLogic.linesNo);response.write(linesNo);
+     }
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+       response.write(userAdminLocale.get("PREVIOUS_PAGE"));
+ response.write(userAdminLocale.get("PREVIOUS_PAGE"));
+
+
+      response.write(userAdminLocale.get("DISPLAY"));
+ response.write(CompanyListLogic.linesNo);
+  for (int i = 10; i<companyList.getNumberOfCompanies(); i=i+10)
+     			{
+      response.write((linesNo==i)?"selected":"");response.write(i);
+}
+      response.write((linesNo==companyList.getNumberOfCompanies())?"selected":"");response.write(companyList.getNumberOfCompanies())+response.write(request.getAttribute("companyList").getNumberOfCompanies());
+
+
+response.write(userAdminLocale.get("PER_PAGE"));    response.write(userAdminLocale.get("THIS_IS"));
+  response.write(CompanyListLogic.pageNo)+response.write(request.getAttribute("CompanyListLogic").pageNo);
+for (int i = 1; i<=companyList.getNumberOfPages(); i++)
+     			 {
+ response.write((currentPage==i)?"selected":"");response.write(i);
+}
+
+       response.write(userAdminLocale.get("OF"));
+      response.write(companyList.getNumberOfPages())+response.write(request.getAttribute("companyList").getNumberOfPages());response.write(userAdminLocale.get("PAGES"));
+
+
+
+
+     			if (currentPage<companyList.getNumberOfPages())
+     			{
+     			
+    response.write(util.alias(proxy, CompanyListLogic.servlet_name, CompanyListLogic.component_name))+response.write(request.getAttribute("util").alias(proxy, CompanyListLogic.servlet_name, CompanyListLogic.component_name));response.write(CompanyListLogic.listCompaniesAction)+response.write(request.getAttribute("CompanyListLogic").listCompaniesAction);response.write(CompanyListLogic.pageNo)+response.write(request.getAttribute("CompanyListLogic").pageNo);response.write(currentPage+1);response.write(CompanyListLogic.linesNo);response.write(linesNo);
+}
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+response.write(userAdminLocale.get("NEXT_PAGE"));
+  response.write(userAdminLocale.get("NEXT_PAGE"));
+
+
+
+
+
+
+
+
+response.write(userAdminLocale.get("COMPANY_NAME"));
+ response.write(userAdminLocale.get("GROUP"));
+ response.write(userAdminLocale.get("ACTIONS"));
+
+
+
+
+
+
+
+     
+boolean derived=false;
+for ( int i = 0; i < companies.length; i++ )
+{
+ String partnerid = "";
+ if (companies[i]!=null)  partnerid = companies[i].getPartnerID().toString();
+ derived = false;
+     
+
+      response.write( (i % 2 == 0) ? "TBDATA_CNT_ODD_BG":" TBDATA_CNT_EVEN_BG");
+       
+       if (companies[i]!=null)
+       {
+       
+       response.write(com.sap.security.core.util.taglib.EncodeHtmlTag.encode(companies [i].getDisplayName()));
+response.write(companyList.getCidsId())+response.write(request.getAttribute("companyList").getCidsId());response.write(com.getSap().getSecurity().getCore().getUtil().getTaglib().getEncodeHtmlTag().getEncode(partnerid));
+
+       }
+       else
+       {
+   response.write(userAdminLocale.get("INDIVIDUAL_USERS"));
+response.write(companyList.getCidsId())+response.write(request.getAttribute("companyList").getCidsId());
+
+       }
+
+
+
+       
+     	    group = companyList.getDefinitionOfOwnGroup(companies[i]);
+     	    if (group==null)
+     	    {
+     	 derived = true;
+     	    		group = companyList.getDefinitionOfDerivedGroup(companies[i]);
+     	    }
+ 
+   response.write(CompanyListLogic.getAssignGroupAction())+response.write(request.getAttribute("CompanyListLogic").getAssignGroupAction());response.write(CompanySelectBean.getCompanyIdId())+response.write(request.getAttribute("CompanySelectBean").getCompanyIdId());response.write(partnerid);
+   if (group!=null) out.print(group.getDescription(locale)); else out.print(group); response.write(derived?"("+userAdminLocale.get("DERIVE_FROM_EBP")+")":"");
+
+
+
+
+    if ( roleFlag.equals(Boolean.FALSE) )
+    { 
+    response.write(userAdminAlias)+response.write(request.getAttribute("userAdminAlias"));response.write(UserAdminLogic.getCreateNewUserAction())+response.write(request.getAttribute("UserAdminLogic").getCreateNewUserAction());response.write(CompanySearchResultBean.getRESULT_COMPANY_ID())+response.write(request.getAttribute("CompanySearchResultBean").getRESULT_COMPANY_ID());response.write(com.getSap().getSecurity().getCore().getUtil().getTaglib().getEncodeHtmlTag().getEncode(partnerid));response.write(userAdminLocale.get("ADD_USER"));
+    response.write(userAdminAlias)+response.write(request.getAttribute("userAdminAlias"));response.write(UserAdminLogic.getSearchUsersAction())+response.write(request.getAttribute("UserAdminLogic").getSearchUsersAction());response.write(CompanySearchResultBean.getRESULT_COMPANY_ID())+response.write(request.getAttribute("CompanySearchResultBean").getRESULT_COMPANY_ID());response.write(com.getSap().getSecurity().getCore().getUtil().getTaglib().getEncodeHtmlTag().getEncode(partnerid));response.write(userAdminLocale.get("SEARCH_USERS"));
+    } 
+
+ response.write(RoleAdminServlet.getAlias())+response.write(request.getAttribute("RoleAdminServlet").getAlias());response.write(RoleAdminServlet.getROLE_MANAGEMENT_MAIN())+response.write(request.getAttribute("RoleAdminServlet").getROLE_MANAGEMENT_MAIN());response.write(com.getSap().getSecurity().getCore().getUtil().getTaglib().getEncodeHtmlTag().getEncode(partnerid));response.write(userAdminLocale.get("ROLE_ASSIGNMENT"));
+
+
+
+     
+} // for ( .. )
+     
+
+
+
+
+
+
+
+     
+      if (currentPage>1)
+     {
+     
+response.write(util.alias(proxy, CompanyListLogic.servlet_name, CompanyListLogic.component_name))+response.write(request.getAttribute("util").alias(proxy, CompanyListLogic.servlet_name, CompanyListLogic.component_name));response.write(CompanyListLogic.listCompaniesAction)+response.write(request.getAttribute("CompanyListLogic").listCompaniesAction);response.write(CompanyListLogic.pageNo)+response.write(request.getAttribute("CompanyListLogic").pageNo);response.write(currentPage-1);response.write(CompanyListLogic.linesNo);response.write(linesNo);
+     }
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+       response.write(userAdminLocale.get("PREVIOUS_PAGE"));
+ response.write(userAdminLocale.get("PREVIOUS_PAGE"));
+
+
+ response.write(userAdminLocale.get("DISPLAY"));
+response.write(CompanyListLogic.getLinesNo())+response.write(request.getAttribute("CompanyListLogic").getLinesNo());
+  for (int i = 10; i<companyList.getNumberOfCompanies(); i=i+10)
+     			{
+      response.write((linesNo==i)?"selected":"");response.write(i);
+}
+      response.write((linesNo==companyList.getNumberOfCompanies())?"selected":"");response.write(companyList.getNumberOfCompanies())+response.write(request.getAttribute("companyList").getNumberOfCompanies());
+
+
+response.write(userAdminLocale.get("PER_PAGE"));    response.write(userAdminLocale.get("THIS_IS"));
+      response.write(CompanyListLogic.getPageNo())+response.write(request.getAttribute("CompanyListLogic").getPageNo());
+for (int i = 1; i<=companyList.getNumberOfPages(); i++)
+     			 {
+ response.write((currentPage==i)?"selected":"");response.write(i);
+}
+
+       response.write(userAdminLocale.get("OF"));
+      response.write(companyList.getNumberOfPages())+response.write(request.getAttribute("companyList").getNumberOfPages());response.write(userAdminLocale.get("PAGES"));
+
+
+
+
+     			if (currentPage<companyList.getNumberOfPages())
+     			{
+     			
+    response.write(util.alias(proxy, CompanyListLogic.servlet_name, CompanyListLogic.component_name))+response.write(request.getAttribute("util").alias(proxy, CompanyListLogic.servlet_name, CompanyListLogic.component_name));response.write(CompanyListLogic.listCompaniesAction)+response.write(request.getAttribute("CompanyListLogic").listCompaniesAction);response.write(CompanyListLogic.pageNo)+response.write(request.getAttribute("CompanyListLogic").pageNo);response.write(currentPage+1);response.write(CompanyListLogic.linesNo);response.write(linesNo);
+}
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+response.write(userAdminLocale.get("NEXT_PAGE"));
+  response.write(userAdminLocale.get("NEXT_PAGE"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+    response.write(CompanyListLogic.searchAgainAction)+response.write(request.getAttribute("CompanyListLogic").searchAgainAction);response.write(userAdminLocale.get("COMP_SELECT_AGAIN"));
+}
+
+}

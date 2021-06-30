@@ -1,0 +1,110 @@
+﻿ package PackageNo887167498;import proxy_txt;import contextspecific_includes_bottom_txt;import java.lang.*; public class selfreg_exception_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+      if ( util.isServlet23() ) proxy.setResponseContentType("text/html; charset=utf-8"); 
+
+ Throwable throwable = new Throwable();
+
+     
+String altmin = userAdminLocale.get("MINIMIZE_THIS_SECTION");
+String altmax = userAdminLocale.get("MAXIMIZE_THIS_SECTION");
+     
+
+     if (!inPortal) {
+
+
+   response.write(userAdminLocale.get("EXCEPTION_PAGE_HEADER"));
+
+
+
+
+     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+ response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+   response.write(userAdminLocale.get("EXCEPTION_PAGE_HEADER"));
+
+
+
+
+
+
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+     response.write(userAdminLocale.get("EXCEPTION_HAS_OCCURED"));response.write(userAdminLocale.get("INFORM_SYSTEM_ADMIN"));
+
+
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+response.write(userAdminLocale.get("WHAT_TO_DO_WITH_EXCEPTION"));
+
+
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+      response.write(altmin)+response.write(request.getAttribute("altmin"));
+      response.write(altmin)+response.write(request.getAttribute("altmin"));response.write(altmax);response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+}
+
+}

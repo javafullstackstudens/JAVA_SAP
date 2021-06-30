@@ -1,0 +1,239 @@
+﻿ package PackageNo1069789718;import com.sap.archtech.daservice.admin.*;import com.sap.archtech.daservice.ejb.*;import java.sql.*;import java.text.*;import java.util.*;import javax.naming.*;import javax.sql.*; public class aas_list_all_app_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();   page.errorPage = "aas_error.jsp";   
+
+     
+       String isUserValid = (String) session.getAttribute("isUserValid");
+       if (!(isUserValid != null && isUserValid.equals("x")))
+       {
+     
+
+  request.getRequestDispatcher("../index.jsp").forward(request,response);
+
+     
+       }
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+   Connection connection = null;
+   PreparedStatement pst0 = null;
+   PreparedStatement pst1 = null;
+   PreparedStatement pst2 = null;
+   ResultSet result0 = null;
+   ResultSet result1 = null;
+   ResultSet result2 = null;
+   
+   // Get Timestamp Formatter
+   SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+   //sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
+   
+   // Get URI From Request
+   String path = request.getParameter("uri").trim();
+   String backpath = path.substring(0, path.length() - 1);
+   backpath = backpath.substring(0, backpath.lastIndexOf('/') + 1);
+     
+   try
+   {
+     
+     // Get DB connection
+     AdminConnectionProvider acp = new AdminConnectionProvider();
+     connection = acp.getConnection();
+  
+     	    // Get all archive stores
+     		HashMap hm = new HashMap();
+     		ArrayList al = new ArrayList();
+     		Context ctx = new InitialContext();
+     		ArchStoreConfigLocalHome beanLocalHome =
+     		    (ArchStoreConfigLocalHome) ctx.lookup("java:comp/env/ArchStoreConfigBean");
+     		Collection col = beanLocalHome.findAll();
+     		Iterator iter = col.iterator();
+     		while(iter.hasNext())
+     		{
+     		  ArchStoreConfigLocal ascl = (ArchStoreConfigLocal) iter.next();
+     		  String archStore = ascl.getArchivestore();
+     		  al.add(archStore);
+     		  hm.put((Long)ascl.getPrimaryKey(), archStore);
+     		} 
+  
+     // Get collection id
+     long parentColId = 0;
+     String cType = "";
+     pst0 = connection.prepareStatement("SELECT COLID, COLTYPE FROM BC_XMLA_COL WHERE URI = ?");
+     	    pst0.setString(1, path.substring(0, path.length()-1));
+     result0 = pst0.executeQuery();
+     while(result0.next())
+     {
+     	parentColId = result0.getLong("COLID");	
+ 	    cType = result0.getString("COLTYPE");	
+     }    	    
+     result0.close();
+     pst0.close();
+     
+     // Check if collection is a home collection
+     if (cType.equalsIgnoreCase("S"))
+     {
+     
+
+request.getRequestDispatcher("aas_list_all.jsp").forward(request,response);
+
+     	
+     }
+     
+     // Get all child collections
+     pst1 = connection.prepareStatement("SELECT * FROM BC_XMLA_COL WHERE PARENTCOLID = ? ORDER BY URI");
+     	    pst1.setLong(1, parentColId);
+     result1 = pst1.executeQuery();
+     while(result1.next())
+     {
+       long colId = result1.getLong("COLID");
+       String uri = result1.getString("URI") + "/";
+       Timestamp creationtime = result1.getTimestamp("CREATIONTIME");
+       String creationuser = result1.getString("CREATIONUSER");
+       long storeid = result1.getLong("STOREID");
+       String selectedArchiveStore = (String) hm.get(new Long(storeid));
+       if (selectedArchiveStore == null)
+     selectedArchiveStore = "None";
+       String coltype = result1.getString("COLTYPE");
+       if (coltype.equalsIgnoreCase("H"))
+ coltype = "Home";
+       else
+ coltype = "Application";  
+       
+       // Check if collection has child collections
+       pst2 = connection.prepareStatement("SELECT COLID FROM BC_XMLA_COL WHERE PARENTCOLID = ?");
+       	      pst2.setLong(1, colId);
+       	      pst2.setMaxRows(1);
+       	      result2 = pst2.executeQuery();
+       int hits = 0;
+       while(result2.next())
+ hits++;
+       result2.close();
+       pst2.close();
+   
+
+
+
+response.write(uri);
+
+
+response.write(coltype);
+
+
+response.write(sdf.format(new java.util.Date(creationtime.getTime() + (creationtime.getNanos() / 1000000))));
+
+
+response.write(creationuser);
+
+
+response.write(selectedArchiveStore);
+
+
+
+
+
+      
+      if (hits != 0)
+      {
+      
+
+
+
+       response.write(uri);
+
+
+
+
+       
+      }
+      
+
+
+
+       response.write(backpath);
+
+
+
+
+
+
+
+
+
+   
+     } // End while() loop
+     
+     // Close result set and prepared statement
+     result1.close();
+     pst1.close();
+     
+     // Commit database
+     connection.commit();
+     
+   } // End try
+   catch (SQLException sqlex)
+   {
+   
+     // Rollback database
+     connection.rollback();
+     
+     // Forward SQL exception
+     throw sqlex;
+   }
+   finally
+   {
+     try
+     {
+
+       // Close DB Objects
+       if (result0 != null)
+ result0.close();
+       if (result1 != null)
+   result1.close();
+       if (result2 != null)
+   result2.close();
+       if (pst0 != null)
+   pst0.close();
+       if (pst1 != null)
+   pst1.close();
+       if (pst2 != null)
+   pst2.close();
+       if (connection != null)
+ connection.close();
+     }
+     catch (SQLException sqlex)
+     {
+       throw new SQLException("Error while closing database objects: " + sqlex);
+     }
+   }
+   
+}
+
+}

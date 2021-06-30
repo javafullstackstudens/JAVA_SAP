@@ -1,0 +1,170 @@
+﻿ package PackageNo1227970707;import proxy_txt;import contextspecific_includes_top_txt;import contextspecific_includes_bottom_txt;import java.util.Hashtable;import com.sap.security.core.util.*; public class orgunit_search_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+ InfoBean info = new InfoBean();
+
+
+ ErrorBean error = new ErrorBean();
+
+
+      String orgUnitName = new String();
+if ( null != proxy.getRequestAttribute(UserAdminLogic.orgUnitName) ) {
+  orgUnitName = (String) proxy.getRequestAttribute(UserAdminLogic.orgUnitName);
+}
+     
+
+
+     if (!inPortal) {
+
+
+ response.write(userAdminLocale.get("USER_MANAGEMENT"));
+
+
+
+
+     }
+
+
+
+
+
+
+
+  response.write(UserAdminLogic.performOrgUnitSearchAction)+response.write(request.getAttribute("UserAdminLogic").performOrgUnitSearchAction);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    response.write(userAdminLocale.get("SEARCH_ORGUNIT"));
+
+
+
+
+
+
+ response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+     response.write(userAdminLocale.get("SEARCH_ORGUNIT_DESP"));
+
+
+
+
+
+ response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+  if ( error.isError() ) { 
+
+
+
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+response.write(userAdminMessages.print(error.getMessage()))+response.write(request.getAttribute("userAdminMessages").print(error.getMessage()));
+
+
+
+  } 
+
+  if ( info.isInfo() ) { 
+
+
+
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+response.write(userAdminMessages.print(info.getMessage()))+response.write(request.getAttribute("userAdminMessages").print(info.getMessage()));
+
+
+
+  } 
+
+       response.write(userAdminAlias)+response.write(request.getAttribute("userAdminAlias"));
+
+
+
+
+     response.write(UserAdminLogic.getOrgUnitName())+response.write(request.getAttribute("UserAdminLogic").getOrgUnitName());response.write(userAdminLocale.get("ORGUNIT_NAME"));
+
+
+
+
+
+       response.write(UserAdminLogic.getOrgUnitName())+response.write(request.getAttribute("UserAdminLogic").getOrgUnitName());
+       response.write(UserAdminLogic.getOrgUnitName())+response.write(request.getAttribute("UserAdminLogic").getOrgUnitName());
+       response.write(util.getFilteringSpecialChar(orgUnitName))+response.write(request.getAttribute("util").getFilteringSpecialChar(orgUnitName));
+
+
+
+ response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+  String nameLinks = userAdminLocale.get("ORGUNIT_NAME");
+     				   if ( entryExit.length() > 0 ) entryExit.delete(0, entryExit.length());		   
+     				   entryExit.append(userAdminMessages.print(new Message("START_GROUP_LINKS", nameLinks))); 
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+       response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+
+       response.write(nameLinks)+response.write(request.getAttribute("nameLinks"));
+  String[] alphabet = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
+     "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T",
+     "U", "V", "W", "X", "Y", "Z" }; 
+   for (int i=0; i<alphabet.length; i++) { 
+     if (alphabet[i].equals("I") || alphabet[i].equals("S")) {  } 
+  response.write(alphabet[i]);      response.write(alphabet[i]);    if ((i+1) != alphabet.length) {   } 
+   } 
+  entryExit.delete(0, entryExit.length());
+     				   entryExit.append(userAdminMessages.print(new Message("END_GROUP_LINKS", nameLinks))); 
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+       response.write(nameLinks)+response.write(request.getAttribute("nameLinks"));
+       response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+
+
+
+
+
+
+
+
+
+ response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+     String search = " "+userAdminLocale.get("SEARCH")+" "; 
+
+
+
+   response.write(UserAdminLogic.getPerformOrgUnitSearchAction())+response.write(request.getAttribute("UserAdminLogic").getPerformOrgUnitSearchAction());
+   response.write(search)+response.write(request.getAttribute("search"));
+
+       response.write(UserAdminLogic.getPerformOrgUnitSearchAction())+response.write(request.getAttribute("UserAdminLogic").getPerformOrgUnitSearchAction());
+}
+
+}

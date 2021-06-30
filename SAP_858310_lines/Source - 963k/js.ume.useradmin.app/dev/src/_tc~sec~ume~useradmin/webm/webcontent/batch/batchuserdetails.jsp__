@@ -1,0 +1,125 @@
+﻿ package PackageNo1610869487;import _proxy_txt;import _contextspecific_includes_top_txt;import _contextspecific_includes_bottom_txt;import com.sap.security.core.admin.batch.BatchLogic;import com.sap.security.core.admin.batch.*;import com.sap.security.core.util.batch.*;import com.sap.security.core.*;import java.util.*;import java.lang.*; public class batchuserdetails_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+
+ Throwable throwable = new Throwable();
+
+
+
+
+     if (!inPortal) {
+
+ response.write(userAdminLocale.get("USER_DETAILS"));
+
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+     }
+
+
+
+     
+     Vector protocol = (Vector) (proxy.getSessionAttribute("protocol"));
+     
+     HashMap user = (HashMap) protocol.elementAt(Integer.parseInt(proxy.getRequestParameter(BatchLogic.userNumber)));
+     String value="";
+     
+
+
+
+
+
+    response.write(userAdminLocale.get("USER_DETAILS"));
+
+
+
+
+    response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+  response.write(util.alias(proxy, BatchLogic.servlet_name))+response.write(request.getAttribute("util").alias(proxy, BatchLogic.servlet_name));response.write(BatchLogic.ProtocolPageAction)+response.write(request.getAttribute("BatchLogic").ProtocolPageAction);response.write(userAdminLocale.get("BACK_TO_PROTOCOL"));
+
+     response.write(Batch.Status)+response.write(request.getAttribute("Batch").Status);response.write((user.get(Batch.Status)==null)?"-":user.get(Batch.Status));
+
+  
+    String warnings = (String) (user.get(Batch.Warnings));
+    if (warnings!=null)
+    {
+     		       StringTokenizer st = new StringTokenizer(warnings, "&", false);
+     		       warnings="";
+     		       while (st.hasMoreElements())
+     		       {
+     		 warnings = warnings+"<br>"+com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String) st.nextElement());
+     		       }
+    }
+  
+       response.write(Batch.Warnings)+response.write(request.getAttribute("Batch").Warnings);response.write((warnings==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode(warnings));
+
+     response.write(Batch.CompanyName)+response.write(request.getAttribute("Batch").CompanyName);response.write((user.get(Batch.CompanyName)==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)user.get(Batch.CompanyName)));
+     response.write(Batch.OrgUnit)+response.write(request.getAttribute("Batch").OrgUnit);response.write((user.get(Batch.OrgUnit)==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)user.get(Batch.OrgUnit)));
+     response.write(Batch.InternalUID)+response.write(request.getAttribute("Batch").InternalUID);response.write((user.get(Batch.InternalUID)==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)user.get(Batch.InternalUID)));
+     response.write(Batch.DisplayName)+response.write(request.getAttribute("Batch").DisplayName);response.write((user.get(Batch.DisplayName)==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)user.get(Batch.DisplayName)));
+
+
+   response.write(Batch.Role)+response.write(request.getAttribute("Batch").Role);
+
+      
+      String rolestring = "";
+      Vector roles = (Vector)( user.get(Batch.Role));
+      if (roles!=null)
+      {
+      for (int j=0; j<roles.size(); j++)
+      {
+       rolestring = rolestring + " " + ((String)(roles.elementAt(j)));
+      }
+      }
+      out.print(com.sap.security.core.util.taglib.EncodeHtmlTag.encode(rolestring));
+      
+
+
+
+
+
+     response.write(Batch.Email)+response.write(request.getAttribute("Batch").Email);response.write((user.get(Batch.Email)==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)user.get(Batch.Email)));
+     response.write(Batch.FirstName)+response.write(request.getAttribute("Batch").FirstName);response.write((user.get(Batch.FirstName)==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)user.get(Batch.FirstName)));
+     response.write(Batch.LastName)+response.write(request.getAttribute("Batch").LastName);response.write((user.get(Batch.LastName)==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)user.get(Batch.LastName)));
+     response.write(Batch.JobTitle)+response.write(request.getAttribute("Batch").JobTitle);response.write((user.get(Batch.JobTitle)==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)user.get(Batch.JobTitle)));
+     response.write(Batch.Country)+response.write(request.getAttribute("Batch").Country);response.write((user.get(Batch.Country)==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)user.get(Batch.Country)));
+     response.write(Batch.Language)+response.write(request.getAttribute("Batch").Language);response.write((user.get(Batch.Language)==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)user.get(Batch.Language)));
+     response.write(Batch.TimeZone)+response.write(request.getAttribute("Batch").TimeZone);response.write((user.get(Batch.TimeZone)==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)user.get(Batch.TimeZone)));
+     response.write(Batch.Currency)+response.write(request.getAttribute("Batch").Currency);response.write((user.get(Batch.Currency)==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)user.get(Batch.Currency)));
+     response.write(Batch.Street)+response.write(request.getAttribute("Batch").Street);response.write((user.get(Batch.Street)==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)user.get(Batch.Street)));
+     response.write(Batch.City)+response.write(request.getAttribute("Batch").City);response.write((user.get(Batch.City)==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)user.get(Batch.City)));
+     response.write(Batch.State)+response.write(request.getAttribute("Batch").State);response.write((user.get(Batch.State)==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)user.get(Batch.State)));
+     response.write(Batch.Province)+response.write(request.getAttribute("Batch").Province);response.write((user.get(Batch.Province)==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)user.get(Batch.Province)));
+     response.write(Batch.Zip)+response.write(request.getAttribute("Batch").Zip);response.write((user.get(Batch.Zip)==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)user.get(Batch.Zip)));
+     response.write(Batch.Telephone)+response.write(request.getAttribute("Batch").Telephone);response.write((user.get(Batch.Telephone)==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)user.get(Batch.Telephone)));
+     response.write(Batch.Fax)+response.write(request.getAttribute("Batch").Fax);response.write((user.get(Batch.Fax)==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)user.get(Batch.Fax)));
+     response.write(Batch.Password)+response.write(request.getAttribute("Batch").Password);response.write((user.get(Batch.Password)==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)user.get(Batch.Password)));
+
+     response.write(Batch.Telephone_ext)+response.write(request.getAttribute("Batch").Telephone_ext);response.write((user.get(Batch.Telephone_ext)==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)user.get(Batch.Telephone_ext)));
+     response.write(Batch.Fax_ext)+response.write(request.getAttribute("Batch").Fax_ext);response.write((user.get(Batch.Fax_ext)==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)user.get(Batch.Fax_ext)));
+     response.write(Batch.Building)+response.write(request.getAttribute("Batch").Building);response.write((user.get(Batch.Building)==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)user.get(Batch.Building)));
+     response.write(Batch.Room)+response.write(request.getAttribute("Batch").Room);response.write((user.get(Batch.Room)==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)user.get(Batch.Room)));
+     response.write(Batch.InhousePost)+response.write(request.getAttribute("Batch").InhousePost);response.write((user.get(Batch.InhousePost)==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)user.get(Batch.InhousePost)));
+     response.write(Batch.AcademicGrade)+response.write(request.getAttribute("Batch").AcademicGrade);response.write((user.get(Batch.AcademicGrade)==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)user.get(Batch.AcademicGrade)));
+     response.write(Batch.IsManager)+response.write(request.getAttribute("Batch").IsManager);response.write((user.get(Batch.IsManager)==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)user.get(Batch.IsManager)));
+     response.write(Batch.Floor)+response.write(request.getAttribute("Batch").Floor);response.write((user.get(Batch.Floor)==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)user.get(Batch.Floor)));
+     response.write(Batch.Salutation)+response.write(request.getAttribute("Batch").Salutation);response.write((user.get(Batch.Salutation)==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)user.get(Batch.Salutation)));
+
+
+
+
+
+  response.write(util.alias(proxy, BatchLogic.servlet_name));response.write(BatchLogic.ProtocolPageAction);response.write(userAdminLocale.get("BACK_TO_PROTOCOL"));
+}
+
+}

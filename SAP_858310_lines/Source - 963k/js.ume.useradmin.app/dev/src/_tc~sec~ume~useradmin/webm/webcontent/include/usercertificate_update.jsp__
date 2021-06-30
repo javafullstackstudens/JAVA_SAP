@@ -1,0 +1,131 @@
+﻿ package PackageNo1535362516;import java.security.cert.X509Certificate; public class usercertificate_update_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+      X509Certificate[] certs = null;
+boolean hasCert = ((Boolean)proxy.getSessionAttribute(UserAdminLogic.hasCert)).booleanValue();
+if ( hasCert ) {
+  certs = (X509Certificate[]) proxy.getSessionAttribute(UserAdminLogic.certs);
+}
+int idx = 0;
+     
+
+
+
+       response.write(parent)+response.write(request.getAttribute("parent"));
+
+
+
+
+
+
+       response.write(UserAdminLogic.performUserCertRemoveAction)+response.write(request.getAttribute("UserAdminLogic").performUserCertRemoveAction);
+
+
+
+
+       response.write(UserAdminLogic.certIdx)+response.write(request.getAttribute("UserAdminLogic").certIdx);
+
+
+
+
+
+
+
+ response.write(parent)+response.write(request.getAttribute("parent"));
+      StringBuffer certSB = new StringBuffer(userAdminAlias);
+certSB.append("?");
+certSB.append(UserAdminLogic.importUserCertAction);
+certSB.append("="); 
+     response.write(util.filteringSpecialChar(certSB.toString()));
+
+
+
+
+      String certificateTitle = userAdminLocale.get("CERTIFICATES");
+if ( entryExit.length() > 0 ) entryExit.delete(0, entryExit.length());
+entryExit.append(userAdminMessages.print(new Message("START_GROUP_BOX", certificateTitle))); 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+   response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+
+   response.write(certificateTitle);
+
+
+
+
+       response.write(certificateTitle);
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+     response.write(altmin)+response.write(request.getAttribute("altmin"));
+     response.write(altmin)+response.write(request.getAttribute("altmin"));response.write(altmax)+response.write(request.getAttribute("altmax"));response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+    response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+    response.write(userAdminLocale.get("ADD_CERT"));
+
+
+
+
+
+
+
+
+     response.write(userAdminLocale.get("SUBJECT"));
+     response.write(userAdminLocale.get("ISSUED_BY"));
+      response.write(userAdminLocale.get("SERIAL_NUM"));
+      response.write(userAdminLocale.get("ACTION"));
+
+  if ( hasCert) {
+    X509Certificate cert = null;
+    for ( int i=0; i<certs.length; i++) {
+cert = certs[i]; 
+ response.write( (i % 2 == 0) ? "TBDATA_CNT_ODD_BG":" TBDATA_CNT_EVEN_BG");
+ response.write(cert.getSubjectDN())+response.write(request.getAttribute("cert").getSubjectDN());
+    response.write(cert.getIssuerDN())+response.write(request.getAttribute("cert").getIssuerDN());
+    response.write(cert.getSerialNumber())+response.write(request.getAttribute("cert").getSerialNumber());
+ idx = i; 
+      StringBuffer urlSB = new StringBuffer(userAdminAlias);
+urlSB.append("?");
+urlSB.append(UserAdminLogic.performUserCertViewAction);
+urlSB.append("=&");
+urlSB.append(UserAdminLogic.certIdx);
+urlSB.append("=");
+urlSB.append(idx);
+String url = urlSB.toString(); 
+ response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(userAdminLocale.get("VIEW_DETAILS"));     response.write(util.filteringSpecialChar(url));
+       response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(userAdminLocale.get("REMOVE"));  response.write(idx);
+
+  } 
+  } 
+
+
+
+
+  response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+      entryExit.delete(0, entryExit.length());
+entryExit.append(userAdminMessages.print(new Message("END_GROUP_BOX", certificateTitle))); 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+   response.write(certificateTitle);
+   response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+}
+
+}

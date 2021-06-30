@@ -1,0 +1,102 @@
+﻿ package PackageNo489334677; public class useraccount_create_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+ response.write(parent)+response.write(request.getAttribute("parent"));
+      StringBuffer certSB = new StringBuffer(userAdminAlias);
+certSB.append("?");
+certSB.append("callCalendar");
+certSB.append("=").append("&").append("formID").append("=");
+String cert = certSB.toString(); 
+     response.write(cert);
+
+
+
+
+      String acH = userAdminLocale.get("ACCOUNT_HISTORY");   
+if ( entryExit.length() > 0 ) entryExit.delete(0, entryExit.length());
+entryExit.append(userAdminMessages.print(new Message("START_GROUP_BOX", acH))); 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+   response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+
+   response.write(acH);
+
+
+
+       response.write(acH);
+
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+     response.write(altmin)+response.write(request.getAttribute("altmin"));
+     response.write(altmin)+response.write(request.getAttribute("altmin"));response.write(altmax)+response.write(request.getAttribute("altmax"));response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+ response.write(userAccount.getValidfrom())+response.write(request.getAttribute("userAccount").getValidfrom());response.write(userAdminLocale.get("VALID_FROM"));
+
+     response.write(userAccount.getValidfrom())+response.write(request.getAttribute("userAccount").getValidfrom());
+     response.write(userAccount.getValidfrom())+response.write(request.getAttribute("userAccount").getValidfrom());
+     response.write(userAccount.getValidFrom())+response.write(request.getAttribute("userAccount").getValidFrom());
+
+
+
+
+       response.write(userAdminLocale.get("CALENDAR"));
+response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+response.write(userAdminLocale.get("CALENDAR"));
+      response.write(userAdminLocale.get("CALENDAR"));
+
+     response.write(userAccount.validfrom)+response.write(request.getAttribute("userAccount").validfrom);
+
+
+
+
+ response.write(userAccount.getValidto())+response.write(request.getAttribute("userAccount").getValidto());response.write(userAdminLocale.get("VALID_TO"));
+
+     response.write(userAccount.getValidto())+response.write(request.getAttribute("userAccount").getValidto());
+     response.write(userAccount.getValidto())+response.write(request.getAttribute("userAccount").getValidto());
+     response.write(userAccount.getValidTo())+response.write(request.getAttribute("userAccount").getValidTo());
+
+
+
+
+       response.write(userAdminLocale.get("CALENDAR"));
+response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+response.write(userAdminLocale.get("CALENDAR"));
+      response.write(userAdminLocale.get("CALENDAR"));
+
+     response.write(userAccount.validto)+response.write(request.getAttribute("userAccount").validto);
+
+
+
+
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+      entryExit.delete(0, entryExit.length());
+entryExit.append(userAdminMessages.print(new Message("END_GROUP_BOX", acH))); 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+   response.write(acH);
+   response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+}
+
+}

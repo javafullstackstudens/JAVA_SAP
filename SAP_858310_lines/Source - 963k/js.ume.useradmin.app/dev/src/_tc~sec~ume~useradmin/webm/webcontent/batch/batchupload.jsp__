@@ -1,0 +1,123 @@
+﻿ package PackageNo888813523;import _proxy_txt;import _contextspecific_includes_top_txt;import _contextspecific_includes_bottom_txt;import com.sap.security.core.admin.batch.*;import com.sap.security.core.*;import com.sap.security.core.util.batch.*;import com.sap.security.core.util.*; public class batchupload_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+ InfoBean info = new InfoBean();
+
+
+
+     if (!inPortal) {
+
+ response.write(userAdminLocale.get("BATCH_UPLOAD_MANAGEMENT"));
+
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+     }
+
+       response.write(batchAlias)+response.write(request.getAttribute("batchAlias")); if (inPortal) {}
+
+
+
+
+     
+     Exception ex = (Exception) (proxy.getRequestAttribute("exception"));
+     
+     if (ex != null)
+       {
+     
+
+      response.write(com.sap.security.core.util.taglib.EncodeHtmlTag.encode(ex.getMessage()))+response.write(request.getAttribute("com").sap.security.core.util.taglib.EncodeHtmlTag.encode(ex.getMessage()));
+
+     
+     
+     }
+     else
+     {
+
+
+
+
+    response.write(userAdminLocale.get("BATCH_UPLOAD_MANAGEMENT"));
+
+
+
+
+
+    response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+  response.write(userAdminLocale.get("PASTE_OR_FILE"));
+
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+
+
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+     if (inPortal) {
+
+     response.write(userAdminLocale.get("UPLOAD_USER_DATA_FILE"));
+
+
+response.write(userAdminLocale.get("FILE_LOCATION"));
+
+
+     }
+
+
+
+
+
+
+   response.write(userAdminLocale.get("OR_PASTE_DATA"));
+
+
+ response.write(userAdminLocale.get("PASTE_DATA"));
+   response.write(BatchLogic.getTextInputField())+response.write(request.getAttribute("BatchLogic").getTextInputField());
+
+
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+   response.write(userAdminLocale.get("OVERWRITE_CHECKBOX_TEXT"));
+
+
+
+
+
+
+
+      response.write(userAdminLocale.get("UPLOAD_NOW"));
+
+
+
+
+
+      } 
+}
+
+}

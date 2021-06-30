@@ -1,0 +1,296 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function script___281776209() {src("Cx_0dummyjs/basic.js");}
+
+function clearEntries() {
+    document.logonForm.longUid.value="";
+    document.logonForm.password.value="";
+}
+
+function setFocusToFirstField() {
+        myform = document.logonForm;
+        for(i=0; i<myform.length; i++) {
+                elem = myform.elements[i];
+                if(elem.readOnly==false && elem.type=="text") {
+                        elem.focus();
+                        break;
+                }
+        }
+}
+
+function addTenantPrefix()
+{
+ Cx_0dummy
+
+
+
+
+ var userlogonid = document.logonForm.Cx_0dummy.value;
+ if (userlogonid.toLowerCase().indexOf("Cx_0dummy\".toLowerCase()) != 0)
+ {
+  document.logonForm.Cx_0dummy.value = "Cx_0dummy\" + userlogonid;
+ }
+ Cx_0dummy
+
+
+ return true;
+}
+
+</       
+Cx_0dummy
+</head>
+Cx_0dummy
+
+Cx_0dummy
+
+<FORM name="logonForm" method="post" action="Cx_0dummy" Cx_0dummy
+Cx_0dummy
+<input name="login_submit" type="hidden" value="on">
+    Cx_0dummy
+    <input type="hidden" name="login_do_redirect" value="1" />
+    Cx_0dummy
+Cx_0dummy
+<input name="no_cert_storing" type="hidden" value="on">
+<table border="0" width="301" height="100" align="left" cellspacing="0" valign="top">
+         display self-registration link if supposed to do so    
+    Cx_0dummy
+        <tr>
+            <td align="left" bgcolor="E9E9E9" colspan=2>
+              <table border="0" cellpadding="0" cellspacing="0" >
+                <tr>
+                  <td>
+                    <span class="urLblStdBar">Cx_0dummy</span>
+                    <a class=urLnk href="Cx_0dummy">
+                      <span class=urTxtStd>Cx_0dummy</span>
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+        </tr>
+    Cx_0dummy
+         display error message if there is one    
+    Cx_0dummy
+        <tr>
+          <td colspan="2" height="33">
+            <div class="urMsgBarErr" style="margin-bottom:3;">
+              <table border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+                <tr>
+                  <td class="urTxtStd"><span class="urMsgBarImgError"><img height="12" width="12" src="Cx_0dummycss/common/1x1.gif"></span></td>
+                  <td><span class="urTxtStd" tabindex="0">Cx_0dummy</span></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </td>
+        </tr>
+    Cx_0dummy
+        <tr>
+          <td colspan="2" height="33">
+            <div class="urMsgBarErr" style="margin-bottom:3;">
+              <table border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+                <tr>
+                  <td class="urTxtStd"><span class="urMsgBarImgError"><img height="12" width="12" src="Cx_0dummycss/common/1x1.gif"></span></td>
+                  <td><span class="urTxtStd" tabindex="0">Cx_0dummy</span></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </td>
+        </tr>
+    Cx_0dummy
+             no error message, display placeholder    
+        <tr>
+          <td colspan="2" height="24"></td>
+        </tr>
+    Cx_0dummy
+         userid    
+    <tr>
+      <td width="161" height="20">
+        <label class=urLblStd for="logonuidfield">
+          Cx_0dummy
+          <span class=urLblReq>&nbsp;*</span>
+        </label>
+      </td>
+      <td width="183" height="20">
+        <input style="WIDTH: 21ex" class="urEdfTxtEnbl" id="logonuidfield" name="Cx_0dummy" type="text" value="Cx_0dummy">
+      </td>
+    </tr>
+         password    
+    <tr>
+      <td width="161" height="20">
+        <label class=urLblStd for="logonpassfield">
+          Cx_0dummy
+          <span class=urLblReq>&nbsp;*</span>
+        </label>
+      </td>
+      <td width="183" height="20">
+        <input style="WIDTH: 21ex" class="urEdfTxtEnbl" id="logonpassfield" name="Cx_0dummy" type="password">
+      </td>
+    </tr>
+         authentication scheme    
+    Cx_0dummy
+
+
+
+
+            <input name="Cx_0dummy" type="hidden" value="Cx_0dummy">
+        Cx_0dummy
+
+
+
+
+
+        <tr>
+          <td width="161" height="26">
+            <label class="urLblStd" for="logonauthschemefield">
+              <nobr>Cx_0dummy</nobr>
+            </label>
+          </td>
+          <td width="183" height="26">
+            <select name="Cx_0dummy" id="logonauthschemefield" class="urDdlWhl" style="WIDTH: 20ex" size=1>
+            Cx_0dummy
+
+
+
+
+
+                        <option value="Cx_0dummy">Cx_0dummy</option>
+            Cx_0dummy
+
+
+
+            </select>
+          </td>
+        </tr>
+    Cx_0dummy
+
+
+
+    Cx_0dummy
+
+
+
+        <tr>
+          <td width="161" height="26">
+            <label class="urLblStd" for="preferredlanguage">
+              <nobr>Cx_0dummy</nobr>
+            </label>
+          </td>
+          <td width="183" height="26">
+          <select id="ume.logon.locale"
+                  name="ume.logon.locale"
+                   class="urDdlWhl" style="WIDTH: 20ex" size=1>
+            <option value="" selected>Cx_0dummy</option>Cx_0dummy
+        </td>
+      </tr>
+ Cx_0dummy
+
+
+         space above buttons    
+    <tr>
+      <td colspan="2" height="20">&nbsp; </td>
+    </tr>
+         logon button    
+    <tr>
+      <td colspan="2">
+        <input style="height:3ex;" class="urBtnStd" type="submit" name="Cx_0dummy" value="Cx_0dummy">
+      </td>
+    </tr>
+         link to certificate logon    
+    Cx_0dummy
+        <tr>
+            <td align="left" bgcolor="E9E9E9" colspan=2>
+              <table border="0" cellpadding="0" cellspacing="0" >
+                <tr>
+                  <td>
+                    <a class=urLnk href="Cx_0dummy">
+                      <span class=urTxtStd>Cx_0dummy</span>
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+        </tr>
+    Cx_0dummy
+         logon help    
+    Cx_0dummy
+        <tr>
+            <td align="left" bgcolor="E9E9E9" colspan=2>
+              <table border="0" cellpadding="0" cellspacing="0" >
+                <tr>
+                  <td>
+                    <span class="urLblStdBar"> Cx_0dummy</span>
+                      <a class=urLnk href="Cx_0dummy">
+                        <span class=urTxtStd>Cx_0dummy</span>
+                      </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+        </tr>
+    Cx_0dummy
+</table>
+</form>
+
+Cx_0dummy
+
+Cx_0dummy
+Cx_0dummy
+Cx_0dummy
+
+
+
+ 

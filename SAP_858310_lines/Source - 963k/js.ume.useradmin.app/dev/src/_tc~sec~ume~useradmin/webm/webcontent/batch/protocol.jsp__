@@ -1,0 +1,313 @@
+﻿ package PackageNo1089415554;import _proxy_txt;import _contextspecific_includes_top_txt;import _contextspecific_includes_bottom_txt;import com.sap.security.core.admin.batch.BatchLogic;import com.sap.security.core.admin.batch.*;import com.sap.security.core.util.batch.*;import com.sap.security.core.*;import java.util.*; public class protocol_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+
+     if (!inPortal) {
+
+ response.write(userAdminLocale.get("UPLOAD_COMPLETE"));
+
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+     }
+
+
+     
+     Exception ex = (Exception) (proxy.getRequestAttribute("exception"));
+     
+     if (ex != null)
+       {
+     
+
+     response.write(com.sap.security.core.util.taglib.EncodeHtmlTag.encode(ex.getMessage()))+response.write(request.getAttribute("com").sap.security.core.util.taglib.EncodeHtmlTag.encode(ex.getMessage()));
+
+  response.write(util.alias(proxy, BatchLogic.servlet_name))+response.write(request.getAttribute("util").alias(proxy, BatchLogic.servlet_name));response.write(BatchLogic.uploadAction)+response.write(request.getAttribute("BatchLogic").uploadAction);response.write(userAdminLocale.get("BACK"));
+
+     
+     
+     }
+     else
+     {
+
+     
+     Vector protocol = (Vector) (proxy.getSessionAttribute("protocol"));
+     
+   
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     int size = 0; if (protocol!=null) size = protocol.size();
+     
+     int createdCounter = 0;
+     int updatedCounter = 0;
+     int failedCounter = 0;
+     int updatefailedCounter = 0;
+     int existsCounter = 0;
+     int nopermissionCounter = 0;
+     
+     
+     for (int i=0; i<size; i++)
+     {
+      HashMap entry = (HashMap)(protocol.elementAt(i));
+      String st = ((String) entry.get(Batch.Status)).trim();
+      if (st.equalsIgnoreCase(Batch.CREATED)) createdCounter++;
+      else if (st.equalsIgnoreCase(Batch.UPDATED)) updatedCounter++;
+      else if (st.equalsIgnoreCase(Batch.FAILED)) failedCounter++;
+      else if (st.equalsIgnoreCase(Batch.UPDATE_FAILED)) updatefailedCounter++;
+      else if (st.equalsIgnoreCase(Batch.EXISTS)) existsCounter++;
+      else if (st.equalsIgnoreCase(Batch.NO_PERMISSION)) nopermissionCounter++;
+     }
+     
+
+
+
+
+
+
+    response.write(userAdminLocale.get("UPLOAD_TOOK"));response.write(((Long)proxy.getSessionAttribute("lastRunTime")).longValue());response.write(userAdminLocale.get("SECONDS"));response.write(userAdminLocale.get("NUMBER_OF_USERS_PROCESSED"));response.write(size);
+
+
+
+
+
+
+
+    response.write(userAdminLocale.get("CREATED"));response.write(createdCounter);
+    response.write(userAdminLocale.get("UPDATED"));response.write(updatedCounter);
+   response.write(userAdminLocale.get("EXISTS"));response.write(existsCounter);
+  response.write(userAdminLocale.get("FAILED"));response.write(failedCounter);
+  response.write(userAdminLocale.get("UPDATE_FAILED"));response.write(updatefailedCounter);
+  response.write(userAdminLocale.get("NO_PERMISSION"));response.write(nopermissionCounter);
+
+
+
+
+     
+     String text;
+     int usersOnPage = Integer.parseInt((String) proxy.getSessionAttribute(BatchLogic.usersOnPageId));
+     int currentPage = Integer.parseInt(((String)(proxy.getSessionAttribute(BatchLogic.currentPageId))));
+     int numberOfErrors = 0;
+     String filter = (String) proxy.getRequestAttribute("filter");
+     if (filter==null) filter = "ALL";
+     
+     if (protocol!=null)
+     {
+     
+
+   response.write(batchAlias)+response.write(request.getAttribute("batchAlias"));
+
+
+
+
+
+
+     
+     if (currentPage>1)
+     {
+     
+
+response.write(util.alias(proxy, BatchLogic.servlet_name))+response.write(request.getAttribute("util").alias(proxy, BatchLogic.servlet_name));response.write(BatchLogic.ProtocolPageAction)+response.write(request.getAttribute("BatchLogic").ProtocolPageAction);response.write(BatchLogic.currentPageId)+response.write(request.getAttribute("BatchLogic").currentPageId);response.write(currentPage-1);response.write(filter);
+     }
+
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+  response.write(userAdminLocale.get("DISPLAY"));
+   response.write(BatchLogic.getProtocolPageAction())+response.write(request.getAttribute("BatchLogic").getProtocolPageAction());
+   response.write(BatchLogic.getUsersOnPageId())+response.write(request.getAttribute("BatchLogic").getUsersOnPageId());
+     for (int k=10; k<size; k=k+10)
+     {
+  response.write((usersOnPage==k)?"selected":"");response.write(k);
+     }
+  response.write((usersOnPage==size)?"selected":"");response.write(size);
+
+  response.write(userAdminLocale.get("PER_PAGE"));
+
+  response.write(userAdminLocale.get("THIS_IS"));
+   response.write(BatchLogic.getCurrentPageId())+response.write(request.getAttribute("BatchLogic").getCurrentPageId());
+     for (int j=1; j<=Math.round(Math.ceil((float)(size)/(float)(usersOnPage))); j++)
+       {
+     
+  response.write((j==currentPage)?"selected":"");response.write(j);
+     }
+
+  response.write(userAdminLocale.get("OF"));
+  response.write(Math.round(Math.ceil((float)(size)/(float)(usersOnPage))));response.write(userAdminLocale.get("PAGES"));
+
+
+     
+     if (currentPage<Math.round(Math.ceil((float)(size)/(float)(usersOnPage))))
+     {
+     
+response.write(util.alias(proxy, BatchLogic.servlet_name))+response.write(request.getAttribute("util").alias(proxy, BatchLogic.servlet_name));response.write(BatchLogic.ProtocolPageAction)+response.write(request.getAttribute("BatchLogic").ProtocolPageAction);response.write(BatchLogic.currentPageId)+response.write(request.getAttribute("BatchLogic").currentPageId);response.write(currentPage+1);response.write(filter);
+     }
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+
+
+
+
+  response.write(filter.equals("ALL")?"selected":""); response.write(userAdminLocale.get("DISPLAY_ALL_RECORDS"));
+  response.write(filter.equals(Batch.CREATED)?"selected":"");response.write(Batch.CREATED)+response.write(request.getAttribute("Batch").CREATED);response.write(userAdminLocale.get("DISPLAY_ONLY"));response.write(userAdminLocale.get(Batch.CREATED))+response.write(request.getAttribute("userAdminLocale").get(Batch.CREATED));
+  response.write(filter.equals(Batch.FAILED)?"selected":"");response.write(Batch.FAILED)+response.write(request.getAttribute("Batch").FAILED);response.write(userAdminLocale.get("DISPLAY_ONLY"));response.write(userAdminLocale.get(Batch.FAILED))+response.write(request.getAttribute("userAdminLocale").get(Batch.FAILED));
+  response.write(filter.equals(Batch.UPDATED)?"selected":"");response.write(Batch.UPDATED)+response.write(request.getAttribute("Batch").UPDATED);response.write(userAdminLocale.get("DISPLAY_ONLY"));response.write(userAdminLocale.get(Batch.UPDATED))+response.write(request.getAttribute("userAdminLocale").get(Batch.UPDATED));
+  response.write(filter.equals(Batch.UPDATE_FAILED)?"selected":"");response.write(Batch.UPDATE_FAILED)+response.write(request.getAttribute("Batch").UPDATE_FAILED);response.write(userAdminLocale.get("DISPLAY_ONLY"));response.write(userAdminLocale.get(Batch.UPDATE_FAILED.replace(' ', '_')))+response.write(request.getAttribute("userAdminLocale").get(Batch.UPDATE_FAILED.replace(' ', '_')));
+  response.write(filter.equals(Batch.EXISTS)?"selected":"");response.write(Batch.EXISTS)+response.write(request.getAttribute("Batch").EXISTS);response.write(userAdminLocale.get("DISPLAY_ONLY"));response.write(userAdminLocale.get(Batch.EXISTS))+response.write(request.getAttribute("userAdminLocale").get(Batch.EXISTS));
+  response.write(filter.equals(Batch.NO_PERMISSION)?"selected":"");response.write(Batch.NO_PERMISSION)+response.write(request.getAttribute("Batch").NO_PERMISSION);response.write(userAdminLocale.get("DISPLAY_ONLY"));response.write(userAdminLocale.get(Batch.NO_PERMISSION.replace(' ', '_')))+response.write(request.getAttribute("userAdminLocale").get(Batch.NO_PERMISSION.replace(' ', '_')));
+
+
+
+ response.write(userAdminLocale.get("FIRST_NAME"));
+ response.write(userAdminLocale.get("LAST_NAME"));
+ response.write(userAdminLocale.get("USER_LOGON_ID"));
+ response.write(userAdminLocale.get("WARNINGS"));
+ response.write(userAdminLocale.get("COMPANY"));
+
+     
+      int start = ((Integer)proxy.getSessionAttribute(BatchLogic.startindex)).intValue();
+      int end = ((Integer)proxy.getSessionAttribute(BatchLogic.endindex)).intValue();
+     
+      if (end > size)
+       {
+ end = size - 1;
+ start = end - (usersOnPage + 1);
+       }
+     
+      for (int i = 0; i<size; i++)
+      {
+      HashMap entry = (HashMap)(protocol.elementAt(i));
+      String status = (String) entry.get(Batch.Status);
+      text= (String)(entry.get(Batch.Status));
+      if (text!=null && (text.indexOf("ERROR")!=-1 || text.indexOf("FAILED")!=-1 || text.indexOf("PERMISSION")!=-1))  numberOfErrors++;
+     
+       if (!(i>=start  && i<=end)) continue;
+       if (status!=null && !status.equals(filter) && !filter.equals("ALL")) continue;
+     
+
+
+
+ 
+     boolean errors = false;
+     text= (String)(entry.get(Batch.Status));
+     text = text.replace(' ', '_');
+ if (text!=null && (text.indexOf("ERROR")!=-1 || text.indexOf("FAILED")!=-1 || text.indexOf("PERMISSION")!=-1))
+     {
+       errors = true;
+ 
+    response.write(userAdminLocale.get(text))+response.write(request.getAttribute("userAdminLocale").get(text));
+ 
+ }
+ else if (text!=null && (text.indexOf("ERROR")!=-1 || text.indexOf("EXISTS")!=-1))
+ {
+     response.write(userAdminLocale.get(text))+response.write(request.getAttribute("userAdminLocale").get(text));
+ }
+ else
+ {
+      response.write(userAdminLocale.get(text))+response.write(request.getAttribute("userAdminLocale").get(text));
+ }
+
+
+
+
+  String fn = (String)entry.get(Batch.FirstName); if (fn==null) fn="-";
+
+      response.write(BatchLogic.getBatchUserDetailPageAction())+response.write(request.getAttribute("BatchLogic").getBatchUserDetailPageAction());response.write(BatchLogic.getUserNumber())+response.write(request.getAttribute("BatchLogic").getUserNumber());response.write(i);response.write(com.sap.security.core.util.taglib.EncodeHtmlTag.encode(fn))+response.write(request.getAttribute("com").sap.security.core.util.taglib.EncodeHtmlTag.encode(fn));
+
+
+
+
+  String ln = (String)entry.get(Batch.LastName); if (ln==null) ln="-";
+
+      response.write(BatchLogic.getBatchUserDetailPageAction())+response.write(request.getAttribute("BatchLogic").getBatchUserDetailPageAction());response.write(BatchLogic.getUserNumber())+response.write(request.getAttribute("BatchLogic").getUserNumber());response.write(i);response.write(com.sap.security.core.util.taglib.EncodeHtmlTag.encode(ln))+response.write(request.getAttribute("com").sap.security.core.util.taglib.EncodeHtmlTag.encode(ln));
+
+
+      response.write(com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)entry.get(Batch.DisplayName)));
+
+String warnings = (String)entry.get(Batch.Warnings);
+     
+  if (warnings==null || warnings.length()==0)
+  {
+    out.print("-");
+  }
+  else
+  {
+   StringTokenizer t = new StringTokenizer(warnings, "&");
+   if (false       )
+   {
+
+
+
+      response.write(errors?"Errors/Warnings:":" Warnings:");
+while (t.hasMoreElements())
+ {
+ 
+     response.write(com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)(t.nextElement())));
+}
+
+     
+      }
+     else
+     {
+      while (t.hasMoreElements())
+       {
+String wline = com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)(t.nextElement()));
+if (wline.indexOf("Error")!=-1)
+{ 
+       response.write(wline+"<br>");
+       }
+       else
+       {
+response.write(wline+"<br>");
+     
+}
+       }
+      }
+     }
+
+
+   response.write(((String)entry.get(Batch.CompanyName)==null)?"-":com.sap.security.core.util.taglib.EncodeHtmlTag.encode((String)entry.get(Batch.CompanyName)));
+
+
+
+     
+     }       
+     
+
+      }
+
+  response.write(numberOfErrors);response.write(userAdminLocale.get("ERRORS"));
+     session.setAttribute(BatchLogic.NUMBER_OF_UPLOAD_ERRORS, new Integer(numberOfErrors));
+
+
+
+
+     response.write(BatchLogic.backToUploadAction)+response.write(request.getAttribute("BatchLogic").backToUploadAction);response.write(userAdminLocale.get("BACK_TO_UPLOAD"));
+
+
+
+
+
+     }
+}
+
+}

@@ -1,0 +1,161 @@
+﻿ package PackageNo1791904653; public class userprofile_addtionalinfo_change_withorgunit_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+
+      String orgUnitName = (String) proxy.getRequestAttribute(UserAdminLogic.orgUnitName);
+if ( null == orgUnitName ) {
+    orgUnitName = new String();
+}
+     
+
+      String addInfo = userAdminLocale.get("ADDITIONAL_INFO");
+if ( entryExit.length() > 0 ) entryExit.delete(0, entryExit.length());		   
+entryExit.append(userAdminMessages.print(new Message("START_GROUP_BOX", addInfo))); 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+   response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+
+   response.write(addInfo);
+
+
+
+
+   response.write(addInfo);
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+       response.write(altmin)+response.write(request.getAttribute("altmin"));
+       response.write(altmin)+response.write(request.getAttribute("altmin"));response.write(altmax)+response.write(request.getAttribute("altmax"));response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+      if(null!=self)
+    _readOnly = UserAdminFactory.isAttributeReadOnly(self.getUniqueID(), UserBean.positionId);
+else
+    _readOnly = false; 
+
+if ( _readOnly) { 
+if ( spanTitle.length() > 0 ) spanTitle.delete(0, spanTitle.length());
+  spanTitle.append(userAdminLocale.get("POSITION")).append(" ");
+  spanTitle.append(user.getPosition()).append(" ");
+  spanTitle.append(userAdminLocale.get("NOT_AVAILABLE")); 
+     response.write(spanTitle.getToString())+response.write(request.getAttribute("spanTitle").getToString());response.write(user.getPositionId())+response.write(request.getAttribute("user").getPositionId());response.write(userAdminLocale.get("POSITION"));
+} else {  
+     response.write(user.getPositionId())+response.write(request.getAttribute("user").getPositionId());response.write(userAdminLocale.get("POSITION"));
+} 
+
+
+ response.write(user.positionId)+response.write(request.getAttribute("user").positionId);
+    response.write(user.positionId)+response.write(request.getAttribute("user").positionId);
+     response.write(util.filteringSpecialChar(user.getPosition()))+response.write(request.getAttribute("util").filteringSpecialChar(user.getPosition()));
+
+
+
+
+  if ( _readOnly ) {     }
+if ( _readOnly) { response.write(user.getPositionId())+response.write(request.getAttribute("user").getPositionId());response.write(util.getFilteringSpecialChar(user().getPosition()))+response.write(request.getAttribute("util").getFilteringSpecialChar(user().getPosition())); } 
+
+
+
+      if(null!=self)
+    _readOnly = UserAdminFactory.isAttributeReadOnly(self.getUniqueID(), UserBean.departmentId);
+else
+    _readOnly = false; 
+
+if ( _readOnly) { 
+if ( spanTitle.length() > 0 ) spanTitle.delete(0, spanTitle.length());
+  spanTitle.append(userAdminLocale.get("DEPARTMENT")).append(" ");
+  spanTitle.append(user.getDepartment()).append(" ");
+  spanTitle.append(userAdminLocale.get("NOT_AVAILABLE")); 
+     response.write(spanTitle.getToString())+response.write(request.getAttribute("spanTitle").getToString());response.write(user.getDepartmentId())+response.write(request.getAttribute("user").getDepartmentId());response.write(userAdminLocale.get("DEPARTMENT"));
+} else {  
+     response.write(user.getDepartmentId())+response.write(request.getAttribute("user").getDepartmentId());response.write(userAdminLocale.get("DEPARTMENT"));
+} 
+
+
+ response.write(user.departmentId)+response.write(request.getAttribute("user").departmentId);
+    response.write(user.departmentId)+response.write(request.getAttribute("user").departmentId);
+     response.write(util.filteringSpecialChar(user.getDepartment()))+response.write(request.getAttribute("util").filteringSpecialChar(user.getDepartment()));
+
+
+
+
+  if ( _readOnly ) {     }
+if ( _readOnly) { response.write(user.getDepartmentId())+response.write(request.getAttribute("user").getDepartmentId());response.write(util.getFilteringSpecialChar(user().getDepartment()))+response.write(request.getAttribute("util").getFilteringSpecialChar(user().getDepartment())); } 
+
+
+    if ( !UserAdminHelper.hasAccess(proxy.getActiveUser(), UserAdminHelper.CREATE_USERS) ) { 
+
+     response.write(userAdminLocale.get("ORGUNIT"));
+    response.write(user.getOrgUnitId())+response.write(request.getAttribute("user").getOrgUnitId());response.write(util.getFilteringSpecialChar(user().getOrgUnit()))+response.write(request.getAttribute("util").getFilteringSpecialChar(user().getOrgUnit()));response.write(user.getOrgUnit())+response.write(request.getAttribute("user").getOrgUnit());
+
+    } else { 
+
+      if(null!=self)
+    _readOnly = UserAdminFactory.isAttributeReadOnly(self.getUniqueID(), UserBean.orgUnitId);
+else
+    _readOnly = false; 
+
+if ( _readOnly) { 
+if ( spanTitle.length() > 0 ) spanTitle.delete(0, spanTitle.length());
+  spanTitle.append(userAdminLocale.get("ORGUNIT")).append(" ");
+  spanTitle.append(orgUnitName).append(" ");
+  spanTitle.append(userAdminLocale.get("NOT_AVAILABLE")); 
+       response.write(spanTitle.getToString())+response.write(request.getAttribute("spanTitle").getToString());response.write(UserAdminLogic.getOrgUnitName())+response.write(request.getAttribute("UserAdminLogic").getOrgUnitName());response.write(userAdminLocale.get("ORGUNIT"));
+  } else {  
+       response.write(UserAdminLogic.getOrgUnitName())+response.write(request.getAttribute("UserAdminLogic").getOrgUnitName());response.write(userAdminLocale.get("ORGUNIT"));
+  } 
+
+
+       response.write(user.orgUnitId)+response.write(request.getAttribute("user").orgUnitId);response.write(util.filteringSpecialChar(user.getOrgUnit()))+response.write(request.getAttribute("util").filteringSpecialChar(user.getOrgUnit()));
+      response.write(UserAdminLogic.getOrgUnitName())+response.write(request.getAttribute("UserAdminLogic").getOrgUnitName());
+
+
+      response.write(UserAdminLogic.getOrgUnitName())+response.write(request.getAttribute("UserAdminLogic").getOrgUnitName());
+      response.write(util.getFilteringSpecialChar(orgUnitName));
+
+
+
+       if ( !_readOnly ) { 
+    response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+      response.write(userAdminLocale.get("SELECT_ORGUNIT"));
+
+
+      }
+
+
+    } 
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+      entryExit.delete(0, entryExit.length());
+entryExit.append(userAdminMessages.print(new Message("END_GROUP_BOX", addInfo))); 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+   response.write(addInfo);
+   response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+}
+
+}

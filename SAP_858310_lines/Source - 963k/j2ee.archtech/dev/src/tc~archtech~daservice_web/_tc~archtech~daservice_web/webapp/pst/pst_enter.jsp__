@@ -1,0 +1,90 @@
+﻿ package PackageNo1188995258;import com.sap.security.api.*;import com.sap.archtech.daservice.mbeans.*; public class pst_enter_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+     
+       String isUserValid = (String) session.getAttribute("isUserValid");
+       if (!(isUserValid != null && isUserValid.equals("x")))
+       {
+     
+
+  request.getRequestDispatcher("../index.jsp").forward(request,response);
+
+     
+       }
+       String archivepath = request.getParameter("archivepath");
+       if (archivepath == null)
+       {
+ archivepath = "/";	
+       }	
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ IUser user = UMFactory.getAuthenticator().getLoggedInUser();
+ boolean hasPermission = user.hasPermission(new XmldasAdminPermission("write", "*"));
+ if (hasPermission == true)
+ {
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+    response.write(archivepath)+response.write(request.getAttribute("archivepath"));
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+     
+ }
+ else
+ {
+     
+ 
+
+
+
+
+
+
+ 
+ 
+ }
+ 
+ 
+}
+
+}

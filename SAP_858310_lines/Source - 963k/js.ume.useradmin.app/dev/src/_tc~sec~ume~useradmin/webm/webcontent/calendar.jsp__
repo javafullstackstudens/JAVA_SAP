@@ -1,0 +1,454 @@
+﻿ package PackageNo2028731684;import _proxy_txt; public class calendar_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+      if ( util.isServlet23() ) proxy.setResponseContentType("text/html; charset=utf-8"); 
+
+      java.util.Locale locale = proxy.getLocale();
+if ( null == locale ) locale = java.util.Locale.getDefault();
+DateUtil dateU = new DateUtil(locale); 
+String previousMonths = userAdminLocale.get("PREVIOUS_3_MONTHS");
+String nextMonths = userAdminLocale.get("NEXT_3_MONTHS");
+String closeWin = userAdminLocale.get("CLOSE_WIN");
+String formID = (String) proxy.getRequestAttribute("formID");
+String fieldID = (String) proxy.getRequestAttribute("fieldID");
+     
+
+      if ( !inPortal ) { 
+
+
+ response.write(userAdminLocale.get("CALENDAR"));
+
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+      if ( request.getHeader("User-Agent").indexOf("MSIE") > 0 ) { 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+      } else { 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+      } 
+      } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       response.write(userAdminLocale.get("WK"));
+     response.write(userAdminLocale.get("SELECT"));
+ response.write(userAdminLocale.get("SU"));
+     response.write(userAdminLocale.get("MO"));
+     response.write(userAdminLocale.get("TU"));
+     response.write(userAdminLocale.get("WE"));
+     response.write(userAdminLocale.get("TH"));
+     response.write(userAdminLocale.get("FR"));
+     response.write(userAdminLocale.get("SA"));
+   response.write(userAdminLocale.get("JAN"));
+       response.write(userAdminLocale.get("FEB"));
+       response.write(userAdminLocale.get("MAR"));
+       response.write(userAdminLocale.get("APR"));
+       response.write(userAdminLocale.get("MAY"));
+       response.write(userAdminLocale.get("JUN"));
+       response.write(userAdminLocale.get("JUL"));
+       response.write(userAdminLocale.get("AUG"));
+       response.write(userAdminLocale.get("SEP"));
+       response.write(userAdminLocale.get("OCT"));
+       response.write(userAdminLocale.get("NOV"));
+       response.write(userAdminLocale.get("DEC"));
+ response.write(dateU.getDateDisplayFormat());
+
+
+
+
+
+
+
+ response.write(com.sap.security.core.util.taglib.EncodeHtmlTag.encode(formID));
+  response.write(com.sap.security.core.util.taglib.EncodeHtmlTag.encode(fieldID));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(previousMonths);response.write(previousMonths);
+
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(nextMonths);response.write(nextMonths);
+
+
+      response.write(userAdminLocale.get("CALENDAR"));
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(closeWin);response.write(closeWin);
+
+
+
+
+
+
+
+
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(previousMonths);response.write(previousMonths);
+
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(nextMonths);response.write(nextMonths);
+
+
+      response.write(userAdminLocale.get("CALENDAR"));
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(closeWin);response.write(closeWin);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  if ( null == proxy.getSessionAttribute("UMESESSION")  ) { 
+
+  } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      if ( !inPortal ) { 
+
+      } 
+
+       if ( !inPortal ) { 
+
+
+
+      } else { 
+
+
+
+
+      } 
+}
+
+}

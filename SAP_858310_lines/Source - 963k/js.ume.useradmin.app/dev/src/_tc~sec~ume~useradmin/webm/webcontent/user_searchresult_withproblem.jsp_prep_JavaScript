@@ -1,0 +1,109 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function script___1174350595() {src("js/basic.js");}
+
+
+
+
+function doSomething(action) {
+    var frm = document.forms["searchresultwithproblem"];
+    
+    inputTag1 = document.createElement("input");
+    inputTag1.setAttribute("name", "problem");
+    inputTag1.setAttribute("type", "hidden");
+    inputTag1.setAttribute("value", "");
+    frm.appendChild(inputTag1);    
+    
+    inputTag2 = document.createElement("input");
+    inputTag2.setAttribute("name", action);
+    inputTag2.setAttribute("type", "hidden");
+    inputTag2.setAttribute("value", "");
+    frm.appendChild(inputTag2);
+    
+    frm.submit();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                            function onClick___1455584744() {doSomething('Cx_0dummy')}
+
+
+
+
+
+
+                                                                                             function onClick____1660489139() {doSomething('Cx_0dummy')}
+
+
+
+
+
+
+
+
+
+
+
+
+ 

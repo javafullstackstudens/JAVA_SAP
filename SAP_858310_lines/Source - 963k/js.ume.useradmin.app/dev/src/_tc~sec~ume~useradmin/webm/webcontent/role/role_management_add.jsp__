@@ -1,0 +1,248 @@
+﻿ package PackageNo936390920;import _proxy_txt;import _contextspecific_includes_top_txt;import _contextspecific_includes_bottom_txt;import com.sap.security.core.role.*;import com.sap.security.core.role.imp.*;import com.sap.security.core.*;import com.sap.security.core.admin.util;import com.sap.security.core.admin.role.*;import com.sap.security.api.*;import java.util.Iterator;import com.sap.security.core.util.*; public class role_management_add_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+
+
+   InfoBean info = new InfoBean();
+    ErrorBean error = new ErrorBean();
+     com.sap.security.core.admin.role.RoleAdminMessagesBean roleAdminMessages = (com.sap.security.core.admin.role.RoleAdminMessagesBean) proxy.getSessionAttribute("roleAdminMessages");
+     com.sap.security.core.admin.role.RoleAdminLocaleBean roleAdminLocale = (com.sap.security.core.admin.role.RoleAdminLocaleBean) proxy.getSessionAttribute("roleAdminLocale");
+
+      
+     Iterator actions = (Iterator)proxy.getRequestAttribute("allActions");
+     Iterator assignedActions = (Iterator)proxy.getRequestAttribute("assignedActions");
+     String[] unavailableActions = (String[])proxy.getRequestAttribute("unavailableActions");
+     
+     String actionDisplayName = "";
+     String roleDisplayName = "";
+     String rolenamesReport = (String) HelperClass.getAttr(proxy,"rolenamesReport");
+     String roleID = "";
+     String roleDescription = "";
+     
+     int  MaxRoleNameLength = RoleAdminServlet.MAX_ROLE_NAME_LENGTH;
+     int  MaxRoleDescriptionLength = RoleAdminServlet.MAX_ROLE_DESCRIPTION_LENGTH;
+     
+     String principal = (String)HelperClass.getAttr(proxy,"principal");
+     IRole role = (IRole)proxy.getRequestAttribute("roleObj");
+     if( null != role)
+     {
+roleDisplayName = role.getDisplayName();
+roleID = role.getUniqueID();
+roleDescription = role.getDescription();
+if(null == roleDescription)
+{
+	roleDescription = "";
+}
+     }
+     
+     
+     String disabled = "";
+     IAction action=null;
+     
+     String ID = (String)HelperClass.getAttr(proxy,"ID");
+     String modifyRole = (String)HelperClass.getAttr(proxy,"modifyRole");
+     String Header;
+     if("true".equals(modifyRole))
+     {
+     	Header = roleAdminLocale.get("MODIFY_ROLE_HEADER");
+     	disabled = "disabled";
+     
+     }
+     else {
+     	Header = roleAdminLocale.get("CREATE_ROLE_HEADER");
+     }
+     String actionUniqueID = "";
+     
+
+
+
+
+
+
+
+
+
+
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+
+
+
+     if (!inPortal) {
+
+ response.write(roleAdminLocale.get("ROLE_MANAGEMENT"));
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+     }
+
+   response.write(util.getConvertDbQuotationToSingle(roleAdminLocale().get("BLANK_NOTIFICATION")));response.write(roleAdminLocale.get("ILLEGAL_ROLE_NAME"));response.write(RoleAdminServlet.getAlias())+response.write(request.getAttribute("RoleAdminServlet").getAlias());
+
+
+
+
+
+
+
+     response.write(Header);
+
+
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+       if ( info.isInfo() ) { 
+
+
+ response.write(webpath)+response.write(request.getAttribute("webpath"));response.write(roleAdminMessages.print(info.getMessage()))+response.write(request.getAttribute("roleAdminMessages").print(info.getMessage()));
+
+
+       } 
+
+       if ( error.isError() ) { 
+
+
+ response.write(webpath)+response.write(request.getAttribute("webpath"));      response.write(roleAdminMessages.print(error.getMessage()))+response.write(request.getAttribute("roleAdminMessages").print(error.getMessage()));
+
+
+       } 
+
+response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+    response.write(roleAdminLocale.get("ROLE_NAME"));
+response.write(roleDisplayName);  response.write(disabled);     response.write(MaxRoleNameLength);
+
+  if (disabled.equals("disabled"))	{ 
+     response.write(roleDisplayName);
+  } 
+
+       response.write(roleAdminLocale.get("DESCRIPTION"));
+
+
+
+
+
+response.write(MaxRoleDescriptionLength);
+response.write(MaxRoleDescriptionLength);
+
+
+   response.write(util.filteringSpecialChar(roleDescription));
+
+
+
+
+
+
+    response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+   response.write(roleAdminLocale.get("SELECT_ACTIONS"));
+
+response.write(roleAdminLocale.get("AVAILABLE_ACTIONS"));
+
+
+
+response.write(roleAdminLocale.get("ASSIGNED_ACTIONS"));
+
+
+
+
+  
+     		if (actions != null)
+     		{
+     			while (actions.hasNext())
+     			{
+     				action = (IAction) actions.next();
+     		   		if(null != action)
+     				{
+     	    	actionDisplayName = action.toString();
+     	actionUniqueID = action.getUniqueID();
+     	    }
+     	    
+     response.write(actionUniqueID);      response.write( actionDisplayName);
+  	}
+     	    } 
+
+
+
+
+    response.write(roleAdminLocale.get("ADD"));    response.write(webpath)+response.write(request.getAttribute("webpath"));
+response.write(roleAdminLocale.get("ADD_ALL"));  response.write(webpath)+response.write(request.getAttribute("webpath"));
+  response.write(roleAdminLocale.get("REMOVE")); response.write(webpath)+response.write(request.getAttribute("webpath"));
+    response.write(roleAdminLocale.get("REMOVE_ALL"));
+
+
+
+
+       
+     	    if (assignedActions != null)
+     	    {
+     			while (assignedActions.hasNext())
+     			{
+ 			    action = (IAction) assignedActions.next();
+ 			    if(null != action)
+ 			    {
+     	actionDisplayName = action.toString();
+     actionUniqueID = action.getUniqueID();
+ }
+     		
+ response.write(actionUniqueID);      response.write(actionDisplayName);
+ }
+     		}
+     	    if (unavailableActions != null)
+     	    {
+     			for (int i=0; i<unavailableActions.length; i++ )
+     			{
+     				actionUniqueID = UpdateCommand.UNAV_ACTION_PREFIX + unavailableActions[i];
+ 			actionDisplayName = unavailableActions[i];
+     		
+ response.write(actionUniqueID);      response.write(actionDisplayName);
+ }
+     		}
+
+
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+response.write(roleAdminLocale.get("APPLY"));
+
+      response.write(roleAdminLocale.get("CANCEL"));
+
+
+
+
+
+   response.write(ID);
+   response.write(modifyRole);
+   response.write(util.getURLEncoder(roleID));
+   response.write(rolenamesReport);
+
+   response.write(principal);
+}
+
+}

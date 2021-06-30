@@ -1,0 +1,336 @@
+﻿ package PackageNo496217836;import com.sap.security.api.logon.ILoginConstants; public class userprofile_basicinfo_change_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+      boolean isSelfRegCompanyUserAllowed = uac.isSelfRegCompanyUserAllowed();
+boolean isLocked = (account==null)?false:account.isLocked();
+boolean unapproved = (self.getAttribute(UserBean.UM, UserBean.UUCOMPANYID)==null)?false:true;
+boolean toShowPswdFields = true;
+if ( !UserAdminCustomization.isPasswordChangeAllowed() ) {
+    toShowPswdFields = false;
+} else {	
+    if (UserAdminFactory.isAttributeReadOnly(account.getUniqueID(), ILoginConstants.LOGON_PWD_ALIAS))
+toShowPswdFields = false;
+}
+     
+
+      String basicInfo = userAdminLocale.get("BASIC_INFO");
+if ( entryExit.length() > 0 ) entryExit.delete(0, entryExit.length());		   
+entryExit.append(userAdminMessages.print(new Message("START_GROUP_BOX", basicInfo))); 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+   response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+
+   response.write(basicInfo);
+
+
+
+
+     response.write(basicInfo);
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+       response.write(altmin)+response.write(request.getAttribute("altmin"));
+       response.write(altmin)+response.write(request.getAttribute("altmin"));response.write(altmax)+response.write(request.getAttribute("altmax"));response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+     response.write(user.getUidId())+response.write(request.getAttribute("user").getUidId());response.write(user.getUid())+response.write(request.getAttribute("user").getUid());
+
+ response.write(userAdminLocale.get("USER_ID"));
+    response.write(userAccount.getLogonUid())+response.write(request.getAttribute("userAccount").getLogonUid());
+   response.write(userAccount.getLogonuid())+response.write(request.getAttribute("userAccount").getLogonuid());response.write(userAccount.getLogonUid())+response.write(request.getAttribute("userAccount").getLogonUid());
+
+    if (toShowPswdFields) { 
+
+ response.write(userAccount.getOldpassword())+response.write(request.getAttribute("userAccount").getOldpassword());response.write(userAdminLocale.get("OLD_PASSWORD"));
+
+     response.write(userAccount.getOldpassword())+response.write(request.getAttribute("userAccount").getOldpassword());
+     response.write(userAccount.getOldpassword())+response.write(request.getAttribute("userAccount").getOldpassword());
+
+     response.write(userAccount.getOldPassword())+response.write(request.getAttribute("userAccount").getOldPassword());
+
+
+
+
+
+ response.write(userAccount.getPassword())+response.write(request.getAttribute("userAccount").getPassword());response.write(userAdminLocale.get("PASSWORD"));
+
+     response.write(userAccount.getPassword())+response.write(request.getAttribute("userAccount").getPassword());
+     response.write(userAccount.getPassword())+response.write(request.getAttribute("userAccount").getPassword());
+
+     response.write(userAccount.getPassword())+response.write(request.getAttribute("userAccount").getPassword());
+
+
+
+
+
+ response.write(userAccount.getPasswordconfirm())+response.write(request.getAttribute("userAccount").getPasswordconfirm());response.write(userAdminLocale.get("PASSWORD_CONFIRM"));
+
+     response.write(userAccount.getPasswordconfirm())+response.write(request.getAttribute("userAccount").getPasswordconfirm());
+     response.write(userAccount.getPasswordconfirm())+response.write(request.getAttribute("userAccount").getPasswordconfirm());
+
+     response.write(userAccount.getPasswordConfirm())+response.write(request.getAttribute("userAccount").getPasswordConfirm());
+
+
+
+
+    } 
+
+
+      if(null!=self)
+    _readOnly = UserAdminFactory.isAttributeReadOnly(self.getUniqueID(), UserBean.lastNameId);
+else
+    _readOnly = false; 
+
+if ( _readOnly) { 
+if ( spanTitle.length() > 0 ) spanTitle.delete(0, spanTitle.length());
+  spanTitle.append(userAdminLocale.get("LAST_NAME")).append(" ");
+  spanTitle.append(user.getLastName()).append(" ");
+  spanTitle.append(userAdminLocale.get("NOT_AVAILABLE")); 
+     response.write(spanTitle.getToString())+response.write(request.getAttribute("spanTitle").getToString());response.write(user.getLastNameId())+response.write(request.getAttribute("user").getLastNameId());response.write(userAdminLocale.get("LAST_NAME"));
+} else {  
+     response.write(user.getLastNameId())+response.write(request.getAttribute("user").getLastNameId());response.write(userAdminLocale.get("LAST_NAME"));
+} 
+
+
+       response.write(user.lastNameId)+response.write(request.getAttribute("user").lastNameId);
+ response.write(user.lastNameId)+response.write(request.getAttribute("user").lastNameId);
+
+  response.write(user.getLastName())+response.write(request.getAttribute("user").getLastName());
+
+
+
+       if ( _readOnly ) {     }
+if ( _readOnly) { response.write(user.getLastNameId())+response.write(request.getAttribute("user").getLastNameId());response.write(user.getLastName())+response.write(request.getAttribute("user").getLastName()); } 
+
+
+
+
+      if(null!=self)
+    _readOnly = UserAdminFactory.isAttributeReadOnly(self.getUniqueID(), UserBean.firstNameId);
+else
+    _readOnly = false; 
+
+if ( _readOnly) { 
+if ( spanTitle.length() > 0 ) spanTitle.delete(0, spanTitle.length());
+  spanTitle.append(userAdminLocale.get("FIRST_NAME")).append(" ");
+  spanTitle.append(user.getFirstName()).append(" ");
+  spanTitle.append(userAdminLocale.get("NOT_AVAILABLE")); 
+     response.write(spanTitle.getToString())+response.write(request.getAttribute("spanTitle").getToString());response.write(user.getFirstNameId())+response.write(request.getAttribute("user").getFirstNameId());response.write(userAdminLocale.get("FIRST_NAME"));
+} else {  
+     response.write(user.getFirstNameId())+response.write(request.getAttribute("user").getFirstNameId());response.write(userAdminLocale.get("FIRST_NAME"));
+} 
+
+
+       response.write(user.firstNameId)+response.write(request.getAttribute("user").firstNameId);
+ response.write(user.firstNameId)+response.write(request.getAttribute("user").firstNameId);
+
+  response.write(user.getFirstName())+response.write(request.getAttribute("user").getFirstName());
+
+
+
+       if ( _readOnly ) {     }
+if ( _readOnly) { response.write(user.getFirstNameId())+response.write(request.getAttribute("user").getFirstNameId());response.write(user.getFirstName())+response.write(request.getAttribute("user").getFirstName()); } 
+
+
+
+
+      if(null!=self)
+    _readOnly = UserAdminFactory.isAttributeReadOnly(self.getUniqueID(), UserBean.emailId);
+else
+    _readOnly = false; 
+
+if ( _readOnly) { 
+if ( spanTitle.length() > 0 ) spanTitle.delete(0, spanTitle.length());
+  spanTitle.append(userAdminLocale.get("EMAIL")).append(" ");
+  spanTitle.append(user.getEmail()).append(" ");
+  spanTitle.append(userAdminLocale.get("NOT_AVAILABLE")); 
+     response.write(spanTitle.getToString())+response.write(request.getAttribute("spanTitle").getToString());response.write(user.getEmailId())+response.write(request.getAttribute("user").getEmailId());response.write(userAdminLocale.get("EMAIL"));
+} else {  
+     response.write(user.getEmailId())+response.write(request.getAttribute("user").getEmailId());response.write(userAdminLocale.get("EMAIL"));
+} 
+
+
+       response.write(user.emailId)+response.write(request.getAttribute("user").emailId);
+ response.write(user.emailId)+response.write(request.getAttribute("user").emailId);
+
+  response.write(user.getEmail())+response.write(request.getAttribute("user").getEmail());
+
+
+
+       if ( _readOnly ) {     }
+if ( _readOnly) { response.write(user.getEmailId())+response.write(request.getAttribute("user").getEmailId());response.write(user.getEmail())+response.write(request.getAttribute("user").getEmail()); } 
+
+
+
+
+      if(null!=self)
+    _readOnly = UserAdminFactory.isAttributeReadOnly(self.getUniqueID(), UserBean.salutationId);
+else
+    _readOnly = false; 
+
+if ( _readOnly) { 
+if ( spanTitle.length() > 0 ) spanTitle.delete(0, spanTitle.length());
+  spanTitle.append(userAdminLocale.get("SALUTATION")).append(" ");
+  spanTitle.append(user.getSalutation()).append(" ");
+  spanTitle.append(userAdminLocale.get("NOT_AVAILABLE")); 
+     response.write(spanTitle.getToString())+response.write(request.getAttribute("spanTitle").getToString());response.write(user.getSalutationId())+response.write(request.getAttribute("user").getSalutationId());response.write(userAdminLocale.get("SALUTATION"));
+} else {  
+     response.write(user.getSalutationId())+response.write(request.getAttribute("user").getSalutationId());response.write(userAdminLocale.get("SALUTATION"));
+} 
+
+
+       response.write(user.salutationId)+response.write(request.getAttribute("user").salutationId);
+ response.write(user.salutationId)+response.write(request.getAttribute("user").salutationId);
+
+  response.write(user.getSalutation())+response.write(request.getAttribute("user").getSalutation());
+
+
+
+       if ( _readOnly ) {     }
+if ( _readOnly) { response.write(user.getSalutationId())+response.write(request.getAttribute("user").getSalutationId());response.write(user.getSalutation())+response.write(request.getAttribute("user").getSalutation()); } 
+
+
+
+
+      if(null!=self)
+    _readOnly = UserAdminFactory.isAttributeReadOnly(self.getUniqueID(), com.sap.security.core.imp.User.LOCALE);
+else
+    _readOnly = false; 
+
+if ( _readOnly) { 
+if ( spanTitle.length() > 0 ) spanTitle.delete(0, spanTitle.length());
+  spanTitle.append(userAdminLocale.get("LANGUAGE")).append(" ");
+  spanTitle.append(user.getPreferredLanguage()).append(" ");
+  spanTitle.append(userAdminLocale.get("NOT_AVAILABLE")); 
+     response.write(spanTitle.getToString())+response.write(request.getAttribute("spanTitle").getToString());response.write(user.getPreferredLanguageId())+response.write(request.getAttribute("user").getPreferredLanguageId());response.write(userAdminLocale.get("LANGUAGE"));
+} else {  
+     response.write(user.getPreferredLanguageId())+response.write(request.getAttribute("user").getPreferredLanguageId());response.write(userAdminLocale.get("LANGUAGE"));
+} 
+
+
+     response.write(user.preferredLanguageId)+response.write(request.getAttribute("user").preferredLanguageId);
+  response.write(user.preferredLanguageId)+response.write(request.getAttribute("user").preferredLanguageId);
+
+       if( _readOnly ){     }
+       response.write((user.getLocale()!=null)?"":" selected");response.write(userAdminLocale.get("PLEASE_SELECT"));
+      response.write(languages.getHtmlOptions(user.getPreferredLanguage()))+response.write(request.getAttribute("languages").getHtmlOptions(user.getPreferredLanguage()));
+if ( _readOnly) { response.write(user.getPreferredLanguageId())+response.write(request.getAttribute("user").getPreferredLanguageId());response.write(user.getPreferredLanguage())+response.write(request.getAttribute("user").getPreferredLanguage()); } 
+
+
+
+ if ( UserAdminHelper.isCompanyConceptEnabled()) { 
+
+     response.write(userAdminLocale.get("COMPANY"));
+
+      if ( null != util.checkEmpty(user.getCompanyId()) ) { response.write(user.getCompanyName())+response.write(request.getAttribute("user").getCompanyName());
+      } else { 
+  if (unapproved) { 
+  response.write(self.getAttribute(UserBean.UM, UserBean.UUCOMPANYID)[0])+response.write(request.getAttribute("self").getAttribute(UserBean.UM, UserBean.UUCOMPANYID)[0]);response.write(userAdminLocale.get("UNAPPROVED"));
+  } else { 
+      if ( isSelfRegCompanyUserAllowed ) { 
+  if ( spanTitle.length() > 0 ) spanTitle.delete(0, spanTitle.length());
+     		     spanTitle.append(userAdminLocale.get("COMPANY")).append(" ");
+     		     spanTitle.append(companySearchResult.getCompanyName()).append(" ");
+     		     spanTitle.append(userAdminLocale.get("NOT_AVAILABLE")); 
+ response.write(spanTitle.getToString())+response.write(request.getAttribute("spanTitle").getToString());
+ response.write(companySearchResult.getRESULT_COMPANY_NAME())+response.write(request.getAttribute("companySearchResult").getRESULT_COMPANY_NAME());
+
+ response.write(companySearchResult.getRESULT_COMPANY_NAME())+response.write(request.getAttribute("companySearchResult").getRESULT_COMPANY_NAME());
+ response.write(util.getFilteringSpecialChar(companySearchResult().getCompanyName()))+response.write(request.getAttribute("util").getFilteringSpecialChar(companySearchResult().getCompanyName()));
+
+
+
+    if (null != companySearchResult.getCompanyId()) { 
+
+     response.write(companySearchResult.getRESULT_COMPANY_ID())+response.write(request.getAttribute("companySearchResult").getRESULT_COMPANY_ID());
+     response.write(util.getFilteringSpecialChar(companySearchResult().getCompanyId()))+response.write(request.getAttribute("util").getFilteringSpecialChar(companySearchResult().getCompanyId()));
+    } 
+  response.write(userAdminLocale.get("SELECT_COMPANY"));
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+   response.write(userAdminLocale.get("SELECT_COMPANY"));
+
+
+
+      } // end of isSelfRegCompanyUserAllowed 
+  } // end else of unapproved 
+      } // end else of util.checkEmpty(user.getCompanyId()) 
+
+
+    } 
+
+
+     response.write(userAdminLocale.get("ACCOUNT_STATUS"));
+
+       if (isLocked){ 
+response.write(userAdminLocale.get("DEACTIVE"));
+}else{ 
+response.write(userAdminLocale.get("ACTIVE"));
+}
+
+
+
+
+      if(null!=self)
+    _readOnly = UserAdminFactory.isAttributeReadOnly(self.getUniqueID(), UserBean.accessibilitylevelId);
+else
+    _readOnly = false; 
+     response.write(userAdminLocale.get("ACCESSIBILITY_LEVEL"));
+
+
+ response.write(user.accessibilitylevelId)+response.write(request.getAttribute("user").accessibilitylevelId);
+   response.write(user.accessibilitylevelId)+response.write(request.getAttribute("user").accessibilitylevelId);
+
+     response.write( (addCheckBoxStyle==true)?"class=\"noborder\"":"" );
+    response.write(user.getAccessibilityLevel())+response.write(request.getAttribute("user").getAccessibilityLevel());
+     response.write((user.getAccessibilityLevel()==IUser.SCREENREADER_ACCESSIBILITY_LEVEL)?"checked":"");
+ if ( _readOnly ) {     }
+if ( _readOnly) { 
+if ( spanTitle.length() > 0 ) spanTitle.delete(0, spanTitle.length());
+  spanTitle.append(userAdminLocale.get("SCREENREADER_NEEDED")).append(" ");
+  spanTitle.append(user.getAccessibilityLevel()).append(" ");
+  spanTitle.append(userAdminLocale.get("NOT_AVAILABLE")); 
+     response.write(spanTitle.getToString())+response.write(request.getAttribute("spanTitle").getToString());response.write(user.getAccessibilitylevelId())+response.write(request.getAttribute("user").getAccessibilitylevelId());response.write(userAdminLocale.get("SCREENREADER_NEEDED"));
+} else {  
+     response.write(user.getAccessibilitylevelId())+response.write(request.getAttribute("user").getAccessibilitylevelId());response.write(userAdminLocale.get("SCREENREADER_NEEDED"));
+} 
+if ( _readOnly) { response.write(user.getAccessibilitylevelId())+response.write(request.getAttribute("user").getAccessibilitylevelId());response.write(user.getAccessibilityLevel())+response.write(request.getAttribute("user").getAccessibilityLevel()); } 
+
+
+
+
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+      entryExit.delete(0, entryExit.length());
+entryExit.append(userAdminMessages.print(new Message("END_GROUP_BOX", basicInfo))); 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+   response.write(basicInfo);
+   response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+}
+
+}

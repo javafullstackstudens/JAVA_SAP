@@ -1,0 +1,131 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+    function viewDetail(url) {
+      window.name = "Cx_0dummy";
+      window.open(url, "sub", "WIDTH=400, HEIGHT=400, status=yes, resizable=no scrollbars=no");
+    }
+
+    function doRemove(idx) {
+      object = document.forms[0];
+      inputTag1 = document.createElement("input");
+      inputTag1.setAttribute("name","Cx_0dummy");
+      inputTag1.setAttribute("type","hidden");
+      inputTag1.setAttribute("value","");
+      object.appendChild( inputTag1 );
+      inputTag2 = document.createElement("input");
+      inputTag2.setAttribute("name","Cx_0dummy");
+      inputTag2.setAttribute("type","hidden");
+      inputTag2.setAttribute("value", idx);
+      object.appendChild( inputTag2 );
+      object.submit();
+    }
+
+    function importCert() {
+        window.name = "Cx_0dummy";
+        Cx_0dummy
+
+
+
+        var url = "Cx_0dummy";
+        window.open(url, "sub", "WIDTH=400, HEIGHT=400, status=yes, resizable=no scrollbars=no");
+    }
+
+
+
+
+
+
+
+
+
+
+function onkeypress____852899763() {if(event.keyCode=='115') {document.getElementById('Cx_0dummy').focus();}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+function onClick___1673460319() {expandME('ccert', 0, 'Cx_0dummy', 'Cx_0dummy', 'Cx_0dummy');}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

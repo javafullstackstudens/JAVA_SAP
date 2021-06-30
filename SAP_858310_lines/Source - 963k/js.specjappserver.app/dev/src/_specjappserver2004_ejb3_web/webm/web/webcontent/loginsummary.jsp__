@@ -1,0 +1,46 @@
+﻿ package PackageNo452927309;import java.util.Collection;import java.util.Iterator;import java.math.BigDecimal;import org.spec.jappserver.servlet.helper.*; public class loginsummary_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+SpecUtils specUtils = new SpecUtils();
+
+
+
+     
+     //HttpSession session = request.getSession();
+     
+
+
+
+
+
+
+
+   response.write( session.getAttribute("sessionCreationDate") );
+
+
+
+     response.write( specUtils.formatCurrency(((BigDecimal)session.getAttribute("totalPurchaseDebits"))) );
+
+
+
+   response.write( specUtils.formatCurrency((BigDecimal)session.getAttribute("totalSalesProfits")) );
+
+
+
+     response.write( session.getAttribute("ordersPlaced") );
+
+
+
+   response.write( session.getAttribute("ordersCancelled") );
+
+
+
+     response.write( session.getAttribute("holdingsSold") );
+
+
+
+     
+     	int totalPagesVisited = ((Integer)session.getAttribute("inventoryPageVisits")).intValue()+((Integer)session.getAttribute("shoppingCartPageVisits")).intValue()+((Integer)session.getAttribute("browsePageVisits")).intValue()+((Integer)session.getAttribute("homepageVisits")).intValue(); 
+     
+     response.write( totalPagesVisited )+response.write(request.getAttribute(" totalPagesVisited "));
+}
+
+}

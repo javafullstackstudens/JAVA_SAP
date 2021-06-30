@@ -1,0 +1,21 @@
+﻿ package PackageNo670448895;import com.sap.archtech.daservice.commands.*; public class index_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    response.write(MasterMethod.DASVERSION)+response.write(request.getAttribute("MasterMethod").DASVERSION);
+}
+
+}

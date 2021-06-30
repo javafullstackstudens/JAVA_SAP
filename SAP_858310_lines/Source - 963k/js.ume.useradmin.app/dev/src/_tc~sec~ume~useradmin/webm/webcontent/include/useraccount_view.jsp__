@@ -1,0 +1,277 @@
+﻿ package PackageNo430626340;import java.util.Date;import java.text.DateFormat;import com.sap.security.api.IUserAccount;import com.sap.security.api.UMException;import com.sap.security.api.IUserFactory;import com.sap.security.core.util.LocaleString;import com.sap.security.core.util.Message; public class useraccount_view_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+       java.util.Locale locale = proxy.getLocale();
+ if ( null == locale ) locale = java.util.Locale.getDefault();
+ UserAdminCustomization uac = (UserAdminCustomization)proxy.getSessionAttribute(UserAdminCustomization.beanId);
+ boolean noLimited = uac.toShowAllAccountInfo();
+     
+
+      String acH = userAdminLocale.get("ACCOUNT_HISTORY");   
+if ( entryExit.length() > 0 ) entryExit.delete(0, entryExit.length());
+entryExit.append(userAdminMessages.print(new Message("START_GROUP_BOX", acH))); 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+   response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+
+   response.write(acH);
+
+
+
+
+       response.write(acH);
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+       response.write(altmin)+response.write(request.getAttribute("altmin"));
+       response.write(altmin)+response.write(request.getAttribute("altmin"));
+       response.write(altmin)+response.write(request.getAttribute("altmin"));response.write(altmax)+response.write(request.getAttribute("altmax"));response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+
+ response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+     response.write(userAdminLocale.get("DATE"));
+     response.write(userAdminLocale.get("DESCRIPTION"));
+
+
+    DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.MEDIUM, locale);
+     		       DateFormat dateOnlyFormat = DateFormat.getDateInstance(DateFormat.MEDIUM, locale);
+     		       Date tmp = account.created();
+String date = userAdminLocale.get("NOT_AVAILABLE");
+if ( null != tmp ) date = dateFormat.format(tmp); 
+       response.write(date);
+  response.write(userAdminLocale.get("NEW_ACCOUNT_CREATED"));
+
+
+
+   Date fromDate = account.getValidFromDate();
+      String from = "";
+     			     if ( null != fromDate) { from = dateOnlyFormat.format(fromDate); }
+      Date toDate = DateUtil.decDateWhenMidnight(account.getValidToDate());
+      String to = "";
+     			     if ( null != toDate ) { to= dateOnlyFormat.format(toDate); } 
+  response.write(from);response.write(to);
+
+  response.write(userAdminLocale.get("ACCOUNT_VALID_DATE"));
+
+
+tmp = account.getLastSuccessfulLogonDate();
+     		   date = "";
+     		       if ( null != tmp && noLimited ) {
+     		   date = dateFormat.format(tmp); 
+} 
+
+tmp = account.getLastFailedLogonDate();
+     		       if ( null != tmp && noLimited  ) {
+     		   date = dateFormat.format(tmp); 
+
+  response.write(date);
+  response.write(userAdminLocale.get("LAST_FAILED_LOGIN"));
+
+} 
+
+tmp = account.getLastPasswordChangedDate();
+     		       if ( null != tmp && noLimited  ) {
+     		   date = dateFormat.format(tmp); 
+
+       response.write(date);
+  response.write(userAdminLocale.get("LAST_PASWD_CHANGE"));
+
+} 
+
+      String[] uids = null;
+IUserFactory uf = UMFactory.getUserFactory();
+IUser executer = null;
+String locklogonid = "";
+String unlocklogonid = "";
+String lockName = "";
+String unlockName = "";   
+String[] unlockMsgs = null;
+String unlockdt = null;
+String lockDate = null;
+String[] lockMsgs = null;
+int currentLockReason = account.getLockReason();
+StringBuffer lockdisplayname = null;
+String[] unlockDate = subjugatedUser.getAttribute(UserBean.UM, UserBean.unlockDate);
+if ( null != unlockDate ) {
+    java.util.Locale lc = LocaleString.getLocaleFromString(unlockDate[0]);
+    String dt = unlockDate[1];
+    if ( null == lc )  {
+lc = LocaleString.getLocaleFromString(unlockDate[1]);
+dt = unlockDate[0];
+    }
+    DateFormat df = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.MEDIUM, lc);
+    unlockdt = dateFormat.format(df.parse(dt));
+    uids = subjugatedUser.getAttribute(UserBean.UM, UserBean.unlockPerson);
+    if ( null != uids ) {
+try {
+    executer = uf.getUser(uids[0]);
+    unlockName = executer.getDisplayName();
+    if ( null != executer.getUserAccounts() ) {
+unlocklogonid = executer.getUserAccounts()[0].getLogonUid();
+     					   }	     
+} catch (UMException ex) {
+    unlockName = uids[0];
+}
+    }
+    unlockMsgs = subjugatedUser.getAttribute(UserBean.UM, UserBean.unlockMessage);
+       }
+       tmp = account.lockDate();
+       if ( null != tmp ) {
+ lockDate = dateFormat.format(tmp);
+ uids = subjugatedUser.getAttribute(UserBean.UM, UserBean.lockPerson);
+ if ( null != uids ) {
+     try {
+ executer = uf.getUser(uids[0]);
+ lockName = executer.getDisplayName();
+ if ( executer.getUserAccounts().length > 0 ) {
+     locklogonid = executer.getUserAccounts()[0].getLogonUid();
+ }
+     } catch (UMException ex) {
+ lockName = uids[0];
+     }
+ }
+ lockdisplayname = new StringBuffer(lockName);
+ if ( locklogonid.length()>0 ) {
+     lockdisplayname.append(" ").append("(").append(locklogonid).append(")");
+ }
+ lockMsgs = subjugatedUser.getAttribute(UserBean.UM, UserBean.lockMessage);
+       } 
+
+      if ( account.isLocked() ) { 
+  if ( null != unlockDate ) { 
+
+       response.write((unlockdt==null)?"":unlockdt);
+
+  response.write(userAdminLocale.get("ACTIVATED_BY"));response.write(unlockName);   if(unlocklogonid.length()>0){   response.write(unlocklogonid);    }
+      if ( null != unlockMsgs && !unlockMsgs[0].equals("") ) { 
+      response.write(userAdminLocale.get("MESSAGE_FROM_ADMIN"));      response.write(unlockMsgs[0])+response.write(request.getAttribute("unlockMsgs[0]"));
+      } 
+
+
+  } 
+  if ( null != tmp ) { 
+
+       response.write((lockDate==null)?"":lockDate);
+
+      if ( IUserAccount.LOCKED_BY_ADMIN == currentLockReason ) { 
+ response.write(userAdminMessages.print(new Message("DEACTIVATED_BY_ADMIN", lockdisplayname.toString())));
+       if ( null !=lockMsgs && !lockMsgs[0].equals("") ) { 
+       response.write(userAdminLocale.get("MESSAGE_FROM_ADMIN"));      response.write(lockMsgs[0])+response.write(request.getAttribute("lockMsgs[0]"));
+       } 
+      } else { 
+      response.write(userAdminMessages.print(new Message("DEACTIVATED_BY_SYSTEM")));
+      } 
+
+
+  } 
+      } else { 
+  if ( null != tmp ) { 
+     int lastLockReason = IUserAccount.LOCKED_BY_ADMIN;
+     String[] lockReason = subjugatedUser.getAttribute(UserBean.UM, UserBean.lockReason);
+     if ( null != lockReason )
+ lastLockReason = Integer.parseInt(lockReason[0]); 
+
+       response.write((lockDate==null)?"":lockDate);
+
+      if ( IUserAccount.LOCKED_BY_ADMIN == lastLockReason ) { 
+ response.write(userAdminMessages.print(new Message("DEACTIVATED_BY_ADMIN", lockdisplayname.toString())));
+       if ( null !=lockMsgs && !lockMsgs[0].equals("") ) { 
+       response.write(userAdminLocale.get("MESSAGE_FROM_ADMIN"));      response.write(lockMsgs[0])+response.write(request.getAttribute("lockMsgs[0]"));
+       } 
+      } else { 
+      response.write(userAdminMessages.print(new Message("DEACTIVATED_BY_SYSTEM")));
+      } 
+
+
+  } 
+  if ( null != unlockDate ) { 
+
+       response.write((unlockdt==null)?"":unlockdt);
+
+  response.write(userAdminLocale.get("ACTIVATED_BY"));response.write(unlockName);   if(unlocklogonid.length()>0){   response.write(unlocklogonid);    }
+      if ( null != unlockMsgs && !unlockMsgs[0].equals("") ) { 
+      response.write(userAdminLocale.get("MESSAGE_FROM_ADMIN"));      response.write(unlockMsgs[0])+response.write(request.getAttribute("unlockMsgs[0]"));
+      } 
+
+
+  } 
+      } 
+
+      String[] expireDate = subjugatedUser.getAttribute(UserBean.UM, UserBean.expireDate);
+String[] expireMsgs = null;
+String expireName = "";
+String expirelogonid = "";
+String expiredt = null;
+if ( null != expireDate ) {
+    java.util.Locale lc = LocaleString.getLocaleFromString(expireDate[0]);
+    String dt = expireDate[1];
+    if ( null == lc )  {
+lc = LocaleString.getLocaleFromString(expireDate[1]);
+dt = expireDate[0];
+    }
+    DateFormat df = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.MEDIUM, lc);
+    expiredt = dateFormat.format(df.parse(dt));
+    uids = subjugatedUser.getAttribute(UserBean.UM, UserBean.expirePerson);
+    try {
+executer = uf.getUser(uids[0]);
+expireName = executer.getDisplayName();
+if ( null != executer.getUserAccounts() ) {
+    expirelogonid = executer.getUserAccounts()[0].getLogonUid();
+}
+    } catch (UMException ex) {
+expireName = uids[0];
+    }
+    expireMsgs = subjugatedUser.getAttribute(UserBean.UM, UserBean.expireMessage);
+       }
+     
+      if ( null != expireDate ) { 
+
+   response.write((expiredt==null)?"":expiredt);
+
+      response.write(userAdminLocale.get("EXPIRED_BY"));response.write(expireName);   if(expirelogonid.length()>0){   response.write(expirelogonid);    }
+  if ( null != expireMsgs && !expireMsgs[0].equals("") ) { 
+  response.write(userAdminLocale.get("MESSAGE_FROM_ADMIN"));      response.write(expireMsgs[0])+response.write(request.getAttribute("expireMsgs[0]"));
+  } 
+
+
+      } 
+
+
+
+
+
+      response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+      entryExit.delete(0, entryExit.length());
+entryExit.append(userAdminMessages.print(new Message("END_GROUP_BOX", acH))); 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+   response.write(acH);
+   response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+}
+
+}

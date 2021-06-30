@@ -1,0 +1,132 @@
+﻿ package PackageNo1236016133;import com.sap.security.api.IUserMaint; public class userprofile_basicinfo_view_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+
+
+
+
+
+      boolean isLocked = (account==null)?false:account.isLocked();
+boolean unapproved = (subjugatedUser.getAttribute(UserBean.UM, UserBean.UUCOMPANYID)==null)?false:true;
+String companyName = util.empty;
+if ( unapproved ) {
+    companyName = util.getTP(subjugatedUser.getAttribute(UserBean.UM, UserBean.UUCOMPANYID)[0]).getDisplayName();
+} else {
+    if ( util.checkEmpty(subjugatedUser.getCompany())==null  ) {
+companyName = util.empty;
+    } else {
+try {
+    companyName = util.getTP(subjugatedUser.getCompany()).getDisplayName();
+} catch ( Exception ex ) {
+    companyName = util.empty;
+}
+    }
+    
+}
+     
+
+      String basicInfo = userAdminLocale.get("BASIC_INFO");
+if ( entryExit.length() > 0 ) entryExit.delete(0, entryExit.length());		   
+entryExit.append(userAdminMessages.print(new Message("START_GROUP_BOX", basicInfo))); 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+   response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+
+   response.write(basicInfo);
+
+
+
+
+   response.write(userAdminLocale.get("BASIC_INFO"));
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+       response.write(altmin)+response.write(request.getAttribute("altmin"));
+       response.write(altmin)+response.write(request.getAttribute("altmin"));response.write(altmax)+response.write(request.getAttribute("altmax"));response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+     response.write(userAdminLocale.get("USER_ID"));
+ response.write(user.getUidId())+response.write(request.getAttribute("user").getUidId());response.write(user.getUid())+response.write(request.getAttribute("user").getUid());
+   response.write(userAccount.getLogonuid())+response.write(request.getAttribute("userAccount").getLogonuid());response.write(userAccount.getLogonUid())+response.write(request.getAttribute("userAccount").getLogonUid());response.write(userAccount.getLogonUid())+response.write(request.getAttribute("userAccount").getLogonUid());
+
+
+
+ response.write(userAdminLocale.get("LAST_NAME"));
+    response.write(user.getLastName())+response.write(request.getAttribute("user").getLastName());
+
+
+ response.write(userAdminLocale.get("FIRST_NAME"));
+    response.write(user.getFirstName())+response.write(request.getAttribute("user").getFirstName());
+
+
+
+ response.write(userAdminLocale.get("EMAIL"));
+    response.write(user.getEmail())+response.write(request.getAttribute("user").getEmail());
+
+
+
+ response.write(userAdminLocale.get("SALUTATION"));
+    response.write(user.getSalutation())+response.write(request.getAttribute("user").getSalutation());
+
+
+
+ response.write(userAdminLocale.get("LANGUAGE"));
+    response.write(languages.getName(user.getPreferredLanguage()))+response.write(request.getAttribute("languages").getName(user.getPreferredLanguage()));
+
+
+ if ( UserAdminHelper.isCompanyConceptEnabled()) { 
+
+ response.write(userAdminLocale.get("COMPANY"));
+    response.write(companyName);response.write((unapproved==true)?" ("+userAdminLocale.get("UNAPPROVED")+")":"");
+
+ } 
+
+
+ response.write(userAdminLocale.get("ACCOUNT_STATUS"));
+
+       if (isLocked) { 
+response.write(userAdminLocale.get("DEACTIVATED"));
+}else{ 
+response.write(userAdminLocale.get("ACTIVE"));
+}
+
+
+
+  if ( user.getAccessibilityLevel() == IUser.SCREENREADER_ACCESSIBILITY_LEVEL ) { 
+
+ response.write(userAdminLocale.get("ACCESSIBILITY_LEVEL"));
+     response.write(userAdminLocale.get("SCREENREADER_NEEDED"));
+
+  } 
+
+     response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+      entryExit.delete(0, entryExit.length());
+entryExit.append(userAdminMessages.print(new Message("END_GROUP_BOX", basicInfo))); 
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+   response.write(basicInfo);
+   response.write(entryExit.getToString())+response.write(request.getAttribute("entryExit").getToString());
+}
+
+}

@@ -1,0 +1,174 @@
+﻿ package PackageNo1275620533;import com.sap.engine.services.textcontainer.demo.MessagesDemo; public class start_jsp {  /* 1 */ 	public String getDeepMessage(Exception e) /* 4 */ 	{ /* 5 */ 		String msg = "Exception:"; /* 6 */ 		Throwable t = e; /* 7 */ 		while (t != null) /* 8 */ 		{ /* 9 */ 			msg += "<br>" + t.toString(); /* 10 */ 			t = t.getCause(); /* 11 */ 		} /* 12 */ 		return msg; /* 13 */ 	} /* 14 */  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      try { 
+     
+     	MessagesDemo.checkLogin(request, response);
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+     	String ctx = request.getParameter("context");
+     	int context = 1;
+     	if (ctx != null)
+     	{
+     		context = new Integer(ctx).intValue();
+     	}
+     	switch (context)
+     	{
+     		case 2: MessagesDemo.setIndustry("OIL");
+     			break;
+     		case 3: MessagesDemo.setIndustry("OIL_GAS");
+     			break;
+     		default:MessagesDemo.setIndustry("");
+     			context = 1;
+     	}
+     
+
+
+
+
+     
+     					if (ctx == null)
+     					{
+     
+
+     
+     					}
+     
+
+
+
+
+
+
+     
+     			if (ctx != null)
+     			{
+     
+
+  response.write( context-1 );
+
+
+
+
+
+
+
+
+
+   response.write( (MessagesDemo.getIndustry() == "" ? "Standard": MessagesDemo.getIndustry()) );
+
+
+
+  response.write( MessagesDemo.getString("THEAD") );
+
+
+
+  response.write( MessagesDemo.getString("TEXT1") );
+
+
+
+    response.write( MessagesDemo.getString("TEXT2") );
+
+
+
+  response.write( MessagesDemo.getString("TEXT3") );
+
+
+
+    response.write( MessagesDemo.getString("TEXT4") );
+
+
+
+  response.write( MessagesDemo.getString("TFOOT") );
+
+
+     
+     			}
+     
+
+
+
+      } catch (Exception e) { 
+       response.write( getDeepMessage(e) )+response.write(request.getAttribute(" getDeepMessage(e) "));
+      } 
+}
+
+}

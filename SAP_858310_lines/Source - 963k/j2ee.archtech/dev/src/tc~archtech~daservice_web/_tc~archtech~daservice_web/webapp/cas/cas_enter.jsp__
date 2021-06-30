@@ -1,0 +1,474 @@
+﻿ package PackageNo2020044678;import com.sap.security.core.server.destinations.api.*;import javax.naming.*;import java.util.*; public class cas_enter_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ // Get Local Destinations
+ ArrayList destinations = new ArrayList();
+      	try {
+     		InitialContext initCtx = new InitialContext();
+     		DestinationService destService = (DestinationService) initCtx
+     				.lookup(DestinationService.JNDI_KEY);
+     		Iterator iter = destService.getDestinationNames("HTTP").iterator();
+     		HTTPDestination dest = null;
+     		while (iter.hasNext())
+     		{
+     			destinations.add((String) iter.next());
+     		}
+     		initCtx.close();
+     	} catch (Exception ex) {
+     		throw new Exception(ex);
+     	}
+ 
+ // Get parameters
+ String entertype = request.getParameter("entertype");
+ if (entertype == null)
+   entertype = "X";
+   
+ String storeid = request.getParameter("storeid");
+ if (storeid == null)
+   storeid = "X";
+     
+ String archivestore = request.getParameter("archivestore");
+ if (archivestore == null)
+   archivestore = "";
+     
+ String storagesystem = request.getParameter("storagesystem");
+ if (storagesystem == null)
+   storagesystem = "";
+     
+ String type = request.getParameter("type");
+ if (type == null)
+   type = "X";
+ else if (type.toUpperCase().startsWith("W"))
+   type = "W";
+ else if (type.toUpperCase().startsWith("F"))
+   type = "F";
+ else
+   type = "X";
+   
+ String winroot = request.getParameter("winroot");
+ if (winroot == null)
+   winroot = "";
+     
+ String unixroot = request.getParameter("unixroot");
+ if (unixroot == null)
+   unixroot = "";
+   
+ String destination = request.getParameter("destination");
+ if (destination == null)
+   destination = "";
+   
+ String proxyhost = request.getParameter("proxyhost");
+ if (proxyhost == null)
+   proxyhost = "";
+   
+ String proxyport = request.getParameter("proxyport");
+ if (proxyport == null || proxyport.startsWith("0"))
+   proxyport = "";
+ 
+ String isdefault = request.getParameter("isdefault");
+ if ((isdefault == null) || (isdefault.length() == 0))
+ {	
+       	  isdefault = "N";
+ }
+ else
+ {
+       	  if (isdefault.equalsIgnoreCase("Y"))
+      	     isdefault = "Y";
+      	  else 
+      		  isdefault = "N";	 
+ }
+       	  
+ if (storeid.startsWith("X"))
+ { 
+ 
+ 
+
+
+
+
+
+ 
+ }
+ else
+ {
+ 
+
+
+
+
+
+ 
+ }
+ 
+
+
+
+
+
+
+
+
+
+
+       
+       if (entertype.equalsIgnoreCase("U"))
+       {
+       
+
+
+       response.write(archivestore);
+
+
+       
+       }
+       else
+       {
+       
+
+
+       response.write(archivestore);
+
+
+       
+       }
+       String archivestoreError = request.getParameter("archivestoreerror");
+       if (archivestoreError != null && archivestoreError.length() > 0)
+       {
+       
+
+
+  response.write(archivestoreError)+response.write(request.getAttribute("archivestoreError"));
+
+
+       
+       }
+       
+
+
+
+
+
+
+
+
+
+       response.write(storagesystem);
+
+
+       
+       String storagesystemError = request.getParameter("storagesystemerror");
+       if (storagesystemError != null && storagesystemError.length() > 0)
+       {
+       
+
+
+  response.write(storagesystemError)+response.write(request.getAttribute("storagesystemError"));
+
+
+       
+       }
+       
+
+
+
+
+
+
+
+
+
+
+       
+ if (isdefault.equalsIgnoreCase("Y"))
+ {
+       
+
+
+
+       
+ }
+ else 
+ {
+       
+
+
+
+       
+ }
+       
+
+
+
+       
+       String isDefaultError = request.getParameter("isdefaulterror");
+       if (isDefaultError != null && isDefaultError.length() > 0)
+       {
+       
+
+
+  response.write(isDefaultError)+response.write(request.getAttribute("isDefaultError"));
+
+
+       
+       }
+       
+
+
+
+
+
+
+
+
+
+
+       
+       if (entertype.equalsIgnoreCase("U"))
+       {
+ if (type.equalsIgnoreCase("W"))
+ {
+       
+
+
+
+
+       
+ }
+ else 
+ {
+       
+
+
+
+
+       
+ }
+       }
+       else
+       {
+ if (type.equalsIgnoreCase("W"))
+ {
+       
+
+
+
+
+       
+ }
+ else if (type.equalsIgnoreCase("F"))
+ {
+       
+
+
+
+
+       
+ }
+ else
+ {
+       
+
+
+
+
+       
+ }
+       }
+       
+
+
+
+       
+       String typeError = request.getParameter("typeerror");
+       if (typeError != null && typeError.length() > 0)
+       {
+       
+
+
+  response.write(typeError)+response.write(request.getAttribute("typeError"));
+
+
+       
+       }
+       
+
+
+
+
+
+
+
+
+
+       response.write(winroot);
+
+
+       
+       String winrootError = request.getParameter("winrooterror");
+       if (winrootError != null && winrootError.length() > 0)
+       {
+       
+
+
+  response.write(winrootError)+response.write(request.getAttribute("winrootError"));
+
+
+       
+       }
+       
+
+
+
+
+
+
+
+
+       response.write(unixroot);
+
+
+       
+       String unixrootError = request.getParameter("unixrooterror");
+       if (unixrootError != null && unixrootError.length() > 0)
+       {
+       
+
+
+  response.write(unixrootError)+response.write(request.getAttribute("unixrootError"));
+
+
+       
+       }
+       
+
+
+
+
+
+
+
+
+
+
+
+       
+   Iterator i = destinations.iterator();
+   while (i.hasNext())
+   {
+     				String destname = (String) i.next();
+     				if (destname.equalsIgnoreCase(destination))
+     				{	
+   
+
+   response.write(destname);     response.write(destname);
+
+   
+     				}
+     else
+     {	
+   
+
+   response.write(destname);    response.write(destname);
+
+   
+     }
+   }
+   
+
+
+
+
+       
+       String destinationError = request.getParameter("destinationerror");
+       if (destinationError != null && destinationError.length() > 0)
+       {
+       
+
+
+  response.write(destinationError)+response.write(request.getAttribute("destinationError"));
+
+
+       
+       }
+       
+
+
+
+
+
+
+
+
+       response.write(proxyhost);
+
+
+
+
+
+
+
+
+       response.write(proxyport);
+
+
+
+
+
+
+
+
+
+
+
+       
+       if (storeid.startsWith("X"))
+       {
+       
+
+
+
+
+       
+       }
+       else
+       {
+       
+
+
+
+
+       
+       }
+       
+
+       response.write(storeid);
+       response.write(archivestore);
+       response.write(storagesystem);
+       response.write(type);
+       response.write(winroot);
+       response.write(unixroot);
+       response.write(destination);
+       response.write(proxyhost);
+       response.write(proxyport);
+       response.write(isdefault);
+}
+
+}

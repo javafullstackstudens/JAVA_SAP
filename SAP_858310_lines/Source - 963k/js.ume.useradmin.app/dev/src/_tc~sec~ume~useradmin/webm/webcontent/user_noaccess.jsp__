@@ -1,0 +1,63 @@
+﻿ package PackageNo1539007513;import proxy_txt;import contextspecific_includes_top_txt;import contextspecific_includes_bottom_txt;import java.lang.*; public class user_noaccess_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+ Throwable throwable = new Throwable();
+
+
+     if (!inPortal) {
+
+
+   response.write(userAdminLocale.get("EXCEPTION_PAGE_HEADER"));
+
+
+
+     }
+
+
+
+
+
+
+
+   response.write(userAdminLocale.get("NOACCESS_PAGE_HEADER"));
+
+
+
+
+
+
+
+   response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+     response.write(userAdminLocale.get("NOACCESS_DESCRIPTION"));
+
+
+
+      String permissionRequired = (String)proxy.getRequestAttribute(com.sap.security.core.admin.UserAdminCommonLogic.PERMISSION_NAMES);
+if ( null != permissionRequired ) 
+{ 
+
+
+response.write(webpath)+response.write(request.getAttribute("webpath"));
+
+
+
+
+
+
+      response.write(userAdminLocale.get("REQUIRED_PERMISSIONS_ARE"));response.write(permissionRequired)+response.write(request.getAttribute("permissionRequired"));
+
+
+      } 
+
+
+
+       response.write(webpath)+response.write(request.getAttribute("webpath"));
+}
+
+}

@@ -1,0 +1,15 @@
+﻿ package PackageNo1612931749;import com.sap.security.core.admin.UserAdminCustomization; public class useradmincustomization_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+      UserAdminCustomization cus = (UserAdminCustomization)proxy.getSessionAttribute(UserAdminCustomization.beanId);
+if ( null == cus ) cus = new UserAdminCustomization();
+IUser cusUser = proxy.getActiveUser();
+boolean isAddnRe = cus.isAddnExist(cusUser);
+String[] addnNames = null;
+String[] addnLabels = null;
+if ( isAddnRe ) {
+    addnNames = cus.getAddnNames(cusUser);
+    addnLabels = cus.getAddnLabels(cusUser);
+}
+     
+}
+
+}

@@ -1,0 +1,56 @@
+﻿ package PackageNo1731122249;import com.sap.engine.services.textcontainer.admin.AdministrationTool; public class index_jsp {  /* 1 */ 	public String getDeepMessage(Exception e) /* 4 */ 	{ /* 5 */ 		String msg = "Exception:"; /* 6 */ 		Throwable t = e; /* 7 */ 		while (t != null) /* 8 */ 		{ /* 9 */ 			msg += "<br>" + t.toString(); /* 10 */ 			t = t.getCause(); /* 11 */ 		} /* 12 */ 		return msg; /* 13 */ 	} /* 14 */  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+     	String err = "";
+     
+     	try
+     	{
+     		AdministrationTool.checkLogin(request, response);
+     	}
+     	catch (Exception e)
+     	{
+     		err = getDeepMessage(e);
+     	}
+     
+
+
+
+
+
+
+
+     
+     	if (err.length() > 0)
+     	{
+     
+
+   response.write( err );
+
+     
+     	}
+     	else
+     	{
+     
+
+
+
+
+     
+     	}
+     
+}
+
+}

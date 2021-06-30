@@ -1,0 +1,256 @@
+﻿ package PackageNo931215270;import com.sap.security.api.*;import com.sap.archtech.daservice.mbeans.*;import com.sap.archtech.daservice.admin.*;import com.sap.archtech.daservice.data.*;import com.sap.archtech.daservice.ejb.*;import java.util.*;import javax.naming.*; public class cas_list_jsp {  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+     
+       String isUserValid = (String) session.getAttribute("isUserValid");
+       if (!(isUserValid != null && isUserValid.equals("x")))
+       {
+     
+
+  request.getRequestDispatcher("../index.jsp").forward(request,response);
+
+     
+       }
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ IUser user = UMFactory.getAuthenticator().getLoggedInUser();
+ boolean hasPermission = user.hasPermission(new XmldasAdminPermission("write", "*"));
+ if (hasPermission == true)
+ {
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+   try
+   {
+       
+     		// Get all BC_XMLA_CONFIG entries
+     		SortedMap tm = new TreeMap();
+     		Context ctx = new InitialContext();
+     		ArchStoreConfigLocalHome beanLocalHome =
+     			(ArchStoreConfigLocalHome) ctx.lookup("java:comp/env/ArchStoreConfigBean");
+     		Collection col = beanLocalHome.findAll();
+     		Iterator iter = col.iterator();
+     		while(iter.hasNext())
+     		{
+     		  ArchStoreConfigLocal ascl = (ArchStoreConfigLocal) iter.next(); 
+     		  String archivestore = ascl.getArchivestore();
+     		  Sapxmla_Config sac = ascl.getSapxmla_Config();
+     		  tm.put(archivestore, sac);
+     		} 					
+     		for (Iterator i = tm.entrySet().iterator(); i.hasNext();)
+     		{
+     		  Sapxmla_Config sac = (Sapxmla_Config) ((Map.Entry) i.next()).getValue();		  
+     		  long storeid = sac.store_id;
+     		  String archivestore = sac.archive_store;
+     		  String storagesystem = sac.storage_system;
+     		  String type = sac.type;
+     		  if (type.equalsIgnoreCase("W"))
+     		    type = "WebDAV System";
+       else
+ type = "File System";
+       String winroot = sac.win_root;
+       if (winroot == null)
+ winroot = "";
+       String winroot_normalized = winroot;
+       winroot_normalized = winroot_normalized.replace("<", "&lt;");
+       winroot_normalized = winroot_normalized.replace(">", "&gt;");
+       String unixroot = sac.unix_root;
+       if (unixroot == null)
+ unixroot = "";
+       String unixroot_normalized = unixroot;
+       unixroot_normalized = unixroot_normalized.replace("<", "&lt;");
+       unixroot_normalized = unixroot_normalized.replace(">", "&gt;");    
+       String destination = sac.destination;
+       if (destination == null)
+ destination = "";    
+       String proxyhost = sac.proxy_host;
+       if (proxyhost == null)
+ proxyhost = "";
+       String proxyport = Integer.toString(sac.proxy_port);
+       if (proxyport == null || proxyport.startsWith("0"))
+ proxyport = "";
+       String ilm_conformance = Short.toString(sac.ilm_conformance);
+       if (ilm_conformance == null)
+ ilm_conformance = "0";
+       String isdefault = sac.is_default;
+       if ((isdefault == null) || (isdefault.length() == 0))
+       {
+     	isdefault = "N";
+       }
+       else
+       {
+     	  isdefault = isdefault.toUpperCase();
+     	  if (!isdefault.equalsIgnoreCase("Y"))
+     	     isdefault = "N";
+       }  
+   
+
+
+
+response.write(archivestore);
+
+
+response.write(storagesystem);
+
+
+       
+     		if (isdefault.equalsIgnoreCase("Y"))
+     		{
+     
+
+    response.write(isdefault);
+
+       
+     		}
+     		else
+     		{	
+     
+
+    response.write(isdefault);
+
+       
+     		}
+     
+
+
+response.write(type);
+
+
+response.write(winroot_normalized);
+
+
+response.write(unixroot_normalized);
+
+
+response.write(destination);
+
+
+response.write(proxyhost);
+
+
+response.write(proxyport);
+
+
+response.write(ilm_conformance);
+
+
+
+
+       response.write(storeid);
+       response.write(archivestore);
+       response.write(storagesystem);
+       response.write(type);
+       response.write(winroot);
+       response.write(unixroot);
+       response.write(destination);
+       response.write(proxyhost);
+       response.write(proxyport);
+       response.write(ilm_conformance);
+       response.write(isdefault);
+
+
+
+
+
+
+       response.write(storeid);
+       response.write(archivestore);
+
+
+
+
+
+   
+     } // End for() loop
+     
+     
+   } // End try
+   catch (Exception ex)
+   {
+     throw ex;
+   }
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+     
+ }
+ else
+ {
+     
+ 
+
+
+
+
+
+
+ 
+ 
+ }
+ 
+ 
+}
+
+}

@@ -1,0 +1,165 @@
+﻿ package PackageNo1089300806;import com.sap.engine.services.textcontainer.test.recipientlistener.TextContainerTestRecipientListener; public class index_jsp {  /* 1 */ 	public String getDeepMessage(Exception e) /* 4 */ 	{ /* 5 */ 		String msg = "Exception:"; /* 6 */ 		Throwable t = e; /* 7 */ 		while (t != null) /* 8 */ 		{ /* 9 */ 			msg += "<br>" + t.toString(); /* 10 */ 			t = t.getCause(); /* 11 */ 		} /* 12 */ 		return msg; /* 13 */ 	} /* 14 */  public void Checkmarx_Class_Init(HttpServletRequest request, HttpServletResponse response, HttpSession session, ServletContext application, PageContext pageContext) {jspInit();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+     	String err = "";
+     	String msg = "";
+     
+     	try
+     	{
+     		String txv = request.getParameter("TXVRequest");
+     		String vcv = request.getParameter("ValueContextAttributeValues");
+     		String vsc = request.getParameter("ValueSystemContext");
+     		if (txv != null)
+     		{
+     			if (txv.equals("R"))
+     			{
+     				TextContainerTestRecipientListener.registerRecipientListeners();
+     				msg = "Recipient listeners sucessfully registered!";
+     			}
+     			else if (txv.equals("U"))
+     			{
+     				TextContainerTestRecipientListener.unregisterRecipientListeners();
+     				msg = "Recipient listeners sucessfully unregistered!";
+     			}
+     			else if (txv.equals("D"))
+     			{
+     				TextContainerTestRecipientListener.deleteEventLists();
+     				msg = "Event lists sucessfully deleted!";
+     			}
+     		}
+     	}
+     	catch (Exception e)
+     	{
+     		err = getDeepMessage(e);
+     	}
+     
+      try { 
+
+
+
+
+
+
+
+
+
+
+     
+     	if (TextContainerTestRecipientListener.registered)
+     	{
+     
+
+
+
+
+
+
+     
+     	}
+     	else
+     	{
+     
+
+
+
+
+
+
+     
+     	}
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+     	if (err.length() > 0)
+     	{
+     
+
+
+     response.write( err );
+
+     
+     	}
+     
+     
+     	if (msg.length() > 0)
+     	{
+     
+
+
+       response.write( msg );
+
+     
+     	}
+     
+
+
+
+
+
+
+
+
+
+  response.write( TextContainerTestRecipientListener.getNumberOfPCDEvents() )+response.write(request.getAttribute(" TextContainerTestRecipientListener").getNumberOfPCDEvents() );
+     
+     	if (TextContainerTestRecipientListener.getNumberOfPCDEvents() > 0)
+     	{
+     
+
+     
+     	}
+     
+
+
+
+
+
+
+
+
+  response.write( TextContainerTestRecipientListener.getNumberOfWebDynproEvents() )+response.write(request.getAttribute(" TextContainerTestRecipientListener").getNumberOfWebDynproEvents() );
+     
+     	if (TextContainerTestRecipientListener.getNumberOfWebDynproEvents() > 0)
+     	{
+     
+
+     
+     	}
+     
+
+
+
+
+
+
+      } catch (Exception e) { 
+       response.write( getDeepMessage(e) )+response.write(request.getAttribute(" getDeepMessage(e) "));
+      } 
+}
+
+}
